@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1e3a6e">
+<title>গ্রন্থকানন — অক্টোবর ইলম যাত্রা</title>
+<meta name="description" content="অক্টোবর মাসব্যাপী ইসলামিক জ্ঞান ও লেখনী প্রতিযোগিতা — ৩১ দিন, ৩১টি ইসলামিক বিষয়।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hind+Siliguri:wght@400;600&family=Noto+Serif+Bengali:wght@500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hind+Siliguri:wght@400;600&family=Noto+Serif+Bengali:wght@500;700&display=swap"></noscript>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#f7f2e7; --paper2:#fbf8f1; --card:#fffdf8;
+  --em:#1e3a6e; --em2:#2b4f8f; --em3:#3d6bb3; --mint:#e6ecf7;
+  --gold:#b98a3a; --gold2:#d9b36a; --goldbg:#f6ecd6;
+  --ink:#1b2236; --ink2:#4a5470; --muted:#7b8398; --line:#e7dfcd;
+  --serif:'Noto Serif Bengali',serif; --sans:'Hind Siliguri',sans-serif; --ar:'Amiri',serif;
+  --shadow:0 1px 2px rgba(60,45,20,.05),0 8px 24px -8px rgba(60,45,20,.14);
+  --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23b98a3a' stroke-width='.7' opacity='.28'%3E%3Cpath d='M28 6l6 16 16 6-16 6-6 16-6-16-16-6 16-6z'/%3E%3Crect x='17' y='17' width='22' height='22' transform='rotate(45 28 28)'/%3E%3Crect x='17' y='17' width='22' height='22'/%3E%3C/g%3E%3C/svg%3E");
+  --pattern-light:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='.7' opacity='.10'%3E%3Cpath d='M28 6l6 16 16 6-16 6-6 16-6-16-16-6 16-6z'/%3E%3Crect x='17' y='17' width='22' height='22' transform='rotate(45 28 28)'/%3E%3Crect x='17' y='17' width='22' height='22'/%3E%3C/g%3E%3C/svg%3E");
+}
+html{scroll-behavior:smooth;}
+html,body{min-height:100vh;background:var(--paper);font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased;}
+body{background-image:var(--pattern);background-attachment:fixed;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(247,242,231,.2) 0%,rgba(247,242,231,.92) 38%,var(--paper) 100%);}
+.wrap{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:0 16px 110px;}
+button{font-family:inherit;}
+a{color:var(--em2);}
+h1,h2,h3,h4{font-family:var(--serif);}
+
+/* ── HEADER ── */
+.hdr{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:10px 16px;margin:0 -16px 14px;
+  background:rgba(247,242,231,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(185,138,58,.18);}
+.hdr img{width:40px;height:40px;object-fit:contain;cursor:pointer;}
+.hdr-t{flex:1;min-width:0;cursor:pointer;line-height:1.25;}
+.hdr-t b{display:block;font-family:var(--serif);font-size:17px;color:var(--em);font-weight:800;}
+.hdr-t span{font-size:11px;color:var(--gold);letter-spacing:.3px;}
+.me-btn{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card);border-radius:30px;padding:4px 12px 4px 4px;font-size:13px;color:var(--ink2);cursor:pointer;max-width:150px;}
+.me-btn .av{width:28px;height:28px;font-size:12px;}
+.me-btn span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* ── BASICS ── */
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:16px;box-shadow:var(--shadow);}
+.sec-h{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px;}
+.sec-h h3{font-size:16px;color:var(--em);display:flex;align-items:center;gap:8px;}
+.sec-h h3::before{content:'';width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;}
+.sec-h a,.link-btn{font-size:13px;color:var(--gold);background:none;border:none;cursor:pointer;text-decoration:none;font-weight:600;}
+.btn{display:block;width:100%;padding:14px;border-radius:14px;border:none;font-size:15px;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .2s,opacity .2s,background .2s;text-align:center;text-decoration:none;font-family:var(--sans);}
+.btn-g{background:linear-gradient(135deg,var(--em) 0%,var(--em2) 100%);color:#fff;box-shadow:0 6px 18px -6px rgba(30,58,110,.55);}
+.btn-g:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(30,58,110,.6);}
+.btn-g:active{transform:scale(.985);}
+.btn-g:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none;}
+.btn-gold{background:linear-gradient(135deg,#c89a48,#e2c07a);color:#3a2708;box-shadow:0 6px 18px -6px rgba(185,138,58,.6);}
+.btn-o{background:var(--paper2);color:var(--em);border:1px solid var(--line);}
+.btn-o:hover{background:var(--mint);border-color:#cdd8ee;}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.lbl{font-size:13px;color:var(--ink2);margin-bottom:6px;display:block;font-weight:600;}
+.inp{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--paper2);color:var(--ink);font-family:var(--sans);font-size:15px;outline:none;transition:border .2s,box-shadow .2s,background .2s;}
+.inp:focus{border-color:var(--em3);background:#fff;box-shadow:0 0 0 4px rgba(61,107,179,.14);}
+.inp::placeholder{color:#b3b8ae;}
+textarea.inp{resize:vertical;line-height:1.85;font-family:var(--serif);font-size:15px;}
+.field{margin-bottom:14px;}
+.alert{border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.7;margin-top:12px;display:none;}
+.alert.show{display:block;}
+.alert.ok{background:#e7f4ec;border:1px solid #b5dcc4;color:#1b5e3d;}
+.alert.err{background:#fcecea;border:1px solid #f1c4bd;color:#9b2f22;}
+.alert.info{background:var(--goldbg);border:1px solid #ead7ae;color:#7a5a1e;}
+.muted{color:var(--muted);font-size:13px;}
+.center{text-align:center;}
+.spin{display:inline-block;width:18px;height:18px;border:2px solid rgba(30,58,110,.18);border-top-color:var(--em);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.view{display:none;}
+.view.on{display:block;animation:fade .35s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+.orn{display:flex;align-items:center;gap:10px;color:var(--gold);font-size:13px;margin:18px 0;}
+.orn::before,.orn::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);}
+.av{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0;font-family:var(--serif);}
+.skel{height:14px;border-radius:7px;background:linear-gradient(90deg,#efe8d8 25%,#f7f2e7 50%,#efe8d8 75%);background-size:200% 100%;animation:sh 1.2s infinite;margin-bottom:10px;}
+@keyframes sh{to{background-position:-200% 0;}}
+
+/* ── HERO (মিহরাব) ── */
+.hero{position:relative;overflow:hidden;color:#fff;text-align:center;padding:34px 22px 24px;margin-bottom:16px;
+  border-radius:240px 240px 26px 26px;background:radial-gradient(ellipse at 50% 0%,#33609f 0%,var(--em) 55%,#13264d 100%);
+  box-shadow:0 20px 40px -18px rgba(19,38,77,.7);}
+.hero::before{content:'';position:absolute;inset:0;background-image:var(--pattern-light);}
+.hero::after{content:'';position:absolute;inset:8px;border:1px solid rgba(217,179,106,.45);border-radius:232px 232px 20px 20px;pointer-events:none;}
+.hero > *{position:relative;z-index:1;}
+.bism{font-family:var(--ar);font-size:24px;color:var(--gold2);margin-top:14px;line-height:1.6;}
+.hero .tag{display:inline-block;font-size:12px;letter-spacing:.5px;color:#f1e3c2;background:rgba(255,255,255,.08);border:1px solid rgba(217,179,106,.35);border-radius:20px;padding:3px 12px;margin-top:8px;}
+.hero h1{font-size:22px;line-height:1.6;margin:12px 0 4px;font-weight:800;}
+.hero .meta{font-size:13px;color:#d3dcf0;}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0 16px;}
+.hero-stats div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:10px 4px;}
+.hero-stats b{display:block;font-family:var(--serif);font-size:22px;color:var(--gold2);line-height:1.3;}
+.hero-stats span{font-size:11.5px;color:#d9e1f2;}
+.mprog{background:rgba(0,0,0,.18);border-radius:14px;padding:12px 14px;text-align:left;}
+.mprog .top{display:flex;justify-content:space-between;font-size:12.5px;color:#e8edf7;margin-bottom:8px;}
+.mprog .top b{color:var(--gold2);}
+.mbar{height:6px;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden;}
+.mbar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,#d9b36a,#f3dca3);transition:width .8s ease;}
+.steps{display:flex;justify-content:center;gap:4px;margin-top:16px;flex-wrap:wrap;font-size:12px;color:#d9e1f2;}
+.steps span{display:flex;align-items:center;gap:4px;}
+.steps span:not(:last-child)::after{content:'›';color:var(--gold2);margin-left:6px;}
+
+/* ── FEATURED ARTICLE ── */
+.feat{position:relative;padding:22px 20px 20px;border:1px solid #ead7ae;background:linear-gradient(180deg,#fffaf0 0%,var(--card) 60%);overflow:hidden;}
+.feat::after{content:'';position:absolute;right:-30px;top:-30px;width:130px;height:130px;background-image:var(--pattern);opacity:.9;border-radius:50%;}
+.chip{display:inline-flex;align-items:center;gap:5px;border-radius:30px;padding:4px 11px;font-size:12px;font-weight:600;background:var(--mint);color:var(--em);}
+.chip.gold{background:var(--goldbg);color:#8a6420;}
+.chips{display:flex;gap:6px;flex-wrap:wrap;position:relative;z-index:1;}
+.feat h2{position:relative;z-index:1;font-size:22px;line-height:1.55;margin:14px 0 8px;color:var(--ink);}
+.feat p{position:relative;z-index:1;font-family:var(--serif);font-size:14.5px;color:var(--ink2);line-height:1.95;margin-bottom:18px;}
+.empty{text-align:center;padding:30px 20px;}
+.empty .ic{font-size:34px;}
+.empty p{margin-top:10px;line-height:1.9;font-family:var(--serif);}
+
+/* ── MY PROGRESS ── */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
+.stat{background:var(--paper2);border:1px solid var(--line);border-radius:16px;padding:12px 6px;text-align:center;}
+.stat b{display:block;font-family:var(--serif);font-size:24px;color:var(--em);line-height:1.3;}
+.stat span{font-size:12px;color:var(--ink2);}
+.stat.hl{background:linear-gradient(160deg,var(--em),var(--em2));border:none;}
+.stat.hl b{color:var(--gold2);}
+.stat.hl span{color:#d9e1f2;}
+.dots{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;}
+@media(min-width:480px){.dots{grid-template-columns:repeat(11,1fr);}}
+.dot{aspect-ratio:1;border-radius:10px;background:var(--paper);border:1px dashed #ddd2bb;display:flex;align-items:center;justify-content:center;font-size:11px;color:#b0a78f;}
+.dot.done{background:var(--em2);border:1px solid var(--em2);color:#fff;}
+.dot.today{border:2px solid var(--gold);color:var(--gold);font-weight:700;}
+.dot.done.today{color:#fff;}
+
+/* ── LEADERBOARD ── */
+.lb-card{border:1px solid #ead7ae;background:linear-gradient(180deg,#fdf6e6 0%,var(--card) 45%);}
+.podium{display:grid;grid-template-columns:1fr 1.15fr 1fr;align-items:end;gap:8px;margin:6px 0 16px;}
+.pd{text-align:center;min-width:0;}
+.pd .av{margin:0 auto 6px;width:48px;height:48px;font-size:18px;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.12);position:relative;}
+.pd.p1 .av{width:62px;height:62px;font-size:22px;}
+.pd .medal{font-size:18px;display:block;margin-bottom:2px;}
+.pd .nm{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 2px;}
+.pd .st{font-size:11.5px;color:var(--ink2);}
+.pd .base{margin-top:8px;border-radius:12px 12px 4px 4px;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;font-family:var(--serif);font-weight:800;color:#fff;font-size:18px;}
+.pd.p1 .base{height:74px;background:linear-gradient(180deg,#d9b36a,#b98a3a);}
+.pd.p2 .base{height:54px;background:linear-gradient(180deg,#aab4c6,#7f8aa1);}
+.pd.p3 .base{height:40px;background:linear-gradient(180deg,#d19a73,#a8704a);}
+.pd.me .nm{color:var(--em2);}
+.lb{list-style:none;}
+.lb li{display:flex;align-items:center;gap:12px;padding:11px 8px;border-radius:14px;}
+.lb li + li{border-top:1px solid #f0e9d9;}
+.lb li.me{background:var(--mint);border-top-color:transparent;}
+.lb li.me + li{border-top-color:transparent;}
+.rank{width:26px;text-align:center;font-family:var(--serif);font-weight:700;color:var(--muted);font-size:14px;flex-shrink:0;}
+.lb .av{width:36px;height:36px;font-size:14px;}
+.lb .nm{flex:1;min-width:0;font-size:14.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.lb .nm small{display:block;font-weight:400;font-size:11.5px;color:var(--muted);}
+.lb .sc{text-align:right;white-space:nowrap;}
+.lb .sc b{font-family:var(--serif);font-size:16px;color:var(--em);}
+.lb .sc small{display:block;font-size:11px;color:var(--muted);}
+.bar{height:4px;border-radius:2px;background:#efe8d8;margin-top:5px;overflow:hidden;}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--em2),var(--em3));}
+
+/* ── DAY GRID ── */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+@media(min-width:480px){.grid{grid-template-columns:repeat(5,1fr);}}
+.dcell{position:relative;border:1px solid var(--line);background:var(--paper2);border-radius:40px 40px 12px 12px;padding:14px 6px 10px;text-align:center;cursor:pointer;transition:transform .15s,box-shadow .2s,border-color .2s;min-height:96px;display:flex;flex-direction:column;align-items:center;text-decoration:none;color:inherit;}
+.dcell:hover{transform:translateY(-2px);border-color:var(--gold2);box-shadow:0 8px 16px -8px rgba(60,45,20,.25);}
+.dcell .n{font-family:var(--serif);font-size:20px;font-weight:800;color:var(--em);line-height:1.2;}
+.dcell .l{font-size:10px;color:var(--muted);letter-spacing:.5px;}
+.dcell .t{font-size:11.5px;line-height:1.45;margin-top:6px;color:var(--ink2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.dcell.locked{background:transparent;border-style:dashed;}
+.dcell.locked:hover{transform:none;box-shadow:none;border-color:var(--line);}
+.dcell.locked .n{color:#cbc2ad;}
+.dcell.locked .t{color:#bdb49e;}
+.dcell.isToday{border:2px solid var(--gold);background:#fff8e8;}
+.dcell.did{background:linear-gradient(180deg,var(--em2),var(--em));border-color:var(--em);}
+.dcell.did .n{color:#fff;}
+.dcell.did .l,.dcell.did .t{color:#d3dcf0;}
+.dcell .ck{position:absolute;top:-6px;right:-4px;width:20px;height:20px;border-radius:50%;background:var(--gold);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;border:2px solid var(--card);}
+
+/* ── ARTICLE ── */
+.readbar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:30;width:0;transition:width .1s;}
+.back{background:none;border:none;color:var(--em2);font-size:14px;cursor:pointer;padding:2px 0 14px;font-weight:600;}
+.art{padding:26px 22px;}
+.art-head{text-align:center;padding-bottom:6px;}
+.art-h{margin:14px 0 6px;font-size:25px;line-height:1.55;font-weight:800;}
+.art-topic{font-size:13px;color:var(--gold);}
+.art-img{width:100%;border-radius:14px;margin:4px 0 18px;display:block;}
+.art-body{font-family:var(--serif);font-size:16.5px;line-height:2.1;color:#232a3d;}
+.art-body p{margin-bottom:16px;}
+.art-body h4{font-size:18px;color:var(--em);margin:26px 0 10px;display:flex;align-items:center;gap:8px;}
+.art-body h4::before{content:'۞';color:var(--gold);font-size:16px;}
+.art-body blockquote{position:relative;margin:18px 0;padding:18px 18px 14px;background:var(--goldbg);border:1px solid #ead7ae;border-radius:16px;font-size:16px;}
+.art-body blockquote::before{content:'❝';position:absolute;top:-14px;left:16px;background:var(--card);color:var(--gold);font-size:22px;line-height:1;padding:2px 6px;border-radius:50%;border:1px solid #ead7ae;}
+.art-body .ar{font-family:var(--ar);font-size:24px;direction:rtl;text-align:center;line-height:2.1;color:var(--em);}
+.art-body ul{margin:0 0 16px 4px;list-style:none;}
+.art-body li{position:relative;padding-left:22px;margin-bottom:6px;}
+.art-body li::before{content:'';position:absolute;left:4px;top:.85em;width:7px;height:7px;background:var(--gold);transform:rotate(45deg);}
+.refs{margin-top:8px;padding:14px 16px;background:var(--paper);border-radius:14px;font-size:13.5px;color:var(--ink2);line-height:1.9;}
+.refs b{color:var(--em);display:block;margin-bottom:2px;}
+
+.part{position:relative;overflow:hidden;border:none;color:#fff;background:linear-gradient(150deg,var(--em) 0%,#13264d 100%);}
+.part::before{content:'';position:absolute;inset:0;background-image:var(--pattern-light);pointer-events:none;}
+.part > *{position:relative;}
+.part h3{font-size:17px;color:var(--gold2);margin-bottom:6px;}
+.part p{color:#d3dcf0;font-size:14px;line-height:1.85;margin-bottom:12px;}
+.part .inp{background:rgba(255,255,255,.95);border-color:transparent;}
+.part .btn-g{background:linear-gradient(135deg,#c89a48,#e2c07a);color:#3a2708;box-shadow:none;}
+.part.done{background:linear-gradient(150deg,#e9eef8,#f7f9fd);color:var(--ink);border:1px solid #c5d3ec;}
+.part.done::before{display:none;}
+.part.done h3{color:var(--em);}
+.part.done p{color:var(--ink2);}
+.part .ok-ic{width:46px;height:46px;border-radius:50%;background:var(--em2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:10px;}
+.pstep{font-size:12px;letter-spacing:.5px;color:var(--gold2);margin:4px 0 8px;font-weight:600;}
+.part.done .pstep{color:var(--gold);}
+.qbox{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px;margin-bottom:16px;}
+.part.done .qbox{background:#fff;border-color:#d3ddef;}
+.qq{font-family:var(--serif);font-size:16px;line-height:1.8;font-weight:600;margin-bottom:10px;}
+.qopts{display:grid;gap:8px;}
+.qopt{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:11px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;font-size:15px;cursor:pointer;transition:background .15s,border-color .15s;font-family:var(--sans);}
+.qopt:hover{background:rgba(255,255,255,.12);}
+.qopt .k{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.qopt.sel{background:rgba(217,179,106,.22);border-color:var(--gold2);}
+.qopt.sel .k{background:var(--gold2);color:#3a2708;}
+.part.done .qopt{background:var(--paper2);border-color:var(--line);color:var(--ink);cursor:default;}
+.part.done .qopt .k{background:#e9e3d3;color:var(--ink2);}
+.part.done .qopt.ok{background:#e3f3ea;border-color:#7cc49b;}
+.part.done .qopt.ok .k{background:#2e8b57;color:#fff;}
+.part.done .qopt.no{background:#fcecea;border-color:#eba59b;}
+.part.done .qopt.no .k{background:#c0392b;color:#fff;}
+.qintro{text-align:center;padding:6px 4px;}
+.qintro p{margin:8px 0 14px;}
+.qclock{font-family:var(--serif);font-size:30px;font-weight:800;color:var(--gold2);}
+.qtimer{font-size:13px;color:#d3dcf0;margin-bottom:12px;}
+.qtimer span{font-family:var(--serif);font-size:22px;font-weight:800;color:var(--gold2);}
+.qtbar{height:6px;border-radius:3px;background:rgba(255,255,255,.15);overflow:hidden;margin-top:6px;}
+.qtbar i{display:block;height:100%;background:linear-gradient(90deg,#d9b36a,#f3dca3);transition:width .25s linear;}
+.qtimer.warn span{color:#ff9d8a;animation:blink .5s infinite alternate;}
+.qtimer.warn .qtbar i{background:#e0604c;}
+@keyframes blink{to{opacity:.4;}}
+.qnote{margin-top:10px;font-size:13.5px;line-height:1.8;color:#f1e3c2;}
+.qres{margin-top:10px;font-size:14px;line-height:1.8;color:var(--ink2);}
+.qres b{color:var(--em);}
+.reacts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.rbtn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 4px 10px;border-radius:16px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);color:#fff;cursor:pointer;font-size:12px;transition:transform .15s,background .15s;font-family:var(--sans);}
+.rbtn .e{font-size:24px;line-height:1.2;}
+.rbtn .c{font-size:11px;opacity:.75;}
+.rbtn:hover{transform:translateY(-2px);background:rgba(255,255,255,.14);}
+.rbtn.main{background:linear-gradient(135deg,#c89a48,#e2c07a);color:#3a2708;border:none;font-weight:700;}
+.rbtn:disabled{opacity:.5;cursor:wait;transform:none;}
+.part.done .rbtn{background:var(--paper2);border-color:var(--line);color:var(--ink2);cursor:default;opacity:1;}
+.part.done .rbtn:not(.mine){opacity:.8;}
+.part.done .rbtn:hover{transform:none;}
+.part.done .rbtn.mine{background:var(--goldbg);border:2px solid var(--gold);color:#7a5a1e;font-weight:700;}
+@media(max-width:380px){.rbtn{font-size:11px;padding:10px 2px 8px;}.rbtn .e{font-size:21px;}}
+.pn{display:flex;gap:10px;}
+.pn .btn{padding:12px;font-size:14px;font-weight:600;flex:1;}
+
+/* ── RULES ── */
+details.rules summary{cursor:pointer;font-family:var(--serif);font-size:16px;font-weight:700;color:var(--em);list-style:none;display:flex;justify-content:space-between;align-items:center;}
+details.rules summary::-webkit-details-marker{display:none;}
+details.rules summary::after{content:'+';width:26px;height:26px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:18px;}
+details.rules[open] summary::after{content:'−';}
+.rlist{list-style:none;margin-top:14px;}
+.rlist li{display:flex;gap:10px;font-size:14px;line-height:1.8;color:var(--ink2);padding:6px 0;}
+.rlist li span{flex-shrink:0;}
+.prizes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;}
+.prizes div{background:var(--paper2);border:1px solid var(--line);border-radius:16px;padding:12px 6px;text-align:center;font-size:12px;line-height:1.5;color:var(--ink2);}
+.prizes .e{font-size:22px;display:block;}
+.prizes b{display:block;font-family:var(--serif);font-size:20px;color:var(--gold);}
+.gifts{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+
+/* ── BOTTOM NAV ── */
+.bnav{position:fixed;left:50%;bottom:calc(12px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:40;display:flex;gap:2px;padding:6px;
+  background:rgba(30,58,110,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:24px;box-shadow:0 12px 30px -10px rgba(19,38,77,.7);width:min(420px,calc(100% - 24px));}
+.bnav a{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;padding:7px 4px;border-radius:18px;color:#a9b9dc;text-decoration:none;font-size:11px;transition:background .2s,color .2s;}
+.bnav a .i{font-size:18px;line-height:1.2;}
+.bnav a.on{background:rgba(255,255,255,.12);color:var(--gold2);font-weight:600;}
+
+/* ── MODAL / TOAST ── */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(12,20,40,.5);backdrop-filter:blur(3px);display:none;align-items:flex-end;justify-content:center;padding:14px;}
+.modal.on{display:flex;}
+.modal .card{width:100%;max-width:440px;margin:0;animation:up .3s ease;border-radius:24px;}
+.modal .mh{text-align:center;margin-bottom:14px;}
+.modal .mh .ic{width:56px;height:56px;border-radius:50%;margin:0 auto 10px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:26px;}
+.modal .mh h3{font-size:18px;color:var(--em);}
+@keyframes up{from{transform:translateY(24px);opacity:0;}to{transform:none;opacity:1;}}
+@media(min-width:600px){.modal{align-items:center;}}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 20px;border-radius:30px;font-size:14px;opacity:0;transition:all .3s;z-index:60;pointer-events:none;max-width:90%;text-align:center;}
+.toast.on{opacity:1;transform:translateX(-50%);}
+.footer{text-align:center;font-size:12px;color:var(--muted);margin-top:26px;line-height:1.8;}
+.footer b{font-family:var(--serif);color:var(--em);font-size:15px;}
+.wc{font-size:12px;color:var(--muted);text-align:right;margin-top:4px;}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink2);line-height:1.7;margin-bottom:16px;cursor:pointer;padding:12px;background:var(--paper);border-radius:12px;}
+.check input{margin-top:5px;accent-color:var(--em2);width:16px;height:16px;flex-shrink:0;}
+.page-h{text-align:center;margin:4px 0 16px;}
+.page-h h2{font-size:22px;color:var(--em);}
+.page-h p{font-size:13.5px;color:var(--ink2);margin-top:4px;line-height:1.8;}
+
+/* ── DAY PAGE: ৩ অংশ ── */
+.dhead{text-align:center;padding:20px 18px 16px;}
+.dhead h1{font-size:22px;line-height:1.55;margin:10px 0 4px;font-weight:800;}
+.dstat{margin-top:12px;font-size:13px;line-height:1.7;padding:9px 12px;border-radius:12px;background:var(--paper);color:var(--ink2);}
+.dstat.ok{background:#e7f4ec;color:#1b5e3d;font-weight:600;}
+.seg{position:sticky;top:61px;z-index:15;display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:5px;margin-bottom:14px;background:rgba(255,253,248,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);}
+.seg a{position:relative;display:flex;flex-direction:column;align-items:center;gap:1px;padding:8px 2px 7px;border-radius:13px;text-decoration:none;color:var(--ink2);font-size:12.5px;font-weight:600;line-height:1.3;text-align:center;}
+.seg a .i{font-size:19px;}
+.seg a small{font-size:10px;font-weight:400;color:var(--muted);}
+.seg a.on{background:linear-gradient(135deg,var(--em),var(--em2));color:#fff;}
+.seg a.on small{color:#d3dcf0;}
+.seg a.done::after{content:'✓';position:absolute;top:3px;right:5px;width:16px;height:16px;border-radius:50%;background:var(--gold);color:#fff;font-size:10px;display:flex;align-items:center;justify-content:center;}
+.pane{display:none;}
+.pane.on{display:block;animation:fade .3s ease;}
+.nextseg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+.nextseg .btn{font-size:13.5px;padding:12px 8px;}
+.segs{display:flex;gap:3px;justify-content:center;margin-top:5px;font-size:10px;}
+.segs i{font-style:normal;opacity:.25;filter:grayscale(1);}
+.segs i.on{opacity:1;filter:none;}
+
+/* ── রেজিস্ট্রেশন ── */
+.reg-welcome{display:flex;flex-direction:column;gap:4px;margin-top:10px;padding:14px;border-radius:16px;background:linear-gradient(160deg,#fdf6e6,#fff);border:1px solid #ead7ae;font-size:13.5px;line-height:1.7;color:var(--ink2);}
+.reg-welcome b{font-family:var(--serif);color:var(--em);font-size:15px;}
+.reg-welcome .free{color:#1b5e3d;font-weight:700;}
+.regcount{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;color:#1b5e3d;background:#e7f4ec;border-radius:20px;padding:4px 12px;font-weight:600;}
+
+/* ── লেখা গ্যালারি ও ভোট ── */
+.gal-cta{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff;border:none;background:linear-gradient(135deg,#8a6420,#c89a48 60%,#e2c07a);box-shadow:0 14px 30px -14px rgba(138,100,32,.8);}
+.gal-cta .ti{width:54px;height:54px;border-radius:16px;flex-shrink:0;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:28px;}
+.gal-cta b{display:block;font-family:var(--serif);font-size:17px;}
+.gal-cta span{font-size:12.5px;opacity:.92;line-height:1.6;}
+.gal-cta .ar{margin-left:auto;font-size:24px;}
+.vstat{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 14px;border-radius:14px;background:var(--goldbg);border:1px solid #ead7ae;font-size:13.5px;color:#7a5a1e;line-height:1.7;margin-bottom:14px;}
+.vslots{display:flex;gap:6px;margin-left:auto;}
+.vslots i{width:26px;height:26px;border-radius:50%;border:2px dashed var(--gold);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:13px;}
+.vslots i.on{background:var(--em2);border:2px solid var(--em2);color:#fff;}
+.wcard{display:block;text-decoration:none;color:inherit;padding:16px;border:1px solid var(--line);border-radius:18px;background:var(--card);margin-bottom:12px;box-shadow:var(--shadow);position:relative;}
+.wcard:hover{border-color:var(--gold2);}
+.wcard h4{font-size:17px;line-height:1.5;color:var(--ink);margin:6px 0 4px;}
+.wcard p{font-family:var(--serif);font-size:13.5px;color:var(--ink2);line-height:1.85;}
+.wcard .by{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:var(--ink2);}
+.wcard .by .av{width:28px;height:28px;font-size:12px;}
+.wcard .vc{margin-left:auto;font-weight:700;color:var(--em);}
+.wcard.voted{border:2px solid var(--em2);}
+.wcard.voted::after{content:'✓ ভোট দিয়েছেন';position:absolute;top:12px;right:12px;font-size:11px;background:var(--em2);color:#fff;border-radius:20px;padding:2px 9px;}
+.wread .art-body{font-size:16px;}
+.vbtn{margin-top:16px;}
+.rank-badge{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;font-size:13px;margin-right:6px;}
+
+/* ── ট্রায়াল ── */
+.trial-cta{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;border:2px dashed var(--gold2);background:linear-gradient(135deg,#fffaf0,#fff);}
+.trial-cta .ti{width:52px;height:52px;border-radius:16px;flex-shrink:0;background:linear-gradient(135deg,#c89a48,#e2c07a);display:flex;align-items:center;justify-content:center;font-size:26px;}
+.trial-cta b{display:block;font-family:var(--serif);font-size:16px;color:var(--em);}
+.trial-cta span{font-size:12.5px;color:var(--ink2);line-height:1.6;}
+.trial-cta .ar{margin-left:auto;font-size:22px;color:var(--gold);}
+.guide{margin:4px 0 0 0;padding:0;list-style:none;counter-reset:g;}
+.guide li{position:relative;padding:10px 0 10px 40px;font-size:13.5px;line-height:1.8;color:var(--ink2);border-top:1px dashed #eadfc6;counter-increment:g;}
+.guide li:first-child{border-top:none;}
+.guide li::before{content:counter(g);position:absolute;left:0;top:11px;width:28px;height:28px;border-radius:50%;background:var(--em);color:#fff;font-family:var(--serif);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.guide li b:first-child{display:block;font-size:14.5px;color:var(--em);}
+.tcheck{list-style:none;}
+.tcheck li{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:12px;font-size:14px;color:var(--ink2);}
+.tcheck li.ok{background:#e7f4ec;color:#1b5e3d;font-weight:600;}
+.tcheck li a{margin-left:auto;font-size:12.5px;color:var(--gold);text-decoration:none;font-weight:600;}
+.tcheck li .plan{margin-left:auto;}
+
+/* ── বিষয়সূচি ── */
+.prep{position:relative;overflow:hidden;border:1px solid #ead7ae;background:linear-gradient(160deg,#fdf6e6 0%,var(--card) 70%);}
+.prep .lead{font-family:var(--serif);font-size:14.5px;line-height:1.9;color:var(--ink2);margin-bottom:12px;}
+.tips{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 4px;}
+.tips div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;font-size:12.5px;line-height:1.6;color:var(--ink2);}
+.tips b{display:block;font-size:13.5px;color:var(--em);margin-bottom:2px;}
+.tlist{list-style:none;}
+.tlist li{display:flex;align-items:center;gap:12px;padding:11px 4px;}
+.tlist li + li{border-top:1px solid #f0e9d9;}
+.tdate{width:48px;flex-shrink:0;text-align:center;border-radius:12px;padding:5px 0 4px;background:var(--paper);border:1px solid var(--line);line-height:1.2;}
+.tdate b{display:block;font-family:var(--serif);font-size:18px;color:var(--em);}
+.tdate span{font-size:10px;color:var(--muted);}
+.tlist li.open .tdate{background:var(--em2);border-color:var(--em2);}
+.tlist li.open .tdate b,.tlist li.open .tdate span{color:#fff;}
+.tlist li.today .tdate{background:var(--gold);border-color:var(--gold);}
+.tlist li.today .tdate b,.tlist li.today .tdate span{color:#fff;}
+.tinfo{flex:1;min-width:0;}
+.tinfo .tt{font-family:var(--serif);font-size:15px;font-weight:600;line-height:1.5;color:var(--ink);}
+.tinfo small{font-size:11.5px;color:var(--muted);}
+.tact{flex-shrink:0;}
+.plan{border:1px solid var(--line);background:var(--paper2);color:var(--ink2);border-radius:20px;padding:6px 10px;font-size:12px;cursor:pointer;white-space:nowrap;}
+.plan.on{background:var(--goldbg);border-color:var(--gold);color:#7a5a1e;font-weight:700;}
+.go-open{display:inline-block;background:var(--em2);color:#fff;border-radius:20px;padding:6px 12px;font-size:12px;font-weight:600;text-decoration:none;white-space:nowrap;}
+.tfilter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.tfilter button{border:1px solid var(--line);background:var(--paper2);border-radius:20px;padding:5px 12px;font-size:12.5px;color:var(--ink2);cursor:pointer;}
+.tfilter button.on{background:var(--em);border-color:var(--em);color:#fff;}
+.upc{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+.upc a{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 10px;}
+.upc .cd{margin-left:auto;font-size:11.5px;color:var(--gold);font-weight:600;white-space:nowrap;}
+</style>
+</head>
+<body>
+<div class="readbar" id="readbar"></div>
+<div class="wrap">
+
+  <header class="hdr">
+    <img src="logoo.png" alt="গ্রন্থকানন" onclick="go('')">
+    <div class="hdr-t" onclick="go('')">
+      <b>গ্রন্থকানন</b>
+      <span>অক্টোবর ইলম যাত্রা ২০২৬</span>
+    </div>
+    <button class="me-btn" id="me-btn" onclick="openProfile()"></button>
+  </header>
+
+  <!-- ═══════════ HOME ═══════════ -->
+  <section class="view" id="v-home">
+    <div class="hero">
+      <div class="bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+      <div class="tag">🌿 ইলম অর্জন করি, শিখি, লিখি ও আমল করি</div>
+      <h1>অক্টোবর মাসব্যাপী ইসলামিক জ্ঞান ও লেখনী প্রতিযোগিতা</h1>
+      <div class="meta">ইলম অর্জনের এক সুন্দর যাত্রা</div>
+      <div class="hero-stats">
+        <div><b>৩১</b><span>দিন</span></div>
+        <div><b>৩১</b><span>ইসলামিক বিষয়</span></div>
+        <div><b>৬</b><span>বিজয়ী</span></div>
+      </div>
+      <div class="mprog" id="mprog"></div>
+      <div class="steps"><span>🎯 কুইজ</span><span>📖 পড়ুন ও রিঅ্যাক্ট</span><span>✍️ লিখুন</span></div>
+    </div>
+
+    <a class="card gal-cta" id="gal-cta" href="#/lekha" style="display:none;"></a>
+
+    <a class="card trial-cta" id="trial-cta" href="#/trial"></a>
+
+    <div id="today-box"><div class="card"><div class="skel" style="width:40%"></div><div class="skel" style="width:80%;height:20px"></div><div class="skel"></div><div class="skel" style="width:70%"></div></div></div>
+
+    <div class="card prep" id="prep-box"></div>
+
+    <div class="card" id="my-box" style="display:none;"></div>
+
+    <div class="card lb-card">
+      <div class="sec-h"><h3>সর্বাধিক অংশগ্রহণ</h3><a href="#/leaderboard">সবাইকে দেখুন ›</a></div>
+      <div id="lb-top"><div class="skel"></div><div class="skel" style="width:80%"></div></div>
+    </div>
+
+    <div class="card">
+      <div class="sec-h"><h3>৩১ দিনের বিষয়</h3><span class="chip" id="pub-count"></span></div>
+      <div class="grid" id="day-grid"></div>
+    </div>
+
+    <div class="card">
+      <details class="rules">
+        <summary>নিয়মাবলি ও পুরস্কার</summary>
+        <ul class="rlist">
+          <li><span>📅</span><div>প্রতিদিন একটি বিষয় খুলবে — পরের দিনেরটা আগে দেখা যাবে না। আগের দিনগুলোতে যেকোনো সময় অংশ নিতে পারবেন।</div></li>
+          <li><span>🧩</span><div>প্রতিদিন তিনটি অংশ: <b>🎯 কুইজ</b>, <b>📖 আর্টিকেল পড়ে রিঅ্যাক্ট</b> ও <b>✍️ লেখা জমা</b>। সবগুলোই ঐচ্ছিক — <b>যেকোনো একটিতে</b> অংশ নিলেই সেই দিনের অংশগ্রহণ গণনা হবে।</div></li>
+          <li><span>⏱</span><div>কুইজে উত্তর দেওয়ার সময় <b>১ মিনিট</b>। একবার শুরু করলে আর বদলানো যাবে না।</div></li>
+          <li><span>✅</span><div>লেখা নিজের ভাষায়, তথ্য যাচাই করে লিখুন — হুবহু কপি-পেস্ট গ্রহণযোগ্য নয়। উদ্ধৃতি দিলে সম্ভব হলে সূত্র এবং বইয়ের নাম ও লেখক উল্লেখ করুন।</div></li>
+          <li><span>✍️</span><div>পুরো মাসে একজন সর্বোচ্চ <b>৩টি লেখা</b> জমা দিতে পারবেন।</div></li>
+          <li><span>🗳</span><div>মাস শেষে সব লেখা সাইটে প্রকাশ করা হবে এবং <b>ভোটের মাধ্যমে</b> সেরা লেখা নির্বাচন হবে। প্রত্যেক রেজিস্টার্ড সদস্য ৩টি ভোট দিতে পারবেন (নিজের লেখায় নয়)।</div></li>
+        </ul>
+        <div class="orn">🏆 থাকছে ৬ জন বিজয়ী</div>
+        <div class="prizes">
+          <div><span class="e">🥇</span><b>৩</b>সেরা লেখা</div>
+          <div><span class="e">🌱</span><b>২</b>নিয়মিত অংশগ্রহণকারী</div>
+          <div><span class="e">🤍</span><b>১</b>সর্বাধিক সক্রিয়</div>
+        </div>
+        <div class="gifts"><span class="chip gold">📚 ইসলামিক বই</span><span class="chip gold">🕌 সুন্নাহ প্রোডাক্ট</span><span class="chip gold">🧶 হ্যান্ডমেড পণ্য</span><span class="chip gold">🏅 সার্টিফিকেট</span></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ═══════════ DAY (৩ অংশ) ═══════════ -->
+  <section class="view" id="v-day">
+    <button class="back" onclick="go('')">‹ সব দিন</button>
+    <div class="card prep" id="trial-guide" style="display:none;"></div>
+    <div class="card dhead" id="d-head"></div>
+    <nav class="seg" id="d-seg"></nav>
+
+    <!-- ১) কুইজ -->
+    <div class="pane" id="p-quiz"><div class="card part" id="quiz-box"></div></div>
+
+    <!-- ২) আর্টিকেল ও রিঅ্যাক্ট -->
+    <div class="pane" id="p-read">
+      <article class="card art" id="art"></article>
+      <div class="card part" id="react-box"></div>
+    </div>
+
+    <!-- ৩) লেখা জমা -->
+    <div class="pane" id="p-write">
+      <div class="card">
+        <div class="sec-h"><h3>✍️ এই বিষয়ে আপনার লেখা</h3><span class="chip gold" id="w-left"></span></div>
+        <p class="muted" style="line-height:1.8;margin-bottom:14px;" id="w-topic"></p>
+        <div id="w-form">
+          <div class="field">
+            <label class="lbl">লেখার শিরোনাম</label>
+            <input class="inp" id="w-title" maxlength="120" placeholder="আপনার লেখার শিরোনাম">
+          </div>
+          <div class="field">
+            <label class="lbl">আপনার লেখা</label>
+            <textarea class="inp" id="w-text" rows="12" placeholder="এখানে নিজের ভাষায় লিখুন…" oninput="wordCount()"></textarea>
+            <div class="wc" id="w-wc">০ শব্দ</div>
+          </div>
+          <div class="field">
+            <label class="lbl">রেফারেন্স / সূত্র <span class="muted">(ঐচ্ছিক, তবে উৎসাহিত)</span></label>
+            <textarea class="inp" id="w-ref" rows="3" placeholder="যেমন: সহীহ বুখারী, হাদিস ১; সূরা বাকারা ২:১৫৩; বই — লেখক"></textarea>
+          </div>
+          <label class="check"><input type="checkbox" id="w-own"> আমি নিশ্চিত করছি যে লেখাটি আমার নিজের ভাষায় লেখা এবং তথ্যগুলো যাচাই করেছি।</label>
+          <button class="btn btn-g" id="w-btn" onclick="submitWriting()">লেখা জমা দিন</button>
+        </div>
+        <div class="alert" id="w-alert"></div>
+      </div>
+      <div class="card" id="my-writings" style="display:none;"></div>
+    </div>
+
+    <div class="pn" id="d-nav" style="margin-top:4px;"></div>
+  </section>
+
+  <!-- ═══════════ বিষয়সূচি ═══════════ -->
+  <section class="view" id="v-topics">
+    <div class="page-h"><h2>📅 ৩১ দিনের বিষয়সূচি</h2><p>কোন দিন কোন বিষয় — আগে থেকেই দেখে নিন<br>এবং লেখার প্রস্তুতি শুরু করুন ইনশাআল্লাহ।</p></div>
+    <div class="card prep">
+      <div class="lead">✍️ সেরা লেখাগুলো হঠাৎ করে লেখা হয় না — আসে পড়া, ভাবনা আর প্রস্তুতি থেকে। যে বিষয়গুলো আপনার মনে দাগ কাটে, সেগুলো <b>🔖 লিখব</b> চিহ্ন দিয়ে রাখুন, আর এখন থেকেই তথ্য জোগাড় শুরু করুন।</div>
+      <div class="tips">
+        <div><b>📚 পড়ুন</b>কুরআন, হাদিস ও নির্ভরযোগ্য বই থেকে বিষয়টি নিয়ে পড়ুন</div>
+        <div><b>📝 নোট নিন</b>গুরুত্বপূর্ণ আয়াত, হাদিস ও ঘটনা লিখে রাখুন</div>
+        <div><b>🔖 সূত্র রাখুন</b>বইয়ের নাম, লেখক, হাদিস নম্বর সংরক্ষণ করুন</div>
+        <div><b>🗓 জমা দিন</b>বিষয়টি খোলার দিন থেকে লেখা জমা দেওয়া যাবে</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="sec-h"><h3>বিষয় তালিকা</h3><span class="chip gold" id="plan-count"></span></div>
+      <div class="tfilter" id="t-filter"></div>
+      <ul class="tlist" id="t-list"></ul>
+    </div>
+  </section>
+
+  <!-- ═══════════ লেখা গ্যালারি ও ভোট ═══════════ -->
+  <section class="view" id="v-gal">
+    <div class="page-h"><h2>🏆 অংশগ্রহণকারীদের লেখা</h2><p id="g-sub">মাসজুড়ে জমা পড়া লেখাগুলো পড়ুন, আর পছন্দের লেখায় ভোট দিন।</p></div>
+    <div id="g-stat"></div>
+    <div class="tfilter" id="g-filter"></div>
+    <div id="g-list"></div>
+  </section>
+  <section class="view" id="v-wread">
+    <button class="back" onclick="go('lekha')">‹ সব লেখা</button>
+    <article class="card art wread" id="w-art"></article>
+    <div id="w-vote"></div>
+  </section>
+
+  <!-- ═══════════ LEADERBOARD ═══════════ -->
+  <section class="view" id="v-lb">
+    <div class="page-h"><h2>🏅 সর্বাধিক অংশগ্রহণ</h2><p>যত দিন অংশ নেবেন (কুইজ, রিঅ্যাক্ট বা লেখা — যেকোনো একটি), তত এগিয়ে থাকবেন।<br>সমান হলে 🎯 সঠিক কুইজ উত্তর, তারপর ✍️ লেখার সংখ্যা দেখা হবে।</p></div>
+    <div class="card lb-card">
+      <div class="sec-h"><h3>লিডারবোর্ড</h3><span class="chip" id="lb-total"></span></div>
+      <div id="lb-all"></div>
+    </div>
+  </section>
+
+  <div class="footer"><b>☪ গ্রন্থকানন</b><br>আপনার বিশ্বস্ত ইসলামিক বই ও সুন্নাহ সামগ্রীর ঠিকানা</div>
+</div>
+
+<nav class="bnav" id="bnav">
+  <a href="#/" data-r="home"><span class="i">🏠</span>হোম</a>
+  <a href="#/today/quiz" data-r="quiz" id="nav-2"><span class="i">🎯</span>কুইজ</a>
+  <a href="#/today/read" data-r="read"><span class="i">📖</span>আজকের পাঠ</a>
+  <a href="#/today/write" data-r="write"><span class="i">✍️</span>লিখুন</a>
+  <a href="#/leaderboard" data-r="lb"><span class="i">🏅</span>লিডারবোর্ড</a>
+</nav>
+
+<!-- PROFILE MODAL -->
+<div class="modal" id="m-profile" onclick="if(event.target===this)closeProfile()">
+  <div class="card">
+    <div class="mh"><div class="ic">🌿</div><h3 id="p-title">ফ্রি রেজিস্ট্রেশন</h3>
+      <div id="p-welcome" class="reg-welcome">
+        <b>আসসালামু আলাইকুম! গ্রন্থকাননের অক্টোবর ইলম যাত্রায় স্বাগতম।</b>
+        <span>📖 ৩১ দিন • ৩১টি বিষয় • 🏆 ৬ জন বিজয়ী</span>
+        <span class="free">✅ সম্পূর্ণ ফ্রি — শুধু নাম ও নম্বর দিন</span>
+        <span class="muted" id="p-count"></span>
+      </div>
+      <p class="muted" style="line-height:1.8;margin-top:6px;">🔒 <b>শুধু একবার দিতে হবে</b> — এই ফোনে মনে থাকবে, প্রতিদিন আর দিতে হবে না। অন্য ফোন থেকে ঢুকলে একই নম্বর দিন, সব অগ্রগতি সেখানেও পাবেন। ফোন নম্বর কারো কাছে প্রকাশ করা হবে না।</p></div>
+    <div class="field"><label class="lbl">আপনার নাম</label><input class="inp" id="p-name" maxlength="50" placeholder="পূর্ণ নাম" autocomplete="name"></div>
+    <div class="field"><label class="lbl">ফোন নম্বর</label><input class="inp" id="p-phone" type="tel" inputmode="tel" maxlength="16" placeholder="01XXXXXXXXX" autocomplete="tel" onkeydown="if(event.key==='Enter')saveProfile()"></div>
+    <button class="btn btn-g" id="p-btn" onclick="saveProfile()">✅ রেজিস্ট্রেশন করুন — ফ্রি</button>
+    <button class="btn" style="background:none;color:var(--muted);font-weight:500;padding:10px;font-size:13px;" onclick="closeProfile()" id="p-later">আগে একটু ঘুরে দেখি</button>
+    <div class="alert" id="p-alert"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════════════════════
+//  ⚙️  Firebase Realtime Database URL
+// ══════════════════════════════════════════════════════
+const FIREBASE_DB_URL = 'https://gkquiz-47e5c-default-rtdb.asia-southeast1.firebasedatabase.app';
+const CONTEST = { year: 2026, month: 10, days: 31 };   // অক্টোবর ২০২৬
+const MAX_WRITINGS = 3;
+const QUIZ_MS = 60 * 1000;                              // কুইজের সময় ১ মিনিট
+// ══════════════════════════════════════════════════════
+
+const DB = (p) => `${FIREBASE_DB_URL}/${p}.json`;
+const BN = '০১২৩৪৫৬৭৮৯';
+const bn = (n) => String(n).replace(/\d/g, d => BN[d]);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $ = (id) => document.getElementById(id);
+const AV_COLORS = ['#176b50', '#b98a3a', '#2a6f8a', '#8a4f6b', '#5b6f2a', '#a8704a', '#4a5d8a'];
+const REACTS = [['read', '📖', 'পড়েছি'], ['love', '❤️', 'মাশাআল্লাহ'], ['dua', '🤲', 'জাযাকাল্লাহ'], ['learn', '💡', 'নতুন শিখলাম']];
+const QK = ['ক', 'খ', 'গ', 'ঘ'];
+const SEGS = [['quiz', '🎯', 'কুইজ'], ['read', '📖', 'পড়ুন ও রিঅ্যাক্ট'], ['write', '✍️', 'লেখা জমা']];
+const WDAY = ['রবি', 'সোম', 'মঙ্গল', 'বুধ', 'বৃহস্পতি', 'শুক্র', 'শনি'];
+
+// ══════════════════════════════════════════════════════
+//  📅 ৩১ দিনের বিষয়সূচি — সবাই আগে থেকে দেখতে পারবে (শুধু বিষয়, কুইজ নয়)
+//  অ্যাডমিন প্যানেলের QUIZ_BANK-এর শিরোনামের সাথে মিল রাখুন
+// ══════════════════════════════════════════════════════
+const TOPICS = [
+  ['ইলম', 'ইলম অর্জনের গুরুত্ব'],
+  ['আকিদা', 'তাওহীদ: ইসলামের মূল ভিত্তি'],
+  ['আকিদা', 'ঈমানের রুকনসমূহ'],
+  ['ইবাদত', 'সালাত: মুমিনের মিরাজ'],
+  ['আত্মশুদ্ধি', 'ইখলাস ও নিয়তের গুরুত্ব'],
+  ['আখলাক', 'সবর: ধৈর্যের সৌন্দর্য'],
+  ['আখলাক', 'শুকর: কৃতজ্ঞ বান্দা হওয়া'],
+  ['আত্মশুদ্ধি', 'তাওবা ও ইস্তিগফার'],
+  ['ইবাদত', 'দুআ: মুমিনের হাতিয়ার'],
+  ['ইবাদত', 'জিকিরে অন্তরের প্রশান্তি'],
+  ['কুরআন', 'কুরআন তিলাওয়াতের ফজিলত'],
+  ['পরিবার', 'পিতা-মাতার প্রতি সদাচরণ'],
+  ['আখলাক', 'উত্তম চরিত্র'],
+  ['আখলাক', 'সত্যবাদিতা'],
+  ['আখলাক', 'জিহ্বার হেফাজত ও গীবত'],
+  ['সমাজ', 'সদকা ও দানের বরকত'],
+  ['আখলাক', 'হায়া: লজ্জাশীলতা'],
+  ['সমাজ', 'প্রতিবেশীর হক'],
+  ['সমাজ', 'সালামের প্রসার'],
+  ['সীরাত', 'রাসূল ﷺ-এর নবুওয়াত লাভ'],
+  ['সীরাত', 'হিজরতের শিক্ষা'],
+  ['সাহাবা', 'সাহাবীদের জীবন থেকে'],
+  ['জীবন', 'সময়ের মূল্য'],
+  ['জীবন', 'হালাল রিযিক'],
+  ['ইবাদত', 'রোজার ফজিলত'],
+  ['ইবাদত', 'যাকাত: সম্পদের পবিত্রতা'],
+  ['ইবাদত', 'হজ ও আরাফার দিন'],
+  ['আখিরাত', 'মৃত্যুর পরও যে আমল চলতে থাকে'],
+  ['আখিরাত', 'জান্নাতের পথে'],
+  ['আখলাক', 'রাগ নিয়ন্ত্রণ'],
+  ['আত্মশুদ্ধি', 'আল্লাহর উপর তাওয়াক্কুল'],
+];
+// ══════════════════════════════════════════════════════
+//  🧪 ট্রায়াল পর্ব (দিন ০) — সবসময় খোলা, অনুশীলনের জন্য; কিছুই গণনা হয় না
+// ══════════════════════════════════════════════════════
+const TRIAL = {
+  day: 0, trial: true, topic: 'ট্রায়াল', title: 'ইসলাম জানার গুরুত্ব',
+  body: `একজন মুসলিম হিসেবে আমরা প্রতিদিন সালাত আদায় করি, রোজা রাখি, আল্লাহর কাছে দুআ করি। কিন্তু একটু থেমে ভাবলে দেখা যায় — আমরা যা করছি, তা কতটা জেনে-বুঝে করছি? ইসলাম কেবল কিছু প্রথা বা অভ্যাসের নাম নয়; এটি জ্ঞানের উপর প্রতিষ্ঠিত একটি পূর্ণাঙ্গ জীবনব্যবস্থা। তাই ইসলামকে সঠিকভাবে মানতে হলে আগে ইসলামকে জানতে হবে।
+
+## ওহির সূচনাই হয়েছে “পড়ো” দিয়ে
+
+মানবজাতির জন্য আল্লাহর শেষ বাণী যখন নাযিল হতে শুরু করে, তার প্রথম শব্দটিই ছিল — পড়ো।
+
+> اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ
+
+> “পড়ো তোমার রবের নামে, যিনি সৃষ্টি করেছেন।” (সূরা আল-আলাক ৯৬:১)
+
+নামাজ, রোজা বা অন্য কোনো বিধানের আগে প্রথম নির্দেশ এসেছে পড়া ও জানার। এ থেকেই বোঝা যায়, ইসলামে জ্ঞানের স্থান কত উঁচুতে।
+
+## জানা ও না-জানা কখনো সমান নয়
+
+আল্লাহ তাআলা স্পষ্ট ভাষায় প্রশ্ন রেখেছেন:
+
+> قُلْ هَلْ يَسْتَوِي الَّذِينَ يَعْلَمُونَ وَالَّذِينَ لَا يَعْلَمُونَ
+
+> “বলুন, যারা জানে আর যারা জানে না, তারা কি সমান হতে পারে?” (সূরা আয-যুমার ৩৯:৯)
+
+অন্য আয়াতে আল্লাহ জানিয়েছেন, তিনি ঈমানদার ও জ্ঞানপ্রাপ্তদের মর্যাদা বহু স্তরে উন্নীত করবেন (সূরা আল-মুজাদালা ৫৮:১১)। অর্থাৎ ইলম শুধু দুনিয়ার সম্মান নয়, আখিরাতের মর্যাদারও মাধ্যম।
+
+## ইলম অর্জন প্রত্যেকের দায়িত্ব
+
+রাসূলুল্লাহ ﷺ বলেছেন: **“ইলম অন্বেষণ করা প্রত্যেক মুসলিমের উপর ফরজ।”** (সুনানে ইবনে মাজাহ ২২৪)
+
+এর মানে এই নয় যে সবাইকে বড় আলেম হতে হবে। বরং প্রত্যেকের উপর অন্তত ততটুকু জানা আবশ্যক, যতটুকু দিয়ে সে নিজের ঈমান, ইবাদত ও দৈনন্দিন জীবন সঠিকভাবে পরিচালনা করতে পারে — যেমন সঠিক আকিদা, পবিত্রতা ও সালাতের নিয়ম, হালাল-হারামের মৌলিক জ্ঞান।
+
+## দ্বীনের বুঝ আল্লাহর বিশেষ অনুগ্রহ
+
+রাসূলুল্লাহ ﷺ বলেছেন:
+
+> مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ
+
+> “আল্লাহ যার কল্যাণ চান, তাকে দ্বীনের সঠিক বুঝ দান করেন।” (সহীহ বুখারী ৭১, সহীহ মুসলিম ১০৩৭)
+
+সম্পদ, পদ বা খ্যাতি নয় — দ্বীনের সঠিক বুঝকেই এখানে আল্লাহর কল্যাণের নিদর্শন বলা হয়েছে।
+
+## ইলমের পথ জান্নাতের পথ
+
+রাসূলুল্লাহ ﷺ বলেছেন: **“যে ব্যক্তি ইলম অর্জনের উদ্দেশ্যে কোনো পথ চলে, আল্লাহ তার জন্য জান্নাতের পথ সহজ করে দেন।”** (সহীহ মুসলিম ২৬৯৯)
+
+আজ আমাদের হাতে বই, মোবাইল, ইন্টারনেট — সবই আছে। প্রতিদিন কয়েক মিনিট নির্ভরযোগ্য কোনো লেখা পড়াও হতে পারে সেই “পথ চলা”।
+
+## জেনে আমল, আমল করে প্রচার
+
+ইলমের উদ্দেশ্য শুধু তথ্য জমানো নয়; জানা বিষয় জীবনে বাস্তবায়ন করাই আসল লক্ষ্য। আর জানা ভালো কথা অন্যকে পৌঁছে দেওয়াও ইবাদত — রাসূলুল্লাহ ﷺ বলেছেন: **“আমার পক্ষ থেকে একটি আয়াত হলেও পৌঁছে দাও।”** (সহীহ বুখারী ৩৪৬১)
+
+মৃত্যুর পরও যে তিনটি আমলের সওয়াব চলতে থাকে, তার একটি হলো **উপকারী ইলম** (সহীহ মুসলিম ১৬৩১)। আপনার লেখা পড়ে যদি একজন মানুষও উপকৃত হয়, সেটিও হতে পারে আপনার জন্য সদকায়ে জারিয়া — ইনশাআল্লাহ।
+
+## শুরু হোক আজ থেকেই
+
+- প্রতিদিন অল্প হলেও নির্ভরযোগ্য উৎস থেকে পড়ুন
+- যা জানলেন, তা নিজের জীবনে প্রয়োগের চেষ্টা করুন
+- অজানা বিষয়ে অনুমান না করে জানা মানুষকে জিজ্ঞেস করুন
+- আর আল্লাহর কাছে দুআ করুন — রাসূল ﷺ-কে শেখানো সেই দুআ দিয়ে:
+
+> رَبِّ زِدْنِي عِلْمًا
+
+> “হে আমার রব, আমার জ্ঞান বাড়িয়ে দিন।” (সূরা ত্ব-হা ২০:১১৪)
+
+এই অক্টোবরে গ্রন্থকাননের সঙ্গে সেই যাত্রাই শুরু হোক — প্রতিদিন একটি বিষয়, একটু পড়া, একটু ভাবনা, আর একটু লেখা। ইনশাআল্লাহ।`,
+  refs: 'আল-কুরআন: সূরা আল-আলাক ৯৬:১; সূরা আয-যুমার ৩৯:৯; সূরা আল-মুজাদালা ৫৮:১১; সূরা ত্ব-হা ২০:১১৪\nসুনানে ইবনে মাজাহ, হাদিস ২২৪\nসহীহ বুখারী, হাদিস ৭১ ও ৩৪৬১; সহীহ মুসলিম, হাদিস ১০৩৭\nসহীহ মুসলিম, হাদিস ২৬৯৯ ও ১৬৩১',
+  quiz: { q: 'হাদিস অনুযায়ী, আল্লাহ যার কল্যাণ চান তাকে কী দান করেন?', opts: ['প্রচুর সম্পদ', 'দ্বীনের সঠিক বুঝ', 'দীর্ঘ জীবন', 'উচ্চ পদমর্যাদা'], ans: 2, ex: 'সহীহ বুখারী ৭১, সহীহ মুসলিম ১০৩৭। এই হাদিসটি আজকের আর্টিকেলের “দ্বীনের বুঝ আল্লাহর বিশেষ অনুগ্রহ” অংশেও আছে — আর্টিকেল পড়লে উত্তর পাওয়া যায়।' }
+};
+const art = (d) => d === 0 ? TRIAL : ARTICLES[d];
+// ট্রায়ালের অগ্রগতি শুধু এই ব্যবহারকারীর ফোনে থাকে — ডেটাবেসে যায় না
+function trialRec() { try { return JSON.parse(store('gk_trial') || 'null'); } catch (e) { return null; } }
+function trialSave(r) { store('gk_trial', JSON.stringify(r)); }
+function resetTrial() {
+  store('gk_trial', 'null'); store(qsKey(0), '{}');
+  toast('🧪 ট্রায়াল আবার শুরু হলো'); renderDay(0, 'quiz'); location.hash = '#/day/0/quiz';
+}
+const topicTitle = (d) => (ARTICLES[d] && ARTICLES[d].title) || (TOPICS[d - 1] || [])[1] || '';
+const topicCat = (d) => (ARTICLES[d] && ARTICLES[d].topic) || (TOPICS[d - 1] || [])[0] || '';
+const wday = (d) => WDAY[new Date(Date.UTC(CONTEST.year, CONTEST.month - 1, d)).getUTCDay()];
+// দিন d খুলতে আর কত দিন বাকি
+const daysUntil = (d) => daysToStart() + d - 1;
+
+let ARTICLES = {};      // day -> article (শুধু আজ পর্যন্ত খোলা দিনগুলো)
+let PARTS = null;       // সবার অংশগ্রহণ (লিডারবোর্ড)
+let ME = null;          // {name, phone, key}
+let MYREC = null;       // আমার অংশগ্রহণের রেকর্ড
+let MYREC_OK = false;   // MYREC ডেটাবেস থেকে সফলভাবে লোড হয়েছে কিনা (না হলে পুরোনো ডেটার উপর লেখা হবে না)
+let LOAD_ERR = false, LOADING = true;
+let CURDAY = null, CURSEG = 'read', RCOUNT = {}, QTIMER = null;
+
+// ── HELPERS ──
+// GET-এ কোনো header পাঠানো হয় না — এতে ব্রাউজারকে আগে আলাদা "preflight" অনুরোধ পাঠাতে হয় না, লোড দ্রুত হয়
+async function api(path, method = 'GET', body) {
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), method === 'GET' ? 10000 : 20000);
+  const opt = { method, signal: ctl.signal };
+  if (body !== undefined) opt.body = JSON.stringify(body);
+  try {
+    const r = await fetch(DB(path), opt);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return await r.json();
+  } finally { clearTimeout(timer); }
+}
+const MEM = {};   // localStorage বন্ধ থাকলে বিকল্প
+function store(k, v) {
+  try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); }
+  catch (e) { if (v === undefined) return MEM[k] ?? null; MEM[k] = v; }
+}
+function normPhone(p) {
+  p = String(p).replace(/[০-৯]/g, d => BN.indexOf(d)).replace(/\D/g, '');
+  if (p.startsWith('880')) p = p.slice(2);
+  if (p.length === 10 && p[0] === '1') p = '0' + p;
+  return p;
+}
+const mask = (p) => p.slice(0, 3) + '•••••' + p.slice(-3);
+async function phoneKey(phone) {
+  const data = new TextEncoder().encode('gk-' + phone);
+  const buf = (window.crypto && crypto.subtle) ? new Uint8Array(await crypto.subtle.digest('SHA-256', data)) : sha256(data);
+  return Array.from(buf).slice(0, 12).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+// crypto.subtle না থাকলে (পুরোনো/অনিরাপদ ব্রাউজার) একই ফলাফলের ছোট SHA-256
+function sha256(bytes) {
+  const K = [], H = [], isP = (n) => { for (let i = 2; i * i <= n; i++) if (n % i === 0) return false; return true; };
+  for (let n = 2, c = 0; c < 64; n++) if (isP(n)) { if (c < 8) H[c] = (Math.pow(n, 1 / 2) * 2 ** 32) | 0; K[c++] = (Math.pow(n, 1 / 3) * 2 ** 32) | 0; }
+  const l = bytes.length, words = new Array(((l + 9 + 63) >> 6) << 4).fill(0);
+  for (let i = 0; i < l; i++) words[i >> 2] |= bytes[i] << (24 - (i % 4) * 8);
+  words[l >> 2] |= 0x80 << (24 - (l % 4) * 8); words[words.length - 1] = l * 8;
+  const r = (x, n) => (x >>> n) | (x << (32 - n)), w = new Array(64);
+  for (let j = 0; j < words.length; j += 16) {
+    let [a, b, c, d, e, f, g, h] = H;
+    for (let i = 0; i < 64; i++) {
+      w[i] = i < 16 ? words[j + i] : (w[i - 16] + (r(w[i - 15], 7) ^ r(w[i - 15], 18) ^ (w[i - 15] >>> 3)) + w[i - 7] + (r(w[i - 2], 17) ^ r(w[i - 2], 19) ^ (w[i - 2] >>> 10))) | 0;
+      const t1 = (h + (r(e, 6) ^ r(e, 11) ^ r(e, 25)) + ((e & f) ^ (~e & g)) + K[i] + w[i]) | 0;
+      const t2 = ((r(a, 2) ^ r(a, 13) ^ r(a, 22)) + ((a & b) ^ (a & c) ^ (b & c))) | 0;
+      h = g; g = f; f = e; e = (d + t1) | 0; d = c; c = b; b = a; a = (t1 + t2) | 0;
+    }
+    [a, b, c, d, e, f, g, h].forEach((v, i) => { H[i] = (H[i] + v) | 0; });
+  }
+  return new Uint8Array(H.flatMap(v => [v >>> 24, (v >>> 16) & 255, (v >>> 8) & 255, v & 255]));
+}
+function dhakaDate() {
+  // বাংলাদেশ = UTC+6 (ডে-লাইট সেভিং নেই) — Intl-এর তারিখ-ফরম্যাট কিছু পুরোনো/ইন-অ্যাপ ব্রাউজারে ভিন্ন আসে, তাই নিজে হিসাব
+  const t = new Date(Date.now() + 6 * 3600000);
+  return [t.getUTCFullYear(), t.getUTCMonth() + 1, t.getUTCDate()];
+}
+function todayDay() {
+  // বাংলাদেশ সময় অনুযায়ী আজ অক্টোবরের কত তারিখ (অক্টোবরের বাইরে হলে null)
+  const [y, m, d] = dhakaDate();
+  return (y === CONTEST.year && m === CONTEST.month) ? d : null;
+}
+function daysToStart() {
+  const [y, m, d] = dhakaDate();
+  return Math.round((Date.UTC(CONTEST.year, CONTEST.month - 1, 1) - Date.UTC(y, m - 1, d)) / 86400000);
+}
+// আজ পর্যন্ত কয়টি দিন খোলা (অক্টোবরের আগে ০, অক্টোবরের পরে ৩১)
+function openUpTo() {
+  const ds = daysToStart();
+  return ds > 0 ? 0 : Math.min(CONTEST.days, 1 - ds);
+}
+function avatar(name, key) {
+  const n = String(name || '?').trim();
+  let h = 0; for (const c of String(key || n)) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return `<div class="av" style="background:${AV_COLORS[h % AV_COLORS.length]};">${esc([...n][0] || '?')}</div>`;
+}
+function toast(msg) {
+  const t = $('toast'); t.textContent = msg; t.classList.add('on');
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('on'), 2800);
+}
+function showAlert(id, type, msg) { const e = $(id); if (e) { e.className = 'alert show ' + type; e.innerHTML = msg; } }
+function hideAlert(id) { const e = $(id); if (e) e.className = 'alert'; }
+function daysDone(rec) { return rec && rec.days ? Object.keys(rec.days).length : 0; }
+function writingsOf(rec) { return rec && rec.subs ? Object.keys(rec.subs).length : 0; }
+function quizRight(rec) { return rec && rec.days ? Object.values(rec.days).filter(x => x && x.qc).length : 0; }
+function dayRec(d) {
+  if (d === 0) return trialRec();
+  return MYREC && MYREC.days ? MYREC.days['day' + d] || null : null;
+}
+function segDone(d) {
+  const r = dayRec(d) || {};
+  return { quiz: !!r.qs, read: !!r.react, write: !!(r.w && Object.keys(r.w).length) };
+}
+function streakOf(rec) {
+  if (!rec || !rec.days) return 0;
+  const set = new Set(Object.keys(rec.days).map(k => +k.replace('day', '')));
+  let d = todayDay() || CONTEST.days, s = 0;
+  if (!set.has(d)) d--;              // আজ এখনো না করলেও গতকাল পর্যন্ত স্ট্রিক ধরা হবে
+  while (d > 0 && set.has(d)) { s++; d--; }
+  return s;
+}
+function excerpt(body, n = 150) {
+  const t = String(body || '').replace(/^[#>\-]+\s*/gm, '').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
+  return t.length > n ? t.slice(0, n) + '…' : t;
+}
+function readMins(body) { return Math.max(1, Math.round(String(body || '').split(/\s+/).length / 180)); }
+const quizOf = (a) => a && a.quiz && a.quiz.q && Array.isArray(a.quiz.opts) ? a.quiz : null;
+
+// ── ARTICLE BODY FORMAT ──
+//  ফাঁকা লাইন = নতুন প্যারা | "## " = উপশিরোনাম | "> " = আয়াত/হাদিস উদ্ধৃতি | "- " = তালিকা
+function renderBody(src) {
+  const blocks = String(src || '').replace(/\r/g, '').split(/\n\s*\n/);
+  const isAr = (s) => (s.match(/[؀-ۿ]/g) || []).length > s.replace(/\s/g, '').length * 0.5;
+  const inline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
+  return blocks.map(b => {
+    b = b.trim(); if (!b) return '';
+    if (b.startsWith('## ')) return `<h4>${inline(b.slice(3))}</h4>`;
+    if (b.startsWith('>')) {
+      const q = b.split('\n').map(l => l.replace(/^>\s?/, '')).join('\n');
+      return `<blockquote class="${isAr(q) ? 'ar' : ''}">${inline(q)}</blockquote>`;
+    }
+    if (/^- /.test(b)) return '<ul>' + b.split('\n').map(l => `<li>${inline(l.replace(/^- /, ''))}</li>`).join('') + '</ul>';
+    return `<p class="${isAr(b) ? 'ar' : ''}">${inline(b)}</p>`;
+  }).join('');
+}
+
+// ── PROFILE ──
+function loadProfile() {
+  try { ME = JSON.parse(store('gk_profile') || 'null'); } catch (e) { ME = null; }
+  $('me-btn').innerHTML = ME ? `${avatar(ME.name, ME.key)}<span>${esc(ME.name)}</span>` : `<div class="av" style="background:var(--gold)">＋</div><span>ফ্রি রেজিস্ট্রেশন</span>`;
+}
+// মোট কতজন রেজিস্ট্রেশন করেছেন (লিডারবোর্ডের তালিকা থেকে)
+const regCount = () => Object.keys(PARTS || {}).length;
+let afterProfile = null;
+function openProfile(cb) {
+  afterProfile = typeof cb === 'function' ? cb : null;
+  $('p-name').value = ME ? ME.name : '';
+  $('p-phone').value = ME ? ME.phone : '';
+  // নতুন হলে স্বাগত বার্তা, আগে থেকে রেজিস্টার্ড হলে শুধু তথ্য পরিবর্তন
+  $('p-welcome').style.display = ME ? 'none' : '';
+  $('p-title').textContent = ME ? 'আপনার তথ্য' : 'ফ্রি রেজিস্ট্রেশন';
+  $('p-btn').textContent = ME ? 'সংরক্ষণ করুন' : '✅ রেজিস্ট্রেশন করুন — ফ্রি';
+  $('p-later').textContent = ME ? 'বন্ধ করুন' : 'আগে একটু ঘুরে দেখি';
+  $('p-count').textContent = regCount() ? `🌱 এখন পর্যন্ত ${bn(regCount())} জন রেজিস্ট্রেশন করেছেন` : '';
+  hideAlert('p-alert');
+  $('m-profile').classList.add('on');
+  setTimeout(() => $('p-name').focus(), 50);
+}
+function closeProfile() { $('m-profile').classList.remove('on'); afterProfile = null; }
+async function saveProfile() {
+  const name = $('p-name').value.trim().replace(/\s+/g, ' ');
+  const phone = normPhone($('p-phone').value);
+  if (name.length < 2) return showAlert('p-alert', 'err', 'অনুগ্রহ করে আপনার নাম লিখুন।');
+  if (!/^01\d{9}$/.test(phone)) return showAlert('p-alert', 'err', 'সঠিক ১১ ডিজিটের মোবাইল নম্বর দিন (01XXXXXXXXX)।');
+  const btn = $('p-btn'), wasNew = !ME; btn.disabled = true;
+  let ok;
+  try {
+    const key = await phoneKey(phone);
+    ME = { name, phone, key };
+    store('gk_profile', JSON.stringify(ME));
+    loadProfile();
+    await loadMyRecord();
+    ok = await registerMe();
+  } catch (e) {
+    return showAlert('p-alert', 'err', '⚠️ কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।');
+  } finally { btn.disabled = false; }
+  const cb = afterProfile;
+  $('m-profile').classList.remove('on'); afterProfile = null;
+  route();
+  toast(wasNew && ok ? `✅ রেজিস্ট্রেশন সম্পন্ন! আসসালামু আলাইকুম, ${name} 🌿` : 'আসসালামু আলাইকুম, ' + name + ' 🌿');
+  if (cb) cb();
+}
+// রেজিস্ট্রেশন ডেটাবেসে জমা (অ্যাডমিন প্যানেলে দেখা যাবে)। আগে থেকে থাকলে শুধু নাম আপডেট।
+async function registerMe() {
+  if (!ME) return false;
+  try {
+    const body = { name: ME.name, masked: mask(ME.phone) };
+    // রেকর্ড ঠিকমতো লোড হলে তবেই নতুন রেজিস্ট্রেশন সময় — নইলে আগের আসল সময় মুছে যেতে পারে
+    if (MYREC_OK && !MYREC.reg) body.reg = Date.now();
+    await api('participants/' + ME.key, 'PATCH', body);
+    await api('contacts/' + ME.key, 'PUT', { name: ME.name, phone: ME.phone });
+    MYREC = Object.assign(MYREC || {}, body);
+    PARTS = PARTS || {}; PARTS[ME.key] = Object.assign(PARTS[ME.key] || {}, MYREC);
+    return true;
+  } catch (e) { return false; }
+}
+async function loadMyRecord() {
+  if (!ME) { MYREC = null; MYREC_OK = false; return; }
+  try { MYREC = await api('participants/' + ME.key) || {}; MYREC_OK = true; } catch (e) { MYREC = MYREC || {}; MYREC_OK = false; }
+}
+
+// ── DATA ──
+// শুধু আজ পর্যন্ত দিনের আর্টিকেল আনা হয়; ভবিষ্যতের দিন Firebase rules দিয়েও বন্ধ থাকে
+// কোন দিন খোলা তা শেষ পর্যন্ত Firebase rules (সার্ভারের ঘড়ি) ঠিক করে। তাই ফোনের ঘড়ি পিছিয়ে থাকলেও
+// পরের দিনটাও চেয়ে দেখা হয়; ধীর নেটে ব্যর্থ হলে আরেকবার চেষ্টা, তাতেও না হলে আগের ক্যাশ করা কপি রাখা হয়।
+const denied = (e) => /HTTP 40[13]/.test(e && e.message);
+const artOk = (a, d) => !!(a && a.published && a.day === d && (!a.openAt || a.openAt <= Date.now() + 36 * 3600000));
+const fetchArt = (d) => api('articles/day' + d).catch(e => denied(e) ? Promise.reject(e) : api('articles/day' + d));
+async function loadArticles() {
+  const n = Math.min(CONTEST.days, openUpTo() + 1);
+  const res = await Promise.allSettled(Array.from({ length: n }, (_, i) => fetchArt(i + 1)));
+  const old = ARTICLES, next = {};
+  res.forEach((r, i) => {
+    const d = i + 1;
+    if (r.status === 'fulfilled') { if (artOk(r.value, d)) next[d] = r.value; }
+    else if (!denied(r.reason) && old[d]) next[d] = old[d];
+  });
+  ARTICLES = next;
+  if (openUpTo() && res.every(r => r.status === 'rejected' && !denied(r.reason))) throw new Error('offline');
+}
+// ══════════ লেখা গ্যালারি ও ভোট (মাস শেষে অ্যাডমিন চালু করবেন) ══════════
+//  প্রত্যেক রেজিস্টার্ড সদস্য সর্বোচ্চ ৩টি ভোট; এক লেখায় একটি; নিজের লেখায় নয়; দেওয়ার পর বদলানো যায় না।
+let SETTINGS = {}, PUBS = null, BALLOTS = null, MYBALLOT = {}, GFILTER = 'all';
+const SLOTS = ['s1', 's2', 's3'];
+const galOpen = () => !!(SETTINGS.gallery && SETTINGS.gallery.open);
+const voteOpen = () => galOpen() && !!(SETTINGS.voting && SETTINGS.voting.open);
+const showCounts = () => !!(SETTINGS.voting && SETTINGS.voting.showCounts);
+async function loadSettings() { try { SETTINGS = await api('settings') || {}; } catch (e) { SETTINGS = SETTINGS || {}; } }
+async function loadGallery() {
+  const [p, b] = await Promise.all([api('published').catch(() => null), api('ballots').catch(() => null)]);
+  PUBS = p || {}; BALLOTS = b || {};
+  MYBALLOT = ME && BALLOTS[ME.key] ? Object.assign({}, BALLOTS[ME.key]) : {};
+}
+// বৈধ ভোট গণনা: প্রতি ভোটার এক লেখায় একবার, নিজের লেখায় দেওয়া ভোট বাদ
+function tally() {
+  const c = {};
+  Object.entries(BALLOTS || {}).forEach(([voter, slots]) => {
+    new Set(Object.values(slots || {})).forEach(id => { const p = PUBS && PUBS[id]; if (p && p.k !== voter) c[id] = (c[id] || 0) + 1; });
+  });
+  return c;
+}
+const myVotes = () => new Set(Object.values(MYBALLOT || {}));
+const seedHash = (s) => { let h = 2166136261; for (const ch of s) h = Math.imul(h ^ ch.codePointAt(0), 16777619) >>> 0; return h; };
+
+async function renderGallery() {
+  $('g-list').innerHTML = '<div class="card"><div class="skel"></div><div class="skel" style="width:80%"></div></div>';
+  $('g-stat').innerHTML = ''; $('g-filter').innerHTML = '';
+  await loadSettings();
+  if (!galOpen()) {
+    $('g-list').innerHTML = '<div class="card empty"><div class="ic">📚</div><p>মাস শেষে সব অংশগ্রহণকারীর লেখা এখানে প্রকাশ করা হবে, আর ভোটের মাধ্যমে সেরা লেখা নির্বাচন হবে ইনশাআল্লাহ।</p></div>';
+    return;
+  }
+  await loadGallery();
+  const counts = tally(), mine = myVotes(), used = mine.size;
+  $('g-stat').innerHTML = voteOpen()
+    ? `<div class="vstat">🗳 <div><b>ভোট চলছে!</b> প্রত্যেকে সর্বোচ্চ <b>৩টি</b> লেখায় ভোট দিতে পারবেন। ভোট দেওয়ার পর বদলানো যাবে না।${ME ? '' : ' ভোট দিতে রেজিস্ট্রেশন লাগবে।'}</div>
+       <div class="vslots">${SLOTS.map((s, i) => `<i class="${i < used ? 'on' : ''}">${i < used ? '✓' : bn(i + 1)}</i>`).join('')}</div></div>`
+    : `<div class="vstat">🏁 <div><b>ভোট গ্রহণ শেষ।</b> ${showCounts() ? 'নিচে ভোটের ফলাফল দেখুন।' : 'ফলাফল শীঘ্রই ঘোষণা করা হবে ইনশাআল্লাহ।'}</div></div>`;
+  const fl = [['all', 'সব লেখা'], ['mine', '✓ আমার ভোট']];
+  if (showCounts()) fl.push(['top', '🏆 সর্বাধিক ভোট']);
+  else if (GFILTER === 'top') GFILTER = 'all';     // ভোট সংখ্যা লুকানো হলে ভুল র‍্যাংক দেখাবে না
+  $('g-filter').innerHTML = fl.map(([k, l]) => `<button class="${GFILTER === k ? 'on' : ''}" onclick="GFILTER='${k}';renderGallery()">${l}</button>`).join('');
+  const seed = ME ? ME.key : 'guest';
+  let list = Object.entries(PUBS).map(([id, p]) => ({ id, ...p, v: counts[id] || 0 }));
+  if (GFILTER === 'mine') list = list.filter(x => mine.has(x.id));
+  if (GFILTER === 'top' && showCounts()) list.sort((a, b) => b.v - a.v || a.t - b.t);
+  else list.sort((a, b) => seedHash(a.id + seed) - seedHash(b.id + seed));  // প্রত্যেকের কাছে আলাদা এলোমেলো ক্রম
+  $('g-sub').textContent = `মোট ${bn(Object.keys(PUBS).length)}টি লেখা প্রকাশিত হয়েছে। পড়ুন, আর পছন্দের লেখায় ভোট দিন।`;
+  $('g-list').innerHTML = list.map((x, i) => `
+    <a class="wcard ${mine.has(x.id) ? 'voted' : ''}" href="#/lekha/${esc(x.id)}">
+      <span class="chip gold">দিন ${bn(x.day)} • ${esc(topicTitle(x.day))}</span>
+      <h4>${GFILTER === 'top' && i < 3 ? `<span class="rank-badge">${bn(i + 1)}</span>` : ''}${esc(x.title)}</h4>
+      <p>${esc(excerpt(x.text, 150))}</p>
+      <div class="by">${avatar(x.name, x.k)}<span>${esc(x.name)} • ${bn(x.words || 0)} শব্দ</span>${showCounts() ? `<span class="vc">🗳 ${bn(x.v)}</span>` : ''}</div>
+    </a>`).join('') || `<div class="card empty"><div class="ic">📝</div><p class="muted">${GFILTER === 'mine' ? 'আপনি এখনো কোনো লেখায় ভোট দেননি।' : 'এখনো কোনো লেখা প্রকাশিত হয়নি।'}</p></div>`;
+}
+
+async function renderWriting(id) {
+  $('w-art').innerHTML = '<div class="skel"></div><div class="skel" style="width:70%"></div>'; $('w-vote').innerHTML = '';
+  if (!PUBS) { await loadSettings(); await loadGallery(); }
+  const x = PUBS && PUBS[id];
+  if (!x) { $('w-art').innerHTML = '<div class="empty"><div class="ic">📄</div><p>লেখাটি পাওয়া যায়নি।</p></div>'; return; }
+  const para = String(x.text || '').split(/\n\s*\n|\n/).map(p => p.trim()).filter(Boolean).map(p => `<p>${esc(p)}</p>`).join('');
+  $('w-art').innerHTML = `
+    <div class="art-head"><div class="chips" style="justify-content:center;"><span class="chip gold">দিন ${bn(x.day)} • ${esc(topicTitle(x.day))}</span></div>
+      <h1 class="art-h">${esc(x.title)}</h1>
+      <div class="art-topic" style="display:flex;align-items:center;justify-content:center;gap:8px;">${avatar(x.name, x.k)} ${esc(x.name)}</div></div>
+    <div class="orn">۞</div>
+    <div class="art-body">${para}</div>
+    ${x.refs ? `<div class="refs"><b>📚 সূত্র</b>${esc(x.refs).replace(/\n/g, '<br>')}</div>` : ''}`;
+  renderVoteBox(id);
+}
+function renderVoteBox(id) {
+  const x = PUBS[id], mine = myVotes(), used = mine.size, counts = tally();
+  let html;
+  if (!voteOpen()) html = `<p>🏁 ভোট গ্রহণ এখন বন্ধ।${showCounts() ? ` এই লেখাটি পেয়েছে <b>${bn(counts[id] || 0)}টি</b> ভোট।` : ''}</p>`;
+  else if (ME && x.k === ME.key) html = '<p>✍️ এটি আপনার নিজের লেখা — নিজের লেখায় ভোট দেওয়া যায় না।</p>';
+  else if (mine.has(id)) html = `<div class="ok-ic">✓</div><h3>আপনি এই লেখায় ভোট দিয়েছেন</h3><p>আপনার বাকি ভোট: ${bn(3 - used)}টি</p>`;
+  else if (used >= 3) html = '<p>আপনার ৩টি ভোটই দেওয়া হয়ে গেছে। জাযাকাল্লাহু খাইরান! 🤍</p>';
+  else html = `<h3>🗳 এই লেখাটি ভালো লাগলে ভোট দিন</h3><p>আপনার বাকি ভোট: <b>${bn(3 - used)}টি</b> • ভোট দেওয়ার পর বদলানো যাবে না।</p>
+    <button class="btn btn-g" id="v-btn" onclick="castVote('${esc(id)}')">🤍 ভোট দিন</button><div class="alert" id="v-alert"></div>`;
+  $('w-vote').innerHTML = `<div class="card part ${mine.has(id) ? 'done' : ''}">${html}</div>`;
+}
+async function castVote(id) {
+  if (!ME) return openProfile(() => castVote(id));
+  const x = PUBS[id]; if (!x || !voteOpen()) return renderVoteBox(id);
+  if (x.k === ME.key || myVotes().has(id)) return renderVoteBox(id);
+  const slot = SLOTS.find(s => !MYBALLOT[s]);
+  if (!slot) return renderVoteBox(id);
+  if (!confirm(`“${x.title}” লেখায় ভোট দেবেন?\nভোট দেওয়ার পর আর বদলানো যাবে না।`)) return;
+  const b = $('v-btn'); if (b) { b.disabled = true; b.innerHTML = '<span class="spin"></span> ভোট দেওয়া হচ্ছে…'; }
+  const put = () => api(`ballots/${ME.key}/${slot}`, 'PUT', id);
+  try {
+    try { await put(); }
+    catch (e) { if (!/401/.test(e.message)) throw e; await registerMe(); await put(); }   // রেজিস্ট্রেশন ডেটাবেসে না থাকলে আগে জমা দিয়ে আবার চেষ্টা
+    MYBALLOT[slot] = id; BALLOTS[ME.key] = Object.assign({}, MYBALLOT);
+    toast('✅ আপনার ভোট গ্রহণ করা হয়েছে। জাযাকাল্লাহু খাইরান!');
+    renderVoteBox(id);
+  } catch (e) {
+    await loadGallery().catch(() => {});
+    renderVoteBox(id);
+    showAlert('v-alert', 'err', /401/.test(e.message) ? '⚠️ ভোট দেওয়া যায়নি — হয়তো ভোট গ্রহণ বন্ধ হয়ে গেছে বা এই স্লটে আগেই ভোট আছে।' : '⚠️ ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।');
+  }
+}
+
+async function loadParticipants() {
+  try { PARTS = await api('participants') || {}; } catch (e) { PARTS = {}; }
+}
+function ranking() {
+  return Object.entries(PARTS || {})
+    .map(([k, r]) => ({ k, name: r.name || '—', masked: r.masked || '', days: daysDone(r), qc: quizRight(r), w: writingsOf(r), last: r.last || 0 }))
+    .filter(r => r.days > 0 || r.w > 0)
+    .sort((a, b) => b.days - a.days || b.qc - a.qc || b.w - a.w || a.last - b.last);
+}
+function latestDay() {
+  const t = todayDay();
+  const days = Object.keys(ARTICLES).map(Number).sort((a, b) => b - a);
+  if (t && ARTICLES[t]) return t;
+  return days[0] || null;                          // সার্ভার যা খুলে দিয়েছে তার মধ্যে সর্বশেষ দিন
+}
+
+// ── অংশগ্রহণ রেকর্ড (যেকোনো একটি অংশ করলেই দিনটি গণনা হয়) ──
+async function record(d, fields) {
+  if (d === 0) {                                   // ট্রায়াল: শুধু ফোনে সেভ, গণনা হয় না
+    const r = trialRec() || { t: Date.now() };
+    for (const k in fields) { const [a, b] = k.split('/'); if (b) { r[a] = r[a] || {}; r[a][b] = fields[k]; } else r[a] = fields[k]; }
+    trialSave(r); drawDayHead(0); renderTrialGuide();
+    return;
+  }
+  // নিজের রেকর্ড লোড না হয়ে থাকলে আগে লোড — নইলে আগের দিনের "প্রথম কখন / সময়মতো" তথ্য মুছে যেতে পারে
+  if (!MYREC_OK) { await loadMyRecord(); if (!MYREC_OK) throw new Error('offline'); }
+  const now = Date.now(), p = 'days/day' + d;
+  const had = dayRec(d);
+  const body = { name: ME.name, masked: mask(ME.phone), last: now };
+  if (!had) { body[p + '/t'] = now; body[p + '/onTime'] = todayDay() === d; }
+  for (const k in fields) body[p + '/' + k] = fields[k];
+  await api('participants/' + ME.key, 'PATCH', body);
+  api('contacts/' + ME.key, 'PUT', { name: ME.name, phone: ME.phone }).catch(() => {});
+  MYREC = MYREC || {}; MYREC.days = MYREC.days || {};
+  const r = MYREC.days['day' + d] = had || { t: now, onTime: todayDay() === d };
+  for (const k in fields) {
+    const [a, b] = k.split('/');
+    if (b) { r[a] = r[a] || {}; r[a][b] = fields[k]; } else r[a] = fields[k];
+  }
+  if (!had) setTimeout(() => toast(`🌿 দিন ${bn(d)}-এর অংশগ্রহণ গণনা হয়েছে!`), 900);
+  loadParticipants();
+  drawDayHead(d);
+}
+
+// ── ROUTER ──
+function go(h) { location.hash = '#/' + h; }
+function route() {
+  const h = location.hash.replace(/^#\/?/, '');
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
+  clearInterval(QTIMER);
+  let m, nav = 'home';
+  if ((m = h.match(/^write\/(\d+)/))) return go(`day/${m[1]}/write`);
+  if ((m = h.match(/^(?:today|write)(?:\/(quiz|read|write))?$/))) {
+    const d = latestDay(), seg = h.startsWith('write') ? 'write' : (m[1] || 'read');
+    if (d) return go(`day/${d}/${seg}`);
+    if (!LOADING) toast('প্রথম দিনের বিষয় ১ অক্টোবর খুলবে ইনশাআল্লাহ 🌙');
+    renderHome(); $('v-home').classList.add('on');
+  }
+  else if ((m = h.match(/^day\/(\d+)(?:\/(quiz|read|write))?/))) { const seg = m[2] || 'read'; renderDay(+m[1], seg); $('v-day').classList.add('on'); nav = +m[1] === latestDay() ? seg : ''; }
+  else if (h === 'leaderboard') { renderLeaderboard(); $('v-lb').classList.add('on'); nav = 'lb'; }
+  else if ((m = h.match(/^lekha\/([\w-]+)/))) { renderWriting(m[1]); $('v-wread').classList.add('on'); nav = 'gal'; }
+  else if (h === 'lekha') { renderGallery(); $('v-gal').classList.add('on'); nav = 'gal'; }
+  else if (h === 'trial') return go('day/0/quiz');
+  else if (h === 'topics') { renderTopics(); $('v-topics').classList.add('on'); }
+  else { renderHome(); $('v-home').classList.add('on'); }
+  // মাস শেষে গ্যালারি চালু হলে নিচের মেনুর “কুইজ” বদলে “লেখা ও ভোট”
+  const n2 = $('nav-2');
+  if (galOpen()) { n2.href = '#/lekha'; n2.dataset.r = 'gal'; n2.innerHTML = '<span class="i">🏆</span>লেখা ও ভোট'; }
+  else { n2.href = '#/today/quiz'; n2.dataset.r = 'quiz'; n2.innerHTML = '<span class="i">🎯</span>কুইজ'; }
+  document.querySelectorAll('#bnav a').forEach(a => a.classList.toggle('on', a.dataset.r === nav));
+  window.scrollTo(0, 0); onScroll();
+}
+
+// ── HOME ──
+function renderHome() {
+  const t = todayDay();
+  const pubN = Object.keys(ARTICLES).length;
+  const ds = daysToStart();
+  $('mprog').innerHTML = ds > 0
+    ? `<div class="top"><span>⏳ প্রতিযোগিতা শুরু হতে বাকি</span><b>${bn(ds)} দিন</b></div><div class="mbar"><i style="width:${Math.max(4, 100 - ds * 3)}%"></i></div>`
+    : `<div class="top"><span>${t ? `আজ অক্টোবরের <b>${bn(t)}</b> তারিখ` : 'যাত্রা সম্পন্ন — আলহামদুলিল্লাহ'}</span><b>${bn(pubN)}/${bn(CONTEST.days)} দিন খোলা</b></div><div class="mbar"><i style="width:${Math.round((t || CONTEST.days) / CONTEST.days * 100)}%"></i></div>`;
+
+  const ld = latestDay();
+  const a = ld ? ARTICLES[ld] : null;
+  const sd = ld ? segDone(ld) : {};
+  $('today-box').innerHTML = (LOADING && !a) ? '<div class="card"><div class="skel" style="width:40%"></div><div class="skel" style="width:80%;height:20px"></div><div class="skel"></div></div>' : LOAD_ERR
+    ? '<div class="card empty"><div class="ic">⚠️</div><p>তথ্য লোড হয়নি।<br><span class="muted">ইন্টারনেট সংযোগ দেখে পেজটি রিফ্রেশ করুন।</span></p></div>'
+    : a ? `
+    <div class="card feat">
+      <div class="chips"><span class="chip">${ld === t ? '🌟 আজকের বিষয়' : '📖 সর্বশেষ বিষয়'} • দিন ${bn(ld)}</span>${a.topic ? `<span class="chip gold">${esc(a.topic)}</span>` : ''}</div>
+      <h2>${esc(a.title)}</h2>
+      <p>${esc(excerpt(a.body))}</p>
+      <div class="reacts" style="grid-template-columns:repeat(3,1fr);position:relative;z-index:1;">
+        ${SEGS.map(([k, e, l]) => `<a class="btn ${sd[k] ? 'btn-o' : (k === 'read' ? 'btn-g' : 'btn-o')}" href="#/day/${ld}/${k}" style="padding:12px 4px;font-size:13px;">${sd[k] ? '✓' : e} ${l.split(' ')[0]}</a>`).join('')}
+      </div>
+      <p class="muted" style="margin:12px 0 0;font-size:12.5px;font-family:var(--sans);">যেকোনো একটিতে অংশ নিলেই আজকের অংশগ্রহণ গণনা হবে।</p>
+    </div>` : `
+    <div class="card empty">
+      <div class="ic">🌙</div>
+      <p><b>প্রথম দিনের বিষয় ও কুইজ ১ অক্টোবর খুলবে ইনশাআল্লাহ।</b><br><span class="muted">এখনই নাম দিয়ে যুক্ত হয়ে থাকুন।</span></p>
+    </div>`;
+
+  renderPrep();
+  const gc = $('gal-cta');
+  gc.style.display = galOpen() ? '' : 'none';
+  if (galOpen()) gc.innerHTML = `<div class="ti">🏆</div><div><b>${voteOpen() ? 'সেরা লেখা নির্বাচন — ভোট দিন!' : 'অংশগ্রহণকারীদের লেখা প্রকাশিত'}</b>
+    <span>${voteOpen() ? 'মাসজুড়ে জমা পড়া সব লেখা পড়ুন, আর পছন্দের ৩টি লেখায় ভোট দিন।' : (showCounts() ? 'লেখাগুলো পড়ুন ও ভোটের ফলাফল দেখুন।' : 'মাসজুড়ে জমা পড়া সব লেখা পড়ুন।')}</span></div><span class="ar">›</span>`;
+  const ts = segDone(0), tn = [ts.quiz, ts.read, ts.write].filter(Boolean).length;
+  $('trial-cta').innerHTML = `<div class="ti">🧪</div><div><b>${tn === 3 ? 'ট্রায়াল সম্পন্ন ✓' : 'নতুন? আগে ট্রায়াল দিয়ে নিন'}</b>
+    <span>${tn === 3 ? 'আপনি প্রস্তুত! চাইলে আবার অনুশীলন করতে পারেন।' : `“ইসলাম জানার গুরুত্ব” — কুইজ, পড়া ও লেখা অনুশীলন করে নিয়মগুলো শিখে নিন। কিছুই গণনা হবে না।${tn ? ` (${bn(tn)}/৩ সম্পন্ন)` : ''}`}</span></div><span class="ar">›</span>`;
+
+  // আমার অগ্রগতি
+  const box = $('my-box');
+  box.style.display = 'block';
+  if (ME) {
+    const set = new Set(MYREC && MYREC.days ? Object.keys(MYREC.days) : []);
+    const r = ranking(); const pos = r.findIndex(x => x.k === ME.key);
+    box.innerHTML = `
+      <div class="sec-h"><h3>আমার অগ্রগতি</h3><span class="chips">${streakOf(MYREC) ? `<span class="chip">🔥 টানা ${bn(streakOf(MYREC))} দিন</span>` : ''}${pos >= 0 ? `<span class="chip gold">🏅 ${bn(pos + 1)}</span>` : ''}</span></div>
+      <div class="stats">
+        <div class="stat hl"><b>${bn(set.size)}</b><span>দিন অংশগ্রহণ</span></div>
+        <div class="stat"><b>${bn(quizRight(MYREC))}</b><span>🎯 সঠিক উত্তর</span></div>
+        <div class="stat"><b>${bn(writingsOf(MYREC))}<small style="font-size:14px;color:var(--muted)">/${bn(MAX_WRITINGS)}</small></b><span>লেখা জমা</span></div>
+      </div>
+      <div class="dots">${Array.from({ length: CONTEST.days }, (_, i) => i + 1).map(d =>
+        `<div class="dot ${set.has('day' + d) ? 'done' : ''} ${d === t ? 'today' : ''}" title="দিন ${bn(d)}">${set.has('day' + d) ? '✓' : bn(d)}</div>`).join('')}</div>`;
+  } else {
+    box.innerHTML = `
+      <div class="center" style="padding:6px 0;">
+        <div style="font-size:30px;">🌱</div>
+        <h3 style="color:var(--em);margin:6px 0 4px;">এখনই ফ্রি রেজিস্ট্রেশন করুন</h3>
+        <p class="muted" style="line-height:1.8;margin-bottom:14px;">শুধু নাম ও ফোন নম্বর — একবারই। প্রতিদিনের অংশগ্রহণ গণনা হবে এবং লিডারবোর্ডে আপনার নাম দেখাবে।</p>
+        <button class="btn btn-g" onclick="openProfile()">✅ রেজিস্ট্রেশন করুন — ফ্রি</button>
+        ${regCount() ? `<span class="regcount">🌱 ${bn(regCount())} জন ইতিমধ্যে রেজিস্ট্রেশন করেছেন</span>` : ''}
+      </div>`;
+  }
+
+  // লিডারবোর্ড প্রিভিউ
+  const r = ranking();
+  $('lb-top').innerHTML = r.length ? podium(r) + `<ul class="lb">${lbRows(r.slice(3, 6), 3)}</ul>`
+    : '<div class="empty" style="padding:14px;"><div class="ic">🏅</div><p class="muted">এখনো কেউ অংশগ্রহণ করেননি — প্রথম হোন!</p></div>';
+
+  // দিনের গ্রিড
+  $('pub-count').textContent = bn(pubN) + '/' + bn(CONTEST.days) + ' খোলা';
+  $('day-grid').innerHTML = Array.from({ length: CONTEST.days }, (_, i) => i + 1).map(d => {
+    const a = ARTICLES[d];
+    if (!a) return `<a class="dcell locked ${d === t ? 'isToday' : ''}" href="#/topics"><span class="l">🔒 ${bn(d)} অক্টো</span><span class="n">${bn(d)}</span><span class="t">${esc(topicTitle(d))}</span></a>`;
+    const s = segDone(d), done = !!dayRec(d);
+    return `<a class="dcell ${d === t ? 'isToday' : ''} ${done ? 'did' : ''}" href="#/day/${d}">
+      ${done ? '<span class="ck">✓</span>' : ''}<span class="l">দিন</span><span class="n">${bn(d)}</span><span class="t">${esc(a.title)}</span>
+      <span class="segs"><i class="${s.quiz ? 'on' : ''}">🎯</i><i class="${s.read ? 'on' : ''}">📖</i><i class="${s.write ? 'on' : ''}">✍️</i></span></a>`;
+  }).join('');
+}
+
+// ── বিষয়সূচি ও প্রস্তুতি ──
+function getPlans() { try { return JSON.parse(store('gk_plans') || '[]'); } catch (e) { return []; } }
+function togglePlan(d) {
+  const p = new Set(getPlans());
+  if (p.has(d)) p.delete(d); else { p.add(d); toast(`🔖 দিন ${bn(d)}: “${topicTitle(d)}” — প্রস্তুতি শুরু করুন!`); }
+  store('gk_plans', JSON.stringify([...p]));
+  renderTopics(); renderPrep();
+}
+function untilTxt(d) {
+  const n = daysUntil(d);
+  return n <= 0 ? 'শীঘ্রই প্রকাশিত হবে' : n === 1 ? 'আগামীকাল' : `আর ${bn(n)} দিন`;
+}
+function renderPrep() {
+  const open = openUpTo();
+  const up = Array.from({ length: CONTEST.days }, (_, i) => i + 1).filter(d => d > open).slice(0, 3);
+  const plans = getPlans();
+  $('prep-box').innerHTML = `
+    <div class="sec-h"><h3>আগেভাগে প্রস্তুতি নিন</h3><span class="chip gold">✍️ লেখার জন্য</span></div>
+    <div class="lead">৩১ দিনের ৩১টি বিষয় এখনই দেখে নিন। পছন্দের বিষয় বেছে আগে থেকে পড়াশোনা ও নোট নিলে আপনার লেখা হবে আরও সমৃদ্ধ — আর থাকবে সেরা লেখার পুরস্কার জেতার সুযোগ! 🏆</div>
+    ${up.length ? `<div class="upc">${up.map(d => `<a href="#/topics"><div class="tdate"><b>${bn(d)}</b><span>অক্টো</span></div>
+      <div class="tinfo"><div class="tt">${esc(topicTitle(d))}</div><small>${esc(topicCat(d))} • ${wday(d)}বার</small></div><span class="cd">${plans.includes(d) ? '🔖 ' : ''}${untilTxt(d)}</span></a>`).join('')}</div>` : ''}
+    <a class="btn btn-gold" href="#/topics">📅 ৩১ দিনের পূর্ণ বিষয়সূচি দেখুন${plans.length ? ` • 🔖 ${bn(plans.length)}টি বাছাই` : ''}</a>`;
+}
+let TFILTER = 'all';
+function renderTopics() {
+  const open = openUpTo(), t = todayDay(), plans = getPlans();
+  const cats = [...new Set(TOPICS.map(x => x[0]))];
+  $('plan-count').textContent = plans.length ? `🔖 ${bn(plans.length)}টি লিখব` : `${bn(CONTEST.days)}টি বিষয়`;
+  $('t-filter').innerHTML = [['all', 'সব'], ['plan', '🔖 আমার বাছাই'], ...cats.map(c => [c, c])]
+    .map(([k, l]) => `<button class="${TFILTER === k ? 'on' : ''}" onclick="TFILTER='${k}';renderTopics()">${l}</button>`).join('');
+  const days = Array.from({ length: CONTEST.days }, (_, i) => i + 1)
+    .filter(d => TFILTER === 'all' || (TFILTER === 'plan' ? plans.includes(d) : topicCat(d) === TFILTER));
+  $('t-list').innerHTML = days.map(d => {
+    const isOpen = d <= open && ARTICLES[d], done = !!dayRec(d);
+    return `<li class="${d === t ? 'today' : isOpen ? 'open' : ''}">
+      <div class="tdate"><b>${bn(d)}</b><span>${wday(d)}</span></div>
+      <div class="tinfo"><div class="tt">${esc(topicTitle(d))}</div><small>${esc(topicCat(d))} • ${d === t ? '🌟 আজকের বিষয়' : isOpen ? (done ? '✓ অংশ নিয়েছেন' : 'খোলা আছে') : '🔒 ' + untilTxt(d)}</small></div>
+      <div class="tact">${isOpen ? `<a class="go-open" href="#/day/${d}">${done ? '✓ দেখুন' : 'অংশ নিন ›'}</a>`
+        : `<button class="plan ${plans.includes(d) ? 'on' : ''}" onclick="togglePlan(${d})">${plans.includes(d) ? '🔖 লিখব ✓' : '🔖 লিখব'}</button>`}</div></li>`;
+  }).join('') || '<li class="muted" style="justify-content:center;padding:20px;">এখনো কোনো বিষয় বাছাই করেননি — “🔖 লিখব” চাপুন।</li>';
+}
+
+function podium(r) {
+  const slot = (x, p) => x ? `<div class="pd p${p} ${ME && x.k === ME.key ? 'me' : ''}">
+      <span class="medal">${['', '🥇', '🥈', '🥉'][p]}</span>${avatar(x.name, x.k)}
+      <div class="nm">${esc(x.name)}</div><div class="st">${bn(x.days)} দিন • 🎯${bn(x.qc)}</div>
+      <div class="base">${bn(p)}</div></div>` : '<div></div>';
+  return `<div class="podium">${slot(r[1], 2)}${slot(r[0], 1)}${slot(r[2], 3)}</div>`;
+}
+function lbRows(rows, offset = 0) {
+  const top = ranking()[0];
+  const max = Math.max(1, top ? top.days : 1, ...rows.map(r => r.days));
+  return rows.map((r, i) => {
+    const n = i + offset + 1, me = ME && r.k === ME.key;
+    return `<li class="${me ? 'me' : ''}">
+      <div class="rank">${bn(n)}</div>${avatar(r.name, r.k)}
+      <div class="nm">${esc(r.name)}${me ? ' <span class="chip" style="padding:1px 8px;font-size:10.5px;">আপনি</span>' : ''}<small>${esc(r.masked)}</small>
+        <div class="bar"><i style="width:${Math.round(r.days / max * 100)}%"></i></div></div>
+      <div class="sc"><b>${bn(r.days)}</b> <span class="muted">দিন</span><small>🎯 ${bn(r.qc)} • ✍️ ${bn(r.w)}</small></div>
+    </li>`;
+  }).join('');
+}
+
+// ── LEADERBOARD ──
+async function renderLeaderboard() {
+  $('lb-all').innerHTML = '<div class="skel"></div><div class="skel" style="width:80%"></div><div class="skel" style="width:60%"></div>';
+  await loadParticipants();
+  const r = ranking();
+  $('lb-total').textContent = bn(r.length) + ' জন';
+  $('lb-all').innerHTML = r.length ? podium(r) + `<ul class="lb">${lbRows(r.slice(3), 3)}</ul>`
+    : '<div class="empty"><div class="ic">🌱</div><p class="muted">এখনো কেউ অংশগ্রহণ করেননি।</p></div>';
+}
+
+// ══════════ দিনের পাতা: ৩টি অংশ ══════════
+function drawDayHead(d) {
+  const a = art(d); if (!a || CURDAY !== d) return;
+  const done = !!dayRec(d), s = segDone(d), tr = d === 0;
+  $('d-head').innerHTML = `
+    <div class="chips" style="justify-content:center;">${tr ? '<span class="chip gold">🧪 ট্রায়াল পর্ব • অনুশীলন</span>' : `<span class="chip">📅 দিন ${bn(d)} / ${bn(CONTEST.days)}</span>${a.topic ? `<span class="chip gold">${esc(a.topic)}</span>` : ''}`}</div>
+    <h1>${esc(a.title)}</h1>
+    <div class="dstat ${done ? 'ok' : ''}">${tr
+      ? (done ? `✅ দারুণ! আসল প্রতিযোগিতায় এভাবেই দিনটি গণনা হবে।${(s.quiz && s.read && s.write) ? ' তিনটি অংশই অনুশীলন করেছেন — আপনি প্রস্তুত! 🎉' : ' বাকি অংশগুলোও চেষ্টা করে দেখুন।'}`
+        : '🧪 এটি অনুশীলন — এখানে যা করবেন তা লিডারবোর্ডে গণনা হবে না। নিচের তিনটি অংশ একে একে চেষ্টা করে দেখুন।')
+      : done
+      ? `✅ এই দিনের অংশগ্রহণ গণনা হয়েছে${(s.quiz && s.read && s.write) ? ' — তিনটি অংশই সম্পন্ন, মাশাআল্লাহ!' : '। চাইলে বাকি অংশেও অংশ নিতে পারেন।'}`
+      : '🧩 নিচের তিনটি অংশের <b>যেকোনো একটিতে</b> অংশ নিলেই এই দিনের অংশগ্রহণ গণনা হবে।'}</div>`;
+  const seg = CURSEG;
+  $('d-seg').innerHTML = SEGS.map(([k, e, l]) =>
+    `<a href="#/day/${d}/${k}" class="${k === seg ? 'on' : ''} ${s[k] ? 'done' : ''}"><span class="i">${e}</span>${l}<small>${k === 'quiz' ? (quizOf(a) ? '১ মিনিট' : 'আজ নেই') : k === 'read' ? bn(readMins(a.body)) + ' মিনিট পাঠ' : 'ঐচ্ছিক'}</small></a>`).join('');
+}
+
+const TRIED = {};                                  // কোন দিন সরাসরি সার্ভার থেকে চাওয়া হয়েছে
+function renderDay(d, seg) {
+  CURDAY = d; CURSEG = seg;
+  const a = art(d);
+  document.querySelectorAll('#v-day .pane').forEach(p => p.classList.remove('on'));
+  renderTrialGuide();                              // ট্রায়াল ছাড়া অন্য দিনে নির্দেশিকা লুকানো থাকবে
+  // তালিকায় না থাকলে (নেট সমস্যা বা ফোনের ঘড়ি ভুল) সরাসরি সার্ভার থেকে একবার চেয়ে দেখা
+  const fetchNow = !a && !LOADING && d >= 1 && d <= Math.min(CONTEST.days, openUpTo() + 1) && !TRIED[d];
+  if (fetchNow) {
+    TRIED[d] = true;
+    fetchArt(d).then(x => { if (artOk(x, d)) { ARTICLES[d] = x; saveCache(); } }).catch(() => {})
+      .finally(() => { if (CURDAY === d && $('v-day').classList.contains('on')) renderDay(d, CURSEG); });
+  }
+  if (!a && (LOADING || fetchNow)) { $('d-seg').style.display = 'none'; $('d-nav').innerHTML = ''; $('d-head').innerHTML = '<div class="skel" style="width:50%;margin:10px auto"></div><div class="skel" style="width:80%;height:22px;margin:10px auto"></div>'; return; }
+  if (!a) {
+    $('d-seg').style.display = 'none'; $('d-nav').innerHTML = '';
+    const future = d > openUpTo() && d <= CONTEST.days;
+    $('d-head').innerHTML = `<div class="empty"><div class="ic">🔒</div>
+      ${TOPICS[d - 1] ? `<h2 style="color:var(--em);font-size:20px;margin-top:8px;">${esc(topicTitle(d))}</h2>` : ''}
+      <p>${future ? `দিন ${bn(d)}-এর আর্টিকেল ও কুইজ খুলবে <b>${bn(d)} অক্টোবর</b> ইনশাআল্লাহ।<br><span class="muted">এখন থেকেই বিষয়টি নিয়ে পড়াশোনা করে লেখার প্রস্তুতি নিন।</span>` : `দিন ${bn(d)}-এর বিষয় এখনো প্রকাশিত হয়নি।`}</p>
+      ${d >= 1 && d <= Math.min(CONTEST.days, openUpTo() + 1) ? `<button class="btn btn-g" style="margin-top:14px;" onclick="TRIED[${d}]=false;renderDay(${d},CURSEG)">↻ আবার চেষ্টা করুন</button>` : ''}
+      ${future ? `<a class="btn btn-gold" href="#/topics" style="margin-top:14px;">📅 বিষয়সূচি দেখুন</a>` : ''}</div>`;
+    return;
+  }
+  $('d-seg').style.display = '';
+  drawDayHead(d);
+  $('p-' + seg).classList.add('on');
+  if (seg === 'quiz') renderQuiz(d);
+  else if (seg === 'write') renderWriteSeg(d);
+  else renderRead(d);
+  if (d === 0) {
+    $('d-nav').innerHTML = `<button class="btn btn-o" onclick="resetTrial()">↺ ট্রায়াল আবার শুরু করুন</button>${latestDay() ? `<a class="btn btn-g" href="#/today">আসল প্রতিযোগিতায় যান ›</a>` : `<a class="btn btn-g" href="#/topics">📅 বিষয়সূচি দেখুন</a>`}`;
+    return;
+  }
+
+  const days = Object.keys(ARTICLES).map(Number).sort((x, y) => x - y);
+  const i = days.indexOf(d);
+  $('d-nav').innerHTML =
+    (i > 0 ? `<a class="btn btn-o" href="#/day/${days[i - 1]}/${seg}">‹ দিন ${bn(days[i - 1])}</a>` : '<span style="flex:1"></span>') +
+    (i < days.length - 1 ? `<a class="btn btn-o" href="#/day/${days[i + 1]}/${seg}">দিন ${bn(days[i + 1])} ›</a>` : '<span style="flex:1"></span>');
+}
+// ── ট্রায়ালের বিস্তারিত নির্দেশিকা ──
+let TRIAL_GUIDE_OPEN = null;
+function renderTrialGuide() {
+  const g = $('trial-guide');
+  if (CURDAY !== 0) { g.style.display = 'none'; return; }
+  const s = segDone(0);
+  if (TRIAL_GUIDE_OPEN === null) TRIAL_GUIDE_OPEN = !(s.quiz && s.read && s.write);
+  const chk = (ok, txt) => `<li class="${ok ? 'ok' : ''}"><span>${ok ? '✅' : '⬜'}</span>${txt}</li>`;
+  g.style.display = 'block';
+  g.innerHTML = `
+    <div class="sec-h"><h3>🧪 ট্রায়াল: কীভাবে অংশ নেবেন</h3><span class="chip gold">৫ মিনিট</span></div>
+    <p class="lead">আসল প্রতিযোগিতা শুরুর আগে এখানে সবকিছু একবার করে দেখে নিন। এখানে যা করবেন <b>তা গণনা হবে না</b> — তাই নির্ভয়ে চেষ্টা করুন।</p>
+    <details class="rules" ${TRIAL_GUIDE_OPEN ? 'open' : ''} ontoggle="TRIAL_GUIDE_OPEN=this.open"><summary>📘 নিয়মগুলো বিস্তারিত পড়ুন</summary>
+    <ol class="guide" style="margin-top:10px;">
+      <li><b>👤 নাম ও নম্বর — শুধু একবার</b>উপরের “ফ্রি রেজিস্ট্রেশন” চেপে নাম ও ফোন নম্বর দিন। এই ফোনে তা মনে থাকবে, <b>প্রতিদিন আর দিতে হবে না।</b> ফোন বদলালে বা ব্রাউজার মুছে গেলে শুধু একই নম্বর আবার দিন — আপনার আগের সব অগ্রগতি ফিরে আসবে।</li>
+      <li><b>🔗 প্রতিদিন একই লিংক</b>লিংক প্রতিদিন একই থাকবে। ঢুকলেই হোমে “আজকের বিষয়” দেখাবে। প্রতিদিন রাত ১২টায় (বাংলাদেশ সময়) নতুন বিষয় খোলে।</li>
+      <li><b>🧩 প্রতিদিন তিনটি অংশ — যেকোনো একটিই যথেষ্ট</b>🎯 কুইজ, 📖 আর্টিকেল পড়ে রিঅ্যাক্ট, ✍️ লেখা জমা। যেকোনো একটি করলেই সেই দিনের অংশগ্রহণ গণনা হবে। তিনটিই করলে আরও ভালো!</li>
+      <li><b>🎯 কুইজের নিয়ম</b>“শুরু করুন” চাপলেই ১ মিনিটের টাইমার চালু হয়। একবার উত্তর বাছাই করলে আর বদলানো যায় না। পেজ রিফ্রেশ করলেও সময় থামে না। সময় শেষ হলেও কুইজে অংশ নেওয়া গণনা হয়।</li>
+      <li><b>📖 পড়ুন ও রিঅ্যাক্ট</b>আর্টিকেল পড়ে নিচের 📖 পড়েছি / ❤️ / 🤲 / 💡 — যেকোনো একটি বাটন চাপুন।</li>
+      <li><b>✍️ লেখার নিয়ম</b>বিষয়কে কেন্দ্র করে নিজের ভাষায় কমপক্ষে ৮০ শব্দ। কপি-পেস্ট নয়; সম্ভব হলে সূত্র দিন। পুরো মাসে সর্বোচ্চ ৩টি লেখা — তাই সেরা বিষয়গুলো বেছে নিন। মাস শেষে সব লেখা সাইটে প্রকাশ হবে এবং সবার ভোটে সেরা লেখা নির্বাচন হবে।</li>
+      <li><b>📅 আগে-পরে</b>আগের দিনগুলো পরে এসেও করা যাবে। পরের দিনের বিষয় “বিষয়সূচি”তে আগেই দেখে প্রস্তুতি নিতে পারবেন।</li>
+      <li><b>🏅 লিডারবোর্ড</b>যত বেশি দিন অংশ নেবেন তত এগিয়ে। সমান হলে সঠিক কুইজ উত্তর, তারপর লেখার সংখ্যা দেখা হবে।</li>
+    </ol></details>
+    <div class="orn">আপনার ট্রায়াল চেকলিস্ট</div>
+    <ul class="tcheck">
+      ${chk(!!ME, `নাম ও নম্বর দেওয়া ${ME ? '— ' + esc(ME.name) : `<button class="plan" onclick="openProfile()">এখনই দিন</button>`}`)}
+      ${chk(s.quiz, `কুইজ অনুশীলন <a href="#/day/0/quiz">🎯 যান</a>`)}
+      ${chk(s.read, `আর্টিকেল পড়ে রিঅ্যাক্ট <a href="#/day/0/read">📖 যান</a>`)}
+      ${chk(s.write, `লেখা জমার অনুশীলন <a href="#/day/0/write">✍️ যান</a>`)}
+    </ul>`;
+}
+function nextSegs(d, cur) {
+  return `<div class="nextseg">${SEGS.filter(([k]) => k !== cur).map(([k, e, l]) =>
+    `<a class="btn ${segDone(d)[k] ? 'btn-o' : 'btn-g'}" href="#/day/${d}/${k}">${segDone(d)[k] ? '✓' : e} ${l}</a>`).join('')}</div>`;
+}
+
+// ── ১) কুইজ (১ মিনিট) ──
+// কুইজ কখন শুরু হয়েছে ও কী উত্তর দিয়েছে — রিফ্রেশ করলেও সময় আবার শুরু হবে না
+const qsKey = (d) => `gk_qs_${ME ? ME.key : 'anon'}_day${d}`;
+function qsGet(d) { try { return JSON.parse(store(qsKey(d)) || '{}'); } catch (e) { return {}; } }
+function qsSet(d, v) { store(qsKey(d), JSON.stringify(v)); }
+function qsLeft(st) { return st.start ? Math.max(0, QUIZ_MS - (Date.now() - st.start)) : QUIZ_MS; }
+function quizOpts(q, cls, d) {
+  return q.opts.map((o, i) => o ? `<button class="qopt ${cls(i)}" ${d != null ? `onclick="pickQ(${d},${i})"` : 'disabled'}><span class="k">${QK[i]}</span>${esc(o)}</button>` : '').join('');
+}
+
+function renderQuiz(d) {
+  clearInterval(QTIMER);
+  const box = $('quiz-box'), q = quizOf(art(d)), rec = dayRec(d);
+  if (!q) {
+    box.className = 'card part done';
+    box.innerHTML = `<h3>🎯 এই দিনে কোনো কুইজ নেই</h3><p>আর্টিকেল পড়ে রিঅ্যাক্ট দিন বা এই বিষয়ে লিখুন — যেকোনো একটিতেই অংশগ্রহণ গণনা হবে।</p>${nextSegs(d, 'quiz')}`;
+    return;
+  }
+  // ফলাফল (অংশ নেওয়া হয়ে গেছে)
+  if (rec && rec.qs) {
+    const answered = rec.qa != null;
+    box.className = 'card part done';
+    box.innerHTML = `<div class="ok-ic">${answered && rec.qc ? '✓' : answered ? '✗' : '⌛'}</div>
+      <h3>${answered ? (rec.qc ? 'সঠিক উত্তর! মাশাআল্লাহ 🎉' : 'উত্তর সঠিক হয়নি') : 'সময় শেষ হয়ে গিয়েছিল'}</h3>
+      <p>${answered ? `আপনি ${bn(rec.qt || 0)} সেকেন্ডে উত্তর দিয়েছেন।` : 'উত্তর দেওয়া হয়নি, তবে কুইজে অংশ নেওয়া গণনা হয়েছে।'}</p>
+      <div class="qbox"><div class="qq">${esc(q.q)}</div>
+        <div class="qopts">${quizOpts(q, i => i === q.ans - 1 ? 'ok' : (answered && i === rec.qa ? 'no' : ''))}</div>
+        <div class="qres">✓ সঠিক উত্তর: <b>${QK[q.ans - 1]} — ${esc(q.opts[q.ans - 1])}</b>${q.ex ? `<br>📖 ${esc(q.ex)}` : ''}</div></div>
+      ${nextSegs(d, 'quiz')}`;
+    return;
+  }
+  box.className = 'card part';
+  const st = qsGet(d), left = qsLeft(st);
+  if (!st.start) {
+    box.innerHTML = `<h3>🎯 আজকের কুইজ</h3>
+      <div class="qintro"><div class="qclock">⏱ ১:০০</div>
+        <p>“শুরু করুন” চাপলে প্রশ্ন দেখাবে। <b>১ মিনিটের</b> মধ্যে উত্তর দিতে হবে — একবার উত্তর বাছাই করলে আর বদলানো যাবে না।</p>
+        <button class="btn btn-gold" onclick="startQuiz(${d})">▶ কুইজ শুরু করুন</button></div>
+      <p style="margin:14px 0 0;font-size:12.5px;text-align:center;">💡 চাইলে আগে আর্টিকেল পড়ে নিতে পারেন — <a href="#/day/${d}/read" style="color:var(--gold2);">📖 পড়ুন</a></p>`;
+    return;
+  }
+  if (st.qa != null || left <= 0) {
+    // উত্তর/সময় শেষ কিন্তু এখনো সেভ হয়নি (ইন্টারনেট সমস্যা) — আবার সেভের চেষ্টা
+    box.innerHTML = `<h3>🎯 আজকের কুইজ</h3><div class="qbox"><div class="qq">${esc(q.q)}</div>
+      <div class="qnote">${st.qa != null ? '🔒 আপনার উত্তর লক হয়েছে।' : '⌛ সময় শেষ।'} সংরক্ষণ হচ্ছে…</div></div>
+      <button class="btn btn-gold" id="q-retry" onclick="saveQuiz(${d})">↻ আবার চেষ্টা করুন</button><div class="alert" id="q-alert"></div>`;
+    saveQuiz(d);
+    return;
+  }
+  box.innerHTML = `<h3>🎯 আজকের কুইজ</h3><div class="qbox" id="qbox">
+    <div class="qtimer"><span id="qt-num">${bn(Math.ceil(left / 1000))}</span> সেকেন্ড বাকি<div class="qtbar"><i id="qt-bar" style="width:${left / QUIZ_MS * 100}%"></i></div></div>
+    <div class="qq">${esc(q.q)}</div><div class="qopts">${quizOpts(q, () => '', d)}</div></div>`;
+  QTIMER = setInterval(() => {
+    const l = qsLeft(qsGet(d));
+    if (!$('qt-num')) return clearInterval(QTIMER);
+    $('qt-num').textContent = bn(Math.ceil(l / 1000));
+    $('qt-bar').style.width = (l / QUIZ_MS * 100) + '%';
+    $('qt-num').parentNode.classList.toggle('warn', l <= 10000);
+    if (l <= 0) { clearInterval(QTIMER); renderQuiz(d); }
+  }, 250);
+}
+function startQuiz(d) {
+  if (!ME) return openProfile(() => startQuiz(d));
+  const st = qsGet(d);
+  if (!st.start) { st.start = Date.now(); qsSet(d, st); }
+  renderQuiz(d);
+  $('quiz-box').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function pickQ(d, i) {
+  const st = qsGet(d);
+  if (st.qa != null || qsLeft(st) <= 0) return renderQuiz(d);
+  st.qa = i; st.ansAt = Date.now(); qsSet(d, st);
+  clearInterval(QTIMER);
+  renderQuiz(d);
+}
+let SAVING_Q = false;
+async function saveQuiz(d) {
+  if (SAVING_Q || !ME) return;
+  const q = quizOf(art(d)), st = qsGet(d);
+  if (!q || !st.start) return;
+  const f = st.qa != null
+    ? { qs: 'answered', qa: st.qa, qc: st.qa === q.ans - 1, qt: Math.max(1, Math.round((st.ansAt - st.start) / 1000)), qT: st.ansAt }
+    : { qs: 'timeout', qT: st.start + QUIZ_MS };
+  SAVING_Q = true;
+  try {
+    await record(d, f);
+    SAVING_Q = false;
+    if (CURDAY === d) renderQuiz(d);
+  } catch (e) {
+    SAVING_Q = false;
+    showAlert('q-alert', 'err', '⚠️ সংরক্ষণ হয়নি। ইন্টারনেট সংযোগ দেখে “আবার চেষ্টা করুন” চাপুন।');
+  }
+}
+
+// ── ২) আর্টিকেল পড়ুন ও রিঅ্যাক্ট দিন ──
+function renderRead(d) {
+  const a = art(d);
+  $('art').innerHTML = `
+    <div class="art-head"><span class="chip gold">⏱ ${bn(readMins(a.body))} মিনিটের পাঠ</span></div>
+    <div class="orn">۞</div>
+    ${a.img ? `<img class="art-img" src="${esc(a.img)}" alt="" onerror="this.remove()">` : ''}
+    <div class="art-body">${renderBody(a.body)}</div>
+    ${a.refs ? `<div class="refs"><b>📚 সূত্র</b>${esc(a.refs).replace(/\n/g, '<br>')}</div>` : ''}`;
+  renderReact(d);
+}
+function renderReact(d) {
+  const box = $('react-box'), rec = dayRec(d), mine = rec && rec.react;
+  const cnt = (k) => RCOUNT[d] && RCOUNT[d][k] ? bn(RCOUNT[d][k]) : '';
+  const btns = `<div class="reacts">${REACTS.map(([k, e, l], i) => mine
+    ? `<button class="rbtn ${mine === k ? 'mine' : ''}" disabled><span class="e">${e}</span>${l}<span class="c" id="rc-${k}">${cnt(k)}</span></button>`
+    : `<button class="rbtn ${i === 0 ? 'main' : ''}" onclick="react(${d},'${k}')"><span class="e">${e}</span>${l}<span class="c" id="rc-${k}">${cnt(k)}</span></button>`).join('')}</div>`;
+  if (mine) {
+    box.className = 'card part done';
+    box.innerHTML = `<div class="ok-ic">✓</div><h3>জাযাকাল্লাহু খাইরান! আপনার প্রতিক্রিয়া গ্রহণ হয়েছে</h3><p></p>${btns}${nextSegs(d, 'read')}`;
+  } else {
+    box.className = 'card part';
+    box.innerHTML = `<h3>🤍 পড়া শেষ? একটি প্রতিক্রিয়া দিন</h3>
+      <p>যেকোনো একটি বাটনে চাপ দিলেই এই দিনের অংশগ্রহণ গণনা হবে।</p>${btns}<div class="alert" id="r-alert"></div>`;
+  }
+  loadReacts(d);
+}
+async function loadReacts(d) {
+  if (d === 0) return;                             // ট্রায়ালে রিঅ্যাক্ট সংখ্যা নেই
+  try {
+    RCOUNT[d] = await api('reactions/day' + d) || {};
+    REACTS.forEach(([k]) => { const e = $('rc-' + k); if (e) e.textContent = RCOUNT[d][k] ? bn(RCOUNT[d][k]) : ''; });
+  } catch (e) {}
+}
+async function react(d, k) {
+  if (!ME) return openProfile(() => react(d, k));
+  document.querySelectorAll('#react-box .rbtn').forEach(b => b.disabled = true);
+  try {
+    await record(d, { react: k, rT: Date.now() });
+    if (d !== 0) {
+      api('reactions/day' + d, 'PATCH', { [k]: { '.sv': { increment: 1 } } }).catch(() => {});
+      RCOUNT[d] = RCOUNT[d] || {}; RCOUNT[d][k] = (RCOUNT[d][k] || 0) + 1;
+    }
+    renderReact(d);
+    $('react-box').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } catch (e) {
+    document.querySelectorAll('#react-box .rbtn').forEach(b => b.disabled = false);
+    showAlert('r-alert', 'err', '⚠️ সংরক্ষণ হয়নি। ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।');
+  }
+}
+
+// ── ৩) লেখা জমা দিন ──
+function renderWriteSeg(d) {
+  hideAlert('w-alert');
+  const a = art(d);
+  const used = writingsOf(MYREC), left = Math.max(0, MAX_WRITINGS - used);
+  $('w-btn').textContent = d === 0 ? '🧪 অনুশীলন জমা দিন' : 'লেখা জমা দিন';
+  if (d === 0) {
+    $('w-topic').innerHTML = `🧪 <b>অনুশীলন:</b> “${esc(a.title)}” বিষয়ে কয়েক লাইন লিখে দেখুন কীভাবে জমা দিতে হয়। এই লেখা কোথাও পাঠানো হবে না এবং আপনার ৩টি লেখার সীমা থেকে কাটা যাবে না। (নিয়ম পরীক্ষার জন্য এখানেও কমপক্ষে ৮০ শব্দ লাগবে।)`;
+    $('w-left').textContent = 'গণনা হবে না';
+    $('w-form').style.display = '';
+    $('my-writings').style.display = 'none';
+    if (segDone(0).write) showAlert('w-alert', 'ok', '✅ লেখা জমার অনুশীলন সম্পন্ন! আসল প্রতিযোগিতায় ঠিক এভাবেই জমা দেবেন।');
+    return;
+  }
+  $('w-topic').innerHTML = `বিষয়: <b>${esc(a.title)}</b> — এই বিষয়কে কেন্দ্র করে নিজের ভাষায় লিখুন। পুরো মাসে সর্বোচ্চ ${bn(MAX_WRITINGS)}টি লেখা জমা দেওয়া যাবে।`;
+  $('w-left').textContent = ME ? `বাকি ${bn(left)}টি` : `সর্বোচ্চ ${bn(MAX_WRITINGS)}টি`;
+  $('w-form').style.display = ME && left === 0 ? 'none' : '';
+  if (ME && left === 0) showAlert('w-alert', 'info', `আপনি ইতিমধ্যে ${bn(MAX_WRITINGS)}টি লেখা জমা দিয়েছেন। জাযাকাল্লাহু খাইরান! 🤍<br>এই দিনে চাইলে 🎯 কুইজ বা 📖 রিঅ্যাক্টে অংশ নিতে পারেন।`);
+  const mw = $('my-writings');
+  const subs = MYREC && MYREC.subs ? Object.values(MYREC.subs).sort((x, y) => x.t - y.t) : [];
+  if (subs.length) {
+    mw.style.display = 'block';
+    mw.innerHTML = `<div class="sec-h"><h3>আমার জমা দেওয়া লেখা</h3></div><ul class="lb">` +
+      subs.map((s, i) => `<li><div class="rank">${bn(i + 1)}</div><div class="nm">${esc(s.title)}<small>দিন ${bn(s.day)} • ${new Date(s.t).toLocaleDateString('bn-BD')}</small></div><span class="chip">✓ জমা</span></li>`).join('') + '</ul>';
+  } else mw.style.display = 'none';
+}
+function wordCount() {
+  const n = $('w-text').value.trim().split(/\s+/).filter(Boolean).length;
+  $('w-wc').textContent = bn(n) + ' শব্দ' + (n < 80 ? ` • কমপক্ষে ${bn(80)}` : ' ✓');
+}
+let PENDING_SUB = null;
+async function submitWriting() {
+  const day = CURDAY;
+  if (!ME) return openProfile(() => renderWriteSeg(day));
+  const title = $('w-title').value.trim();
+  const text = $('w-text').value.trim();
+  const refs = $('w-ref').value.trim();
+  const words = text.split(/\s+/).filter(Boolean).length;
+  if (day == null || !art(day)) return;
+  if (title.length < 3) return showAlert('w-alert', 'err', 'লেখার একটি শিরোনাম দিন।');
+  if (words < 80) return showAlert('w-alert', 'err', `লেখাটি একটু বড় করুন — কমপক্ষে ৮০ শব্দ (এখন ${bn(words)} শব্দ)।`);
+  if (!$('w-own').checked) return showAlert('w-alert', 'err', 'নিশ্চয়তা বক্সে টিক দিন।');
+  if (day === 0) {                                 // ট্রায়াল: কোথাও পাঠানো হয় না
+    await record(0, { ['w/trial']: Date.now() });
+    $('w-title').value = ''; $('w-text').value = ''; $('w-ref').value = ''; $('w-own').checked = false; wordCount();
+    renderWriteSeg(0);
+    toast('🧪 অনুশীলন সফল! আসল লেখা এভাবেই জমা হবে');
+    return;
+  }
+
+  const btn = $('w-btn'); btn.disabled = true; btn.innerHTML = '<span class="spin"></span> জমা হচ্ছে…';
+  try {
+    await loadMyRecord();                          // সর্বশেষ সংখ্যা যাচাই
+    if (!MYREC_OK) throw new Error('offline');
+    // আগের চেষ্টায় লেখাটি জমা হয়ে গিয়ে থাকলে (পরের ধাপে নেট গেলে) আবার নতুন কপি পাঠানো হবে না
+    const sig = [ME.key, day, title, text, refs].join('\u0001');
+    const pend = PENDING_SUB && PENDING_SUB.sig === sig ? PENDING_SUB : null;
+    if (!pend && writingsOf(MYREC) >= MAX_WRITINGS) { renderWriteSeg(day); return; }
+    const t = pend ? pend.t : Date.now();
+    const id = pend ? pend.id : (await api('submissions', 'POST', { key: ME.key, name: ME.name, phone: ME.phone, day, title, text, refs, words, t })).name;
+    PENDING_SUB = { sig, id, t };
+    await api('participants/' + ME.key + '/subs/' + id, 'PUT', { day, title, t });
+    MYREC.subs = MYREC.subs || {}; MYREC.subs[id] = { day, title, t };
+    await record(day, { ['w/' + id]: t });
+    PENDING_SUB = null;
+    $('w-title').value = ''; $('w-text').value = ''; $('w-ref').value = ''; $('w-own').checked = false; wordCount();
+    renderWriteSeg(day);
+    showAlert('w-alert', 'ok', '✅ আপনার লেখা সফলভাবে জমা হয়েছে। জাযাকাল্লাহু খাইরান! 🌿');
+  } catch (e) {
+    showAlert('w-alert', 'err', '⚠️ জমা হয়নি। ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন। (আপনার লেখা মুছে যায়নি)');
+  } finally {
+    btn.textContent = 'লেখা জমা দিন'; btn.disabled = false;
+  }
+}
+
+// ── READING PROGRESS ──
+function onScroll() {
+  const on = $('v-day').classList.contains('on') && $('p-read').classList.contains('on');
+  const h = document.documentElement.scrollHeight - innerHeight;
+  $('readbar').style.width = on && h > 0 ? (scrollY / h * 100) + '%' : '0';
+}
+addEventListener('scroll', onScroll, { passive: true });
+
+// ── INIT ──
+// দ্রুত খোলার জন্য: আগের বারের তথ্য দিয়ে সাথে সাথে পেজ দেখানো হয়, তারপর নতুন তথ্য এলে আপডেট হয়
+function saveCache() {
+  try { store('gk_cache', JSON.stringify({ a: ARTICLES, p: PARTS, m: MYREC, s: SETTINGS, k: ME && ME.key })); } catch (e) {}
+}
+function loadCache() {
+  try {
+    const c = JSON.parse(store('gk_cache') || 'null'); if (!c) return false;
+    ARTICLES = {}; Object.values(c.a || {}).forEach(a => { if (a && artOk(a, a.day)) ARTICLES[a.day] = a; });
+    PARTS = c.p || null;
+    SETTINGS = c.s || {};
+    if (ME && c.k === ME.key) MYREC = c.m || null;
+    return true;
+  } catch (e) { return false; }
+}
+(async function init() {
+  loadProfile();
+  if (ME && !ME.key) { ME.key = await phoneKey(ME.phone); store('gk_profile', JSON.stringify(ME)); loadProfile(); }
+  window.addEventListener('hashchange', route);
+  const hadCache = loadCache();
+  const wasOpen = new Set(Object.keys(ARTICLES));
+  route();                                          // সাথে সাথে দেখাও (ক্যাশ বা লোডিং অবস্থা)
+  try {
+    await Promise.all([loadArticles(), loadParticipants(), loadMyRecord(), loadSettings()]);
+    LOAD_ERR = false; LOADING = false;
+    saveCache();
+  } catch (e) {
+    LOAD_ERR = !hadCache; LOADING = false;
+  }
+  // নতুন তথ্য এলে পেজ আপডেট — তবে কেউ কুইজ দিচ্ছে বা লিখছে এমন অবস্থায় বাধা দেওয়া হবে না
+  const onDay = $('v-day').classList.contains('on');
+  if (!onDay || !wasOpen.has(String(CURDAY)) && CURDAY !== 0) {
+    const y = scrollY; route(); if (!onDay) scrollTo(0, y);
+  } else drawDayHead(CURDAY);
+
+  // নতুন কেউ ঢুকলে প্রথমেই ফ্রি রেজিস্ট্রেশনের ফর্ম
+  if (!ME) { if (!$('m-profile').classList.contains('on')) openProfile(); }
+  // আগে নাম দিয়েছিলেন কিন্তু রেজিস্ট্রেশন ডেটাবেসে নেই — চুপচাপ জমা করে দাও
+  else if (MYREC_OK && !MYREC.reg) registerMe();
+})();
+</script>
+</body>
+</html>

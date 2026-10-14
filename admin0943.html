@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>গ্রন্থকানন — Admin</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Serif+Bengali:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{min-height:100vh;background:#0e1a12;font-family:'Noto Serif Bengali',serif;color:#e0f0e8;}
+body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,#1a4a2a 0%,transparent 70%),#0e1a12;}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:16px 16px 48px;}
+button{font-family:inherit;}
+.hdr{text-align:center;padding:16px 0 14px;}
+.hdr b{font-family:'Amiri',serif;font-size:26px;color:#e8d48a;}
+.hdr div{font-size:12px;color:#5a9a6a;letter-spacing:1px;margin-top:2px;}
+.tabs{display:flex;gap:6px;margin-bottom:14px;overflow-x:auto;}
+.tab{flex:1;white-space:nowrap;padding:10px 12px;border-radius:10px;border:1px solid rgba(200,168,75,.25);background:transparent;color:#9abfaa;font-size:14px;cursor:pointer;}
+.tab.on{background:rgba(200,168,75,.16);border-color:#c8a84b;color:#e8d48a;font-weight:700;}
+.card{background:rgba(20,50,30,.72);border:1px solid rgba(200,168,75,.2);border-radius:14px;padding:18px;margin-bottom:14px;}
+.sec{font-size:14px;color:#c8a84b;font-weight:700;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;}
+.lbl{font-size:12px;color:#7aad8a;margin-bottom:5px;display:block;}
+.inp{width:100%;padding:10px 13px;border-radius:8px;border:1px solid rgba(200,168,75,.3);background:rgba(255,255,255,.06);color:#e8f5ec;font-family:inherit;font-size:14px;outline:none;}
+.inp:focus{border-color:#c8a84b;}
+.inp::placeholder{color:#4a7a5a;}
+select.inp option{background:#13301f;}
+textarea.inp{resize:vertical;line-height:1.8;}
+.field{margin-bottom:12px;}
+.row{display:grid;grid-template-columns:110px 1fr;gap:10px;}
+.hint{font-size:11px;color:#6a9a7a;margin-top:4px;line-height:1.7;}
+.hint code{background:rgba(200,168,75,.12);padding:0 5px;border-radius:4px;color:#e8d48a;}
+.btn{padding:11px 18px;border-radius:9px;border:none;font-size:14px;font-weight:700;cursor:pointer;}
+.btn-g{background:linear-gradient(135deg,#a8882a,#e8d48a,#a8882a);color:#0a1f17;}
+.btn-g:disabled{opacity:.45;cursor:not-allowed;}
+.btn-o{background:transparent;border:1px solid rgba(200,168,75,.4);color:#e8d48a;font-weight:500;}
+.btn-r{background:transparent;border:1px solid rgba(220,90,80,.45);color:#f0a0a0;font-weight:500;}
+.btn-s{padding:6px 11px;font-size:12px;}
+.btns{display:flex;gap:8px;flex-wrap:wrap;}
+.alert{border-radius:9px;padding:11px 13px;font-size:13px;line-height:1.7;margin-top:10px;display:none;}
+.alert.show{display:block;}
+.alert.ok{background:rgba(52,168,83,.12);border:1px solid rgba(52,168,83,.35);color:#7de87e;}
+.alert.err{background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.35);color:#f0a0a0;}
+.alert.info{background:rgba(80,140,255,.08);border:1px solid rgba(80,140,255,.25);color:#a0c4ff;}
+.daygrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:6px;}
+.dg{aspect-ratio:1;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);color:#6a8a7a;font-size:13px;cursor:pointer;}
+.dg.pub{background:rgba(52,168,83,.22);border-color:#52a853;color:#b8f0c0;}
+.dg.draft{background:rgba(200,168,75,.14);border-color:rgba(200,168,75,.5);color:#e8d48a;}
+.dg.cur{outline:2px solid #e8d48a;outline-offset:1px;}
+.legend{font-size:11px;color:#7aad8a;margin-top:8px;}
+.preview{background:#f3f8f4;color:#1e3b2f;border-radius:12px;padding:18px;line-height:2;font-size:15px;max-height:520px;overflow:auto;}
+.preview h1{font-size:20px;line-height:1.5;margin-bottom:6px;}
+.preview p{margin-bottom:12px;}
+.preview h4{color:#1f7a4a;margin:16px 0 6px;}
+.preview blockquote{margin:12px 0;padding:10px 12px;background:#fbf4e2;border-right:3px solid #b8892a;border-radius:8px;}
+.preview .ar{font-family:'Amiri',serif;font-size:21px;direction:rtl;text-align:right;}
+.preview ul{margin:0 0 12px 20px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top;}
+th{color:#c8a84b;font-weight:600;font-size:12px;}
+td small{color:#6a9a7a;display:block;}
+.tw{overflow-x:auto;}
+.item{border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px;margin-bottom:10px;background:rgba(0,0,0,.18);}
+.item h4{font-size:15px;color:#f0f8f0;margin-bottom:3px;}
+.item .m{font-size:12px;color:#7aad8a;}
+.item .body{white-space:pre-wrap;font-size:14px;line-height:1.9;color:#d8ecdf;margin-top:10px;display:none;background:rgba(0,0,0,.2);padding:12px;border-radius:8px;}
+.item.open .body{display:block;}
+.qwrap{border:1px dashed rgba(200,168,75,.35);border-radius:12px;padding:14px;margin:4px 0 14px;background:rgba(0,0,0,.12);}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
+.ansbtns{display:flex;gap:8px;}
+.ansbtns button{flex:1;padding:9px;border-radius:8px;border:1px solid rgba(200,168,75,.3);background:transparent;color:#9abfaa;font-size:15px;cursor:pointer;}
+.ansbtns button.on{background:rgba(52,168,83,.25);border-color:#52a853;color:#b8f0c0;font-weight:700;}
+.pq{margin-top:16px;padding:12px;border:1px solid #d5e8dc;border-radius:10px;background:#fff;font-size:14px;}
+.pq div{padding:6px 10px;border:1px solid #e7dfcd;border-radius:8px;margin-top:6px;}
+.pq div.ok{background:#e3f3ea;border-color:#7cc49b;}
+.sumrow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0;}
+.sumrow div{background:rgba(0,0,0,.2);border-radius:10px;padding:10px 4px;text-align:center;font-size:11px;color:#7aad8a;}
+.sumrow b{display:block;font-size:20px;color:#e8d48a;}
+.ok-t{color:#7de87e;} .no-t{color:#f0a0a0;}
+@media(max-width:480px){.row{grid-template-columns:1fr;}.qgrid{grid-template-columns:1fr;}.sumrow{grid-template-columns:repeat(2,1fr);}th,td{padding:7px 4px;font-size:12px;}}
+.pane{display:none;}
+.pane.on{display:block;}
+.winner{background:linear-gradient(135deg,rgba(200,168,75,.25),rgba(200,168,75,.08));border:1px solid #c8a84b;border-radius:12px;padding:16px;text-align:center;margin-top:12px;}
+.winner b{display:block;font-size:22px;color:#e8d48a;margin:4px 0;}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(200,168,75,.3);border-top-color:#c8a84b;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;}
+@keyframes spin{to{transform:rotate(360deg);}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hdr"><b>☪ গ্রন্থকানন Admin</b><div>অক্টোবর ইলম যাত্রা — আর্টিকেল ও অংশগ্রহণ ব্যবস্থাপনা</div></div>
+
+  <div class="tabs">
+    <button class="tab on" data-t="art">📖 আর্টিকেল</button>
+    <button class="tab" data-t="sub">✍️ লেখা</button>
+    <button class="tab" data-t="par">🏅 অংশগ্রহণ</button>
+    <button class="tab" data-t="set">⚙️ সেটিং</button>
+  </div>
+
+  <!-- ARTICLES -->
+  <div class="pane on" id="p-art">
+    <div class="card">
+      <div class="sec"><span>📅 ৩১ দিন</span><span style="font-size:12px;color:#7aad8a;" id="art-count"></span></div>
+      <div class="daygrid" id="daygrid"></div>
+      <div class="legend">🟩 প্রকাশিত &nbsp; 🟨 খসড়া &nbsp; ⬛ খালি — যেকোনো দিনে ক্লিক করে লিখুন/এডিট করুন</div>
+      <div id="draft-bar" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:12px;padding:10px 12px;border-radius:10px;background:rgba(0,0,0,.2);font-size:13px;line-height:1.7;"></div>
+    </div>
+
+    <div class="card">
+      <div class="sec"><span id="ed-title">✏️ দিন ১ — আর্টিকেল</span></div>
+      <div class="row">
+        <div class="field"><label class="lbl">দিন</label><input class="inp" id="a-day" type="number" min="1" max="31" value="1" onchange="pickDay(+this.value)"></div>
+        <div class="field"><label class="lbl">বিষয় (ট্যাগ)</label><input class="inp" id="a-topic" placeholder="যেমন: আখলাক, সীরাত, ইবাদত"></div>
+      </div>
+      <div class="field"><label class="lbl">শিরোনাম</label><input class="inp" id="a-title" placeholder="আর্টিকেলের শিরোনাম" oninput="preview()"></div>
+      <div class="field">
+        <label class="lbl">আর্টিকেল</label>
+        <textarea class="inp" id="a-body" rows="16" placeholder="আর্টিকেল এখানে লিখুন বা পেস্ট করুন…" oninput="preview()"></textarea>
+        <div class="hint">ফরম্যাট: ফাঁকা লাইন = নতুন প্যারা • <code>## </code> = উপশিরোনাম • <code>&gt; </code> = আয়াত/হাদিস বক্স • <code>- </code> = তালিকা • <code>**লেখা**</code> = বোল্ড • আরবি লেখা আপনাআপনি আরবি ফন্টে দেখাবে</div>
+      </div>
+      <div class="field"><label class="lbl">সূত্র / রেফারেন্স</label><textarea class="inp" id="a-refs" rows="3" placeholder="প্রতি লাইনে একটি সূত্র" oninput="preview()"></textarea></div>
+      <div class="field"><label class="lbl">ছবির লিংক (ঐচ্ছিক)</label><input class="inp" id="a-img" type="url" placeholder="https://…" oninput="preview()"></div>
+
+      <div class="qwrap">
+        <div class="sec" style="margin-bottom:8px;"><span>🎯 আর্টিকেলের কুইজ <span style="color:#7aad8a;font-weight:400;font-size:12px;">(উত্তরের সময় ১ মিনিট • প্রশ্ন ফাঁকা রাখলে কুইজ দেখাবে না)</span></span><button class="btn btn-o btn-s" onclick="useBankQuiz()">↺ প্রস্তাবিত কুইজ</button></div>
+        <div class="field"><label class="lbl">প্রশ্ন (আর্টিকেল পড়লেই উত্তর জানা যাবে এমন)</label><input class="inp" id="q-q" placeholder="যেমন: ইলম অর্জন কার উপর ফরজ?" oninput="preview()"></div>
+        <div class="qgrid">
+          <input class="inp" id="q-o1" placeholder="ক) অপশন" oninput="preview()">
+          <input class="inp" id="q-o2" placeholder="খ) অপশন" oninput="preview()">
+          <input class="inp" id="q-o3" placeholder="গ) অপশন" oninput="preview()">
+          <input class="inp" id="q-o4" placeholder="ঘ) অপশন" oninput="preview()">
+        </div>
+        <div class="field"><label class="lbl">সঠিক উত্তর</label>
+          <div class="ansbtns" id="q-ans"><button data-a="1">ক</button><button data-a="2">খ</button><button data-a="3">গ</button><button data-a="4">ঘ</button></div></div>
+        <div class="field"><label class="lbl">ব্যাখ্যা (উত্তর দেওয়ার পর দেখাবে, ঐচ্ছিক)</label><input class="inp" id="q-ex" placeholder="সংক্ষিপ্ত ব্যাখ্যা / সূত্র" oninput="preview()"></div>
+      </div>
+      <label style="display:flex;gap:8px;align-items:center;font-size:14px;margin:4px 0 14px;cursor:pointer;"><input type="checkbox" id="a-pub" checked> সাইটে প্রকাশ করুন (টিক না দিলে খসড়া হিসেবে থাকবে)</label>
+      <div class="btns">
+        <button class="btn btn-g" id="a-save" onclick="saveArticle()" style="flex:1;">💾 সেভ করুন</button>
+        <button class="btn btn-o" onclick="copyLink()">🔗 লিংক কপি</button>
+        <button class="btn btn-r" onclick="deleteArticle()">🗑 মুছুন</button>
+      </div>
+      <div class="alert" id="a-alert"></div>
+    </div>
+
+    <div class="card">
+      <div class="sec"><span>👁 প্রিভিউ</span></div>
+      <div class="preview" id="a-prev"></div>
+    </div>
+  </div>
+
+  <!-- SUBMISSIONS -->
+  <div class="pane" id="p-sub">
+    <div class="card" id="vote-ctl"><span class="spin"></span></div>
+    <div class="card">
+      <div class="sec"><span>✍️ জমা দেওয়া লেখা <span id="sub-count" style="color:#7aad8a;font-weight:400;"></span></span>
+        <span class="btns"><button class="btn btn-o btn-s" onclick="loadSubs()">↻ রিফ্রেশ</button><button class="btn btn-o btn-s" onclick="exportSubs()">⬇ CSV</button></span></div>
+      <div class="row" style="grid-template-columns:1fr 1fr;">
+        <select class="inp" id="sub-day" onchange="renderSubs()"><option value="">সব দিন</option></select>
+        <input class="inp" id="sub-q" placeholder="নাম / শিরোনাম দিয়ে খুঁজুন" oninput="renderSubs()">
+      </div>
+    </div>
+    <div id="sub-list"></div>
+  </div>
+
+  <!-- PARTICIPANTS -->
+  <div class="pane" id="p-par">
+    <div class="card">
+      <div class="sec"><span>🏅 অংশগ্রহণকারী <span id="par-count" style="color:#7aad8a;font-weight:400;"></span></span>
+        <span class="btns"><button class="btn btn-o btn-s" onclick="loadPar()">↻ রিফ্রেশ</button><button class="btn btn-o btn-s" onclick="exportPar()">⬇ CSV</button></span></div>
+      <div class="tw"><table><thead><tr><th>#</th><th>নাম / ফোন</th><th>দিন</th><th>সময়মতো</th><th>🎯 সঠিক</th><th>লেখা</th></tr></thead><tbody id="par-body"></tbody></table></div>
+    </div>
+    <div class="card">
+      <div class="sec"><span>📅 দিনভিত্তিক রিপোর্ট — কে পড়েছে, কুইজ, রিঅ্যাক্ট</span>
+        <span class="btns"><select class="inp" id="dl-day" style="width:auto;padding:6px 10px;" onchange="renderDayLog()"></select><button class="btn btn-o btn-s" onclick="exportDay()">⬇ CSV</button></span></div>
+      <div id="dl-sum"></div>
+      <div class="tw"><table><thead><tr><th>#</th><th>নাম / ফোন</th><th>🎯 কুইজ</th><th>📖 রিঅ্যাক্ট</th><th>✍️</th><th>প্রথম কখন</th></tr></thead><tbody id="dl-body"></tbody></table></div>
+    </div>
+    <div class="card">
+      <div class="sec"><span>🎲 সর্বাধিক সক্রিয় — দৈবচয়ন</span></div>
+      <div class="row" style="grid-template-columns:1fr auto;align-items:end;">
+        <div><label class="lbl">কমপক্ষে কত দিন অংশগ্রহণ করতে হবে?</label><input class="inp" id="rnd-min" type="number" min="1" max="31" value="20"></div>
+        <button class="btn btn-g" onclick="pickRandom()">দৈবচয়ন করুন</button>
+      </div>
+      <div id="rnd-out"></div>
+    </div>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="pane" id="p-set">
+    <div class="card">
+      <div class="sec"><span>🔥 Firebase</span></div>
+      <div class="field"><label class="lbl">Firebase Database URL</label><input class="inp" id="s-db" type="url"></div>
+      <div class="field"><label class="lbl">🔑 Database Secret (অ্যাডমিন চাবি)</label><input class="inp" id="s-secret" type="password" autocomplete="off" placeholder="Firebase console থেকে কপি করা secret">
+        <div class="hint">কোথায় পাবেন: Firebase console → ⚙️ Project settings → <b>Service accounts</b> → <b>Database secrets</b> → Show → কপি করুন। এটা শুধু এই ব্রাউজারে থাকে — কাউকে দেবেন না। এটা ছাড়া অ্যাডমিন প্যানেল ডেটা দেখতে বা আর্টিকেল সেভ করতে পারবে না।</div></div>
+      <div class="field"><label class="lbl">পাবলিক সাইটের লিংক (যেমন https://gronthokanon.netlify.app)</label><input class="inp" id="s-base" type="url" placeholder="https://…"></div>
+      <button class="btn btn-g" onclick="saveSettings()">সেভ করুন</button>
+      <div class="alert" id="s-alert"></div>
+      <div class="hint" style="margin-top:12px;">ডেটাবেসে যা থাকে: <code>articles</code> (আর্টিকেল), <code>participants</code> (লিডারবোর্ড — নাম ও আংশিক নম্বর), <code>contacts</code> (পূর্ণ ফোন নম্বর), <code>submissions</code> (জমা দেওয়া লেখা), <code>reactions</code> (রিঅ্যাক্ট সংখ্যা)।</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DEFAULT_DB = 'https://gkquiz-47e5c-default-rtdb.asia-southeast1.firebasedatabase.app';
+const $ = (id) => document.getElementById(id);
+const BN = '০১২৩৪৫৬৭৮৯';
+const bn = (n) => String(n).replace(/\d/g, d => BN[d]);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ls = (k, v) => { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } };
+const dbUrl = () => (ls('gk_fb_db_url') || DEFAULT_DB).replace(/\/+$/, '');
+const baseUrl = () => (ls('gk_base_url') || '').replace(/\/+$/, '');
+const secret = () => ls('gk_db_secret') || '';
+async function api(path, method = 'GET', body) {
+  const opt = { method };                           // header ছাড়া — অতিরিক্ত preflight অনুরোধ লাগে না
+  if (body !== undefined) opt.body = JSON.stringify(body);
+  const s = secret();
+  const r = await fetch(`${dbUrl()}/${path}.json${s ? '?auth=' + encodeURIComponent(s) : ''}`, opt);
+  if (r.status === 401) throw new Error(s ? 'Secret সঠিক নয় (401)' : 'সেটিং ট্যাবে Database Secret দিন (401)');
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return r.json();
+}
+// দিন N-এর আর্টিকেল ও কুইজ খুলবে N অক্টোবর রাত ১২টায় (বাংলাদেশ সময়)
+const openAtOf = (d) => Date.UTC(2026, 9, d) - 6 * 3600 * 1000;
+
+// ══════════════════════════════════════════════════════
+//  📚 ৩১ দিনের বিষয় ও শিরোনাম (এটা সবার জন্য খোলা তথ্য — সাইটের বিষয়সূচিতেও আছে)
+//  কুইজ-উত্তর ও আর্টিকেল এখানে নেই — সেগুলো আপনার কম্পিউটারের আলাদা খসড়া ফাইলে থাকে,
+//  যাতে এই অ্যাডমিন পেজ অনলাইনে থাকলেও কেউ আগেভাগে তা দেখতে না পারে।
+// ══════════════════════════════════════════════════════
+const QUIZ_BANK = [
+  { topic: 'ইলম', title: 'ইলম অর্জনের গুরুত্ব' },
+  { topic: 'আকিদা', title: 'তাওহীদ: ইসলামের মূল ভিত্তি' },
+  { topic: 'আকিদা', title: 'ঈমানের রুকনসমূহ' },
+  { topic: 'ইবাদত', title: 'সালাত: মুমিনের মিরাজ' },
+  { topic: 'আত্মশুদ্ধি', title: 'ইখলাস ও নিয়তের গুরুত্ব' },
+  { topic: 'আখলাক', title: 'সবর: ধৈর্যের সৌন্দর্য' },
+  { topic: 'আখলাক', title: 'শুকর: কৃতজ্ঞ বান্দা হওয়া' },
+  { topic: 'আত্মশুদ্ধি', title: 'তাওবা ও ইস্তিগফার' },
+  { topic: 'ইবাদত', title: 'দুআ: মুমিনের হাতিয়ার' },
+  { topic: 'ইবাদত', title: 'জিকিরে অন্তরের প্রশান্তি' },
+  { topic: 'কুরআন', title: 'কুরআন তিলাওয়াতের ফজিলত' },
+  { topic: 'পরিবার', title: 'পিতা-মাতার প্রতি সদাচরণ' },
+  { topic: 'আখলাক', title: 'উত্তম চরিত্র' },
+  { topic: 'আখলাক', title: 'সত্যবাদিতা' },
+  { topic: 'আখলাক', title: 'জিহ্বার হেফাজত ও গীবত' },
+  { topic: 'সমাজ', title: 'সদকা ও দানের বরকত' },
+  { topic: 'আখলাক', title: 'হায়া: লজ্জাশীলতা' },
+  { topic: 'সমাজ', title: 'প্রতিবেশীর হক' },
+  { topic: 'সমাজ', title: 'সালামের প্রসার' },
+  { topic: 'সীরাত', title: 'রাসূল ﷺ-এর নবুওয়াত লাভ' },
+  { topic: 'সীরাত', title: 'হিজরতের শিক্ষা' },
+  { topic: 'সাহাবা', title: 'সাহাবীদের জীবন থেকে' },
+  { topic: 'জীবন', title: 'সময়ের মূল্য' },
+  { topic: 'জীবন', title: 'হালাল রিযিক' },
+  { topic: 'ইবাদত', title: 'রোজার ফজিলত' },
+  { topic: 'ইবাদত', title: 'যাকাত: সম্পদের পবিত্রতা' },
+  { topic: 'ইবাদত', title: 'হজ ও আরাফার দিন' },
+  { topic: 'আখিরাত', title: 'মৃত্যুর পরও যে আমল চলতে থাকে' },
+  { topic: 'আখিরাত', title: 'জান্নাতের পথে' },
+  { topic: 'আখলাক', title: 'রাগ নিয়ন্ত্রণ' },
+  { topic: 'আত্মশুদ্ধি', title: 'আল্লাহর উপর তাওয়াক্কুল' },
+];
+
+// ── খসড়া ফাইল (কুইজ + আর্টিকেল) — শুধু আপনার ব্রাউজারে লোড হয় ──
+let DRAFTS = null;
+function parseDrafts(text) {
+  const d = new Function(String(text) + '\n;return (typeof DRAFTS !== "undefined") ? DRAFTS : null;')();
+  if (!d || !Array.isArray(d.quiz) || d.quiz.length !== 31) throw new Error('ফাইলটি সঠিক খসড়া ফাইল নয়');
+  return d;
+}
+function loadStoredDrafts() {
+  const t = ls('gk_drafts');
+  if (t) { try { DRAFTS = parseDrafts(t); } catch (e) { DRAFTS = null; } }
+  drawDraftBar();
+}
+function drawDraftBar() {
+  const n = DRAFTS && DRAFTS.articles ? Object.keys(DRAFTS.articles).length : 0;
+  $('draft-bar').innerHTML = DRAFTS
+    ? `<span style="color:#7de87e;">✅ খসড়া ফাইল লোড করা আছে — ৩১টি কুইজ ও ${bn(n)}টি আর্টিকেল</span>
+       <span class="btns"><label class="btn btn-o btn-s" style="cursor:pointer;">🔄 নতুন ফাইল<input type="file" accept=".js,.txt" hidden onchange="onDraftFile(this)"></label>
+       <button class="btn btn-r btn-s" onclick="clearDrafts()">✕ সরান</button></span>`
+    : `<span style="color:#f0c890;">📂 খসড়া ফাইল লোড করা হয়নি — প্রস্তাবিত কুইজ ও আর্টিকেল দেখতে আপনার কম্পিউটারের <b>gronthokanon-khoshra.js</b> ফাইলটি লোড করুন।</span>
+       <label class="btn btn-g btn-s" style="cursor:pointer;">📂 খসড়া ফাইল লোড করুন<input type="file" accept=".js,.txt" hidden onchange="onDraftFile(this)"></label>`;
+}
+function onDraftFile(input) {
+  const f = input.files && input.files[0]; if (!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try {
+      DRAFTS = parseDrafts(r.result);
+      ls('gk_drafts', r.result);
+      drawDraftBar(); pickDay(CUR);
+      alertBox('a-alert', 'ok', '✅ খসড়া ফাইল লোড হয়েছে। দিন বেছে নিলে প্রস্তাবিত কুইজ ও আর্টিকেল বসে যাবে। (ফাইলটি শুধু এই ব্রাউজারে মনে থাকবে)');
+    } catch (e) { alertBox('a-alert', 'err', '❌ ' + esc(e.message)); }
+  };
+  r.readAsText(f, 'utf-8');
+}
+function clearDrafts() {
+  if (!confirm('এই ব্রাউজার থেকে খসড়া সরিয়ে ফেলবেন? (আপনার কম্পিউটারের ফাইল মুছবে না)')) return;
+  try { localStorage.removeItem('gk_drafts'); } catch (e) {}
+  DRAFTS = null; drawDraftBar(); pickDay(CUR);
+}
+function alertBox(id, type, msg) { const e = $(id); if (!e) return; e.className = 'alert show ' + type; e.innerHTML = msg; }
+
+// ── TABS ──
+document.querySelectorAll('.tab').forEach(t => t.onclick = () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.toggle('on', x === t));
+  document.querySelectorAll('.pane').forEach(p => p.classList.toggle('on', p.id === 'p-' + t.dataset.t));
+  if (t.dataset.t === 'sub' && !SUBS) loadSubs();
+  if (t.dataset.t === 'par' && !PARS) loadPar();
+});
+
+// ── ARTICLES ──
+let ARTS = {}, CUR = 1;
+async function loadArts() {
+  try { ARTS = await api('articles') || {}; } catch (e) { ARTS = {}; alertBox('a-alert', 'err', '⚠️ ডেটাবেস থেকে লোড হয়নি — ' + esc(e.message)); }
+  drawGrid();
+}
+function drawGrid() {
+  let pub = 0;
+  $('daygrid').innerHTML = Array.from({ length: 31 }, (_, i) => i + 1).map(d => {
+    const a = ARTS['day' + d];
+    if (a && a.published) pub++;
+    return `<button class="dg ${a ? (a.published ? 'pub' : 'draft') : ''} ${d === CUR ? 'cur' : ''}" title="${esc((a && a.title) || QUIZ_BANK[d - 1].title)}" onclick="pickDay(${d})">${bn(d)}</button>`;
+  }).join('');
+  $('art-count').textContent = `${bn(pub)}/৩১ প্রকাশিত`;
+}
+function pickDay(d) {
+  d = Math.min(31, Math.max(1, d || 1)); CUR = d;
+  const a = ARTS['day' + d] || {};
+  const bank = QUIZ_BANK[d - 1];
+  $('a-day').value = d;
+  $('a-topic').value = a.topic || (a.title ? '' : bank.topic);
+  $('a-title').value = a.title || bank.title;
+  // প্রস্তাবিত কুইজ ও আর্টিকেল আসে কম্পিউটারের খসড়া ফাইল থেকে (লোড করা থাকলে)
+  const bankQ = DRAFTS ? DRAFTS.quiz[d - 1] || {} : {};
+  const draft = !a.body && DRAFTS && DRAFTS.articles ? DRAFTS.articles[d] : null;
+  $('a-body').value = a.body || (draft ? draft.body : '');
+  $('a-refs').value = a.refs || (draft ? draft.refs : '');
+  $('a-img').value = a.img || '';
+  $('a-pub').checked = a.published !== false;
+  loadQuiz(a.body ? (a.quiz || {}) : bankQ);
+  $('ed-title').textContent = `✏️ দিন ${bn(d)} — ${a.body ? 'এডিট' : 'নতুন আর্টিকেল'} • খুলবে ${bn(d)} অক্টোবর`;
+  $('a-alert').className = 'alert';
+  if (!a.body) alertBox('a-alert', 'info', !DRAFTS
+    ? `📂 দিন ${bn(d)}: প্রস্তাবিত কুইজ ও আর্টিকেল দেখতে উপরের <b>“খসড়া ফাইল লোড করুন”</b> বাটনে চাপ দিয়ে আপনার কম্পিউটারের খসড়া ফাইলটি বেছে নিন।`
+    : draft
+    ? `📝 দিন ${bn(d)}-এর প্রস্তাবিত <b>আর্টিকেল, সূত্র ও কুইজ</b> বসানো হয়েছে। নিচের প্রিভিউতে পড়ে যাচাই করুন, প্রয়োজনে সংশোধন করে <b>সেভ</b> করুন। (এখনো সেভ হয়নি)`
+    : `💡 দিন ${bn(d)}-এর প্রস্তাবিত বিষয় “${esc(bank.title)}” ও কুইজ বসানো হয়েছে। এই বিষয়ে আর্টিকেল লিখে সেভ করুন — চাইলে শিরোনাম/কুইজ বদলাতে পারেন।`);
+  drawGrid(); preview();
+}
+function renderBody(src) {
+  const blocks = String(src || '').replace(/\r/g, '').split(/\n\s*\n/);
+  const isAr = (s) => (s.match(/[؀-ۿ]/g) || []).length > s.replace(/\s/g, '').length * 0.5;
+  const inline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
+  return blocks.map(b => {
+    b = b.trim(); if (!b) return '';
+    if (b.startsWith('## ')) return `<h4>${inline(b.slice(3))}</h4>`;
+    if (b.startsWith('>')) { const q = b.split('\n').map(l => l.replace(/^>\s?/, '')).join('\n'); return `<blockquote class="${isAr(q) ? 'ar' : ''}">${inline(q)}</blockquote>`; }
+    if (/^- /.test(b)) return '<ul>' + b.split('\n').map(l => `<li>${inline(l.replace(/^- /, ''))}</li>`).join('') + '</ul>';
+    return `<p class="${isAr(b) ? 'ar' : ''}">${inline(b)}</p>`;
+  }).join('');
+}
+function loadQuiz(q) {
+  $('q-q').value = q.q || ''; $('q-ex').value = q.ex || '';
+  [1, 2, 3, 4].forEach(i => $('q-o' + i).value = (q.opts || [])[i - 1] || '');
+  setAns(q.ans || 0);
+}
+function useBankQuiz() {
+  if (!DRAFTS) return alertBox('a-alert', 'info', '📂 আগে খসড়া ফাইল লোড করুন।');
+  loadQuiz(DRAFTS.quiz[+$('a-day').value - 1] || {});
+}
+let QANS = 0;
+function setAns(n) { QANS = n; document.querySelectorAll('#q-ans button').forEach(b => b.classList.toggle('on', +b.dataset.a === n)); preview(); }
+document.querySelectorAll('#q-ans button').forEach(b => b.onclick = () => setAns(+b.dataset.a));
+function readQuiz() {
+  const q = $('q-q').value.trim();
+  if (!q) return null;
+  return { q, opts: [1, 2, 3, 4].map(i => $('q-o' + i).value.trim()), ans: QANS, ex: $('q-ex').value.trim() };
+}
+function preview() {
+  const img = $('a-img').value.trim();
+  const qz = readQuiz();
+  $('a-prev').innerHTML = `<h1>${esc($('a-title').value) || '<span style="color:#9ab">শিরোনাম</span>'}</h1>` +
+    (img ? `<img src="${esc(img)}" style="width:100%;border-radius:10px;margin:8px 0;" onerror="this.remove()">` : '') +
+    renderBody($('a-body').value) +
+    ($('a-refs').value.trim() ? `<div style="border-top:1px dashed #cde;margin-top:12px;padding-top:8px;font-size:13px;"><b>📚 সূত্র:</b><br>${esc($('a-refs').value).replace(/\n/g, '<br>')}</div>` : '') +
+    (qz ? `<div class="pq"><b>🎯 ${esc(qz.q)}</b>${qz.opts.map((o, i) => o ? `<div class="${i === qz.ans - 1 ? 'ok' : ''}">${'কখগঘ'[i]}) ${esc(o)}${i === qz.ans - 1 ? ' ✓' : ''}</div>` : '').join('')}${qz.ex ? `<small style="display:block;margin-top:8px;color:#4a5d53;">📖 ${esc(qz.ex)}</small>` : ''}</div>` : '');
+}
+async function saveArticle() {
+  const d = +$('a-day').value;
+  const title = $('a-title').value.trim(), body = $('a-body').value.trim();
+  if (!(d >= 1 && d <= 31)) return alertBox('a-alert', 'err', 'দিন ১–৩১ এর মধ্যে দিন।');
+  if (!title || !body) return alertBox('a-alert', 'err', 'শিরোনাম ও আর্টিকেল দুটোই লিখুন।');
+  const quiz = readQuiz();
+  if (quiz) {
+    if (quiz.opts.filter(Boolean).length < 2) return alertBox('a-alert', 'err', 'কুইজে কমপক্ষে ২টি অপশন দিন।');
+    if (!quiz.ans || !quiz.opts[quiz.ans - 1]) return alertBox('a-alert', 'err', 'কুইজের সঠিক উত্তর (ক/খ/গ/ঘ) বেছে দিন — সেই অপশনটি ফাঁকা রাখা যাবে না।');
+  }
+  const data = { day: d, title, body, topic: $('a-topic').value.trim(), refs: $('a-refs').value.trim(), img: $('a-img').value.trim(), published: $('a-pub').checked, openAt: openAtOf(d), ts: Date.now() };
+  if (quiz) data.quiz = quiz;
+  const b = $('a-save'); b.disabled = true; b.innerHTML = '<span class="spin"></span> সেভ হচ্ছে…';
+  try {
+    await api('articles/day' + d, 'PUT', data);
+    ARTS['day' + d] = data; CUR = d; drawGrid();
+    alertBox('a-alert', 'ok', data.published ? `✅ দিন ${bn(d)} প্রকাশিত হয়েছে।<br>লিংক: <b>${esc(articleLink(d))}</b>` : `✅ দিন ${bn(d)} খসড়া হিসেবে সেভ হয়েছে (সাইটে দেখাবে না)।`);
+  } catch (e) {
+    alertBox('a-alert', 'err', `❌ সেভ হয়নি: ${esc(e.message)} — Firebase URL ও Database Rules দেখুন।`);
+  } finally { b.disabled = false; b.textContent = '💾 সেভ করুন'; }
+}
+async function deleteArticle() {
+  const d = +$('a-day').value;
+  if (!ARTS['day' + d]) return alertBox('a-alert', 'info', 'এই দিনে কোনো আর্টিকেল নেই।');
+  if (!confirm(`দিন ${d}-এর আর্টিকেল স্থায়ীভাবে মুছে ফেলবেন?`)) return;
+  try { await api('articles/day' + d, 'DELETE'); delete ARTS['day' + d]; pickDay(d); alertBox('a-alert', 'ok', '🗑 মুছে ফেলা হয়েছে।'); }
+  catch (e) { alertBox('a-alert', 'err', '❌ মোছা যায়নি: ' + esc(e.message)); }
+}
+function articleLink(d) { return `${baseUrl() || '(সাইটের লিংক সেটিং-এ দিন)'}/#/day/${d}`; }
+function copyLink() {
+  const t = articleLink(+$('a-day').value);
+  navigator.clipboard.writeText(t).then(() => alertBox('a-alert', 'ok', '🔗 কপি হয়েছে: ' + esc(t)), () => prompt('লিংক কপি করুন:', t));
+}
+
+// ── SUBMISSIONS ──
+let SUBS = null;
+async function loadSubs() {
+  $('sub-list').innerHTML = '<div class="card"><span class="spin"></span></div>';
+  try { const d = await api('submissions') || {}; SUBS = Object.entries(d).map(([id, s]) => ({ id, ...s })).sort((a, b) => b.t - a.t); }
+  catch (e) { $('sub-list').innerHTML = '<div class="card">⚠️ লোড হয়নি।</div>'; return; }
+  const days = [...new Set(SUBS.map(s => s.day))].sort((a, b) => a - b);
+  $('sub-day').innerHTML = '<option value="">সব দিন</option>' + days.map(d => `<option value="${d}">দিন ${bn(d)}</option>`).join('');
+  await loadVoteData();
+  renderSubs(); renderVoteCtl();
+}
+
+// ── লেখা প্রকাশ ও ভোট ব্যবস্থাপনা ──
+let PUB = {}, BAL = {}, SET = {}, VOTE_ERR = '';
+async function loadVoteData() {
+  try { const [p, b, s] = await Promise.all([api('published'), api('ballots'), api('settings')]); PUB = p || {}; BAL = b || {}; SET = s || {}; VOTE_ERR = ''; }
+  catch (e) { VOTE_ERR = '⚠️ ভোটের তথ্য লোড হয়নি: ' + esc(e.message); }
+}
+// বৈধ ভোট: প্রতি ভোটার এক লেখায় একবার, নিজের লেখায় দেওয়া ভোট বাদ
+function vtally() {
+  const c = {}; let voters = 0, total = 0;
+  Object.entries(BAL).forEach(([voter, slots]) => {
+    let any = false;
+    new Set(Object.values(slots || {})).forEach(id => { const p = PUB[id]; if (p && p.k !== voter) { c[id] = (c[id] || 0) + 1; total++; any = true; } });
+    if (any) voters++;
+  });
+  return { c, voters, total };
+}
+const flag = (a, b) => !!(SET[a] && SET[a][b]);
+const pubRec = (s) => ({ k: s.key || '', name: s.name, day: s.day, title: s.title, text: s.text, refs: s.refs || '', words: s.words || 0, t: s.t });
+function ranked() {
+  const { c } = vtally();
+  return Object.entries(PUB).map(([id, p]) => {
+    const s = (SUBS || []).find(x => x.id === id) || {};
+    return { id, title: p.title, name: p.name, phone: s.phone || '', day: p.day, v: c[id] || 0, t: p.t };
+  }).sort((a, b) => b.v - a.v || a.t - b.t);
+}
+function renderVoteCtl() {
+  const { voters, total } = vtally(), pubN = Object.keys(PUB).length, subN = (SUBS || []).length;
+  const tg = (path, on, onTxt, offTxt) => `<button class="btn btn-s ${on ? 'btn-g' : 'btn-o'}" onclick="setFlag('${path}', ${!on})">${on ? onTxt : offTxt}</button>`;
+  const r = ranked();
+  $('vote-ctl').innerHTML = `
+    <div class="sec"><span>🏆 মাস শেষে প্রকাশ ও ভোট</span><button class="btn btn-o btn-s" onclick="loadSubs()">↻ রিফ্রেশ</button></div>
+    <div class="hint" style="margin-bottom:12px;">ধাপ: <b>১)</b> লেখা প্রকাশ করুন → <b>২)</b> গ্যালারি চালু করুন (সবাই পড়তে পারবে) → <b>৩)</b> ভোট চালু করুন → <b>৪)</b> সময় শেষে ভোট বন্ধ করুন → <b>৫)</b> চাইলে ফলাফল সবাইকে দেখান।</div>
+    <div class="sumrow">
+      <div><b>${bn(pubN)}/${bn(subN)}</b>লেখা প্রকাশিত</div><div><b>${bn(voters)}</b>জন ভোট দিয়েছেন</div>
+      <div><b>${bn(total)}</b>মোট বৈধ ভোট</div><div><b>${flag('voting', 'open') ? '🟢' : '⚪'}</b>ভোট ${flag('voting', 'open') ? 'চলছে' : 'বন্ধ'}</div>
+    </div>
+    <div class="btns" style="margin-bottom:10px;">
+      <button class="btn btn-g btn-s" onclick="publishAll()">✅ সব লেখা প্রকাশ করুন</button>
+      ${tg('gallery/open', flag('gallery', 'open'), '📚 গ্যালারি চালু — বন্ধ করুন', '📚 গ্যালারি চালু করুন')}
+      ${tg('voting/open', flag('voting', 'open'), '🗳 ভোট চলছে — বন্ধ করুন', '🗳 ভোট চালু করুন')}
+      ${tg('voting/showCounts', flag('voting', 'showCounts'), '👁 ভোট সংখ্যা দেখাচ্ছে — লুকান', '👁 ভোট সংখ্যা সবাইকে দেখান')}
+      <button class="btn btn-o btn-s" onclick="exportResults()">⬇ ফলাফল CSV</button>
+    </div>
+    <div class="alert" id="sub-alert"></div>
+    ${r.length ? `<div class="tw" style="margin-top:8px;"><table><thead><tr><th>#</th><th>লেখা / লেখক</th><th>দিন</th><th>🗳 ভোট</th></tr></thead><tbody>
+      ${r.slice(0, 15).map((x, i) => `<tr${i < 3 && x.v ? ' style="background:rgba(200,168,75,.12)"' : ''}><td>${i < 3 && x.v ? ['🥇', '🥈', '🥉'][i] : bn(i + 1)}</td><td>${esc(x.title)}<small>${esc(x.name)} • ${esc(x.phone)}</small></td><td>${bn(x.day)}</td><td><b>${bn(x.v)}</b></td></tr>`).join('')}
+      </tbody></table></div><div class="hint">প্রথম ১৫টি দেখানো হচ্ছে; পূর্ণ তালিকা CSV-তে। নিজের লেখায় দেওয়া ভোট ও একই লেখায় দ্বিতীয় ভোট গণনা থেকে বাদ।</div>` : ''}`;
+  if (VOTE_ERR) alertBox('sub-alert', 'err', VOTE_ERR);
+}
+async function setFlag(path, val) {
+  const msgs = {
+    'gallery/open': val ? 'গ্যালারি চালু করবেন? প্রকাশিত সব লেখা সাইটে সবাই পড়তে পারবে।' : 'গ্যালারি বন্ধ করবেন? সাইট থেকে লেখাগুলো লুকিয়ে যাবে।',
+    'voting/open': val ? 'ভোট চালু করবেন? রেজিস্টার্ড সদস্যরা ভোট দিতে পারবেন।' : 'ভোট বন্ধ করবেন? এরপর আর কেউ ভোট দিতে পারবে না।',
+    'voting/showCounts': val ? 'সবাইকে ভোট সংখ্যা দেখাবেন?' : 'ভোট সংখ্যা লুকাবেন?'
+  };
+  if (!confirm(msgs[path])) return;
+  if (path === 'voting/open' && val && !flag('gallery', 'open')) await api('settings/gallery/open', 'PUT', true).catch(() => {});
+  try { await api('settings/' + path, 'PUT', val); await loadVoteData(); renderVoteCtl(); alertBox('sub-alert', 'ok', '✅ সেভ হয়েছে।'); }
+  catch (e) { alertBox('sub-alert', 'err', '❌ সেভ হয়নি: ' + esc(e.message)); }
+}
+async function togglePub(id) {
+  const s = SUBS.find(x => x.id === id); if (!s) return;
+  if (VOTE_ERR) return alertBox('sub-alert', 'err', VOTE_ERR + ' — আগে “↻ রিফ্রেশ” চাপুন।');
+  try {
+    if (PUB[id]) { if (!confirm(`“${s.title}” লেখাটি অপ্রকাশিত করবেন? (এর ভোট গণনা থেকে বাদ যাবে)`)) return; await api('published/' + id, 'DELETE'); delete PUB[id]; }
+    else { const rec = pubRec(s); await api('published/' + id, 'PUT', rec); PUB[id] = rec; }
+    renderSubs(); renderVoteCtl();
+  } catch (e) { alertBox('sub-alert', 'err', '❌ ' + esc(e.message)); }
+}
+async function publishAll() {
+  if (VOTE_ERR) return alertBox('sub-alert', 'err', VOTE_ERR + ' — আগে “↻ রিফ্রেশ” চাপুন।');
+  const rest = (SUBS || []).filter(s => !PUB[s.id]);
+  if (!rest.length) return alertBox('sub-alert', 'info', 'সব লেখা আগেই প্রকাশিত।');
+  if (!confirm(`${rest.length}টি লেখা প্রকাশ করবেন? (লেখকের ফোন নম্বর প্রকাশ হবে না)`)) return;
+  const body = {}; rest.forEach(s => { body[s.id] = pubRec(s); });
+  try { await api('published', 'PATCH', body); Object.assign(PUB, body); renderSubs(); renderVoteCtl(); alertBox('sub-alert', 'ok', `✅ ${bn(rest.length)}টি লেখা প্রকাশিত। এখন “গ্যালারি চালু করুন” চাপলে সবাই দেখতে পাবে।`); }
+  catch (e) { alertBox('sub-alert', 'err', '❌ ' + esc(e.message)); }
+}
+function exportResults() {
+  csv([['অবস্থান', 'শিরোনাম', 'লেখক', 'ফোন', 'দিন', 'বৈধ ভোট'], ...ranked().map((x, i) => [i + 1, x.title, x.name, x.phone, x.day, x.v])], 'gronthokanon-voting-result.csv');
+}
+function renderSubs() {
+  if (!SUBS) return;
+  const d = $('sub-day').value, q = $('sub-q').value.trim().toLowerCase();
+  const list = SUBS.filter(s => (!d || s.day == d) && (!q || (s.name + ' ' + s.title).toLowerCase().includes(q)));
+  $('sub-count').textContent = `(${bn(list.length)})`;
+  $('sub-list').innerHTML = list.map(s => `
+    <div class="item" id="s-${s.id}">
+      <h4>${esc(s.title)}</h4>
+      <div class="m">${esc(s.name)} • ${esc(s.phone)} • দিন ${bn(s.day)} • ${bn(s.words || 0)} শব্দ • ${new Date(s.t).toLocaleString('bn-BD')}</div>
+      <div class="btns" style="margin-top:8px;"><button class="btn btn-o btn-s" onclick="this.closest('.item').classList.toggle('open')">📄 পড়ুন</button>
+        <button class="btn btn-s ${PUB[s.id] ? 'btn-g' : 'btn-o'}" onclick="togglePub('${s.id}')">${PUB[s.id] ? '✅ প্রকাশিত' : '📢 প্রকাশ করুন'}</button>
+        ${PUB[s.id] ? `<span style="font-size:12px;color:#e8d48a;align-self:center;">🗳 ${bn(vtally().c[s.id] || 0)} ভোট</span>` : ''}</div>
+      <div class="body">${esc(s.text)}${s.refs ? '\n\n📚 সূত্র:\n' + esc(s.refs) : ''}</div>
+    </div>`).join('') || '<div class="card" style="color:#7aad8a;">কোনো লেখা নেই।</div>';
+}
+
+// ── PARTICIPANTS ──
+let PARS = null;
+async function loadPar() {
+  $('par-body').innerHTML = '<tr><td colspan="6"><span class="spin"></span></td></tr>';
+  try {
+    const [p, c] = await Promise.all([api('participants'), api('contacts')]);
+    PARS = Object.entries(p || {}).map(([k, r]) => {
+      const days = r.days ? Object.values(r.days) : [];
+      return { k, name: r.name, phone: (c && c[k] && c[k].phone) || r.masked || '', raw: r.days || {}, days: days.length, onTime: days.filter(x => x.onTime).length, qc: days.filter(x => x.qc).length, w: r.subs ? Object.keys(r.subs).length : 0, last: r.last || 0, reg: r.reg || 0, dayList: r.days ? Object.keys(r.days).map(x => +x.replace('day', '')).sort((a, b) => a - b) : [] };
+    }).sort((a, b) => b.days - a.days || b.qc - a.qc || b.w - a.w || a.last - b.last);
+  } catch (e) { $('par-body').innerHTML = '<tr><td colspan="6">⚠️ লোড হয়নি।</td></tr>'; return; }
+  const act = PARS.filter(r => r.days > 0).length;
+  $('par-count').textContent = `(${bn(PARS.length)} জন রেজিস্টার্ড • ${bn(act)} জন অংশ নিয়েছেন)`;
+  $('par-body').innerHTML = PARS.map((r, i) => `<tr><td>${bn(i + 1)}</td><td>${esc(r.name)}<small>${esc(r.phone)}</small>${r.reg ? `<small>📝 রেজি: ${new Date(r.reg).toLocaleDateString('bn-BD', { day: 'numeric', month: 'short' })}</small>` : ''}</td><td>${bn(r.days)}<small>${r.dayList.map(bn).join(', ')}</small></td><td>${bn(r.onTime)}</td><td>${bn(r.qc)}</td><td>${bn(r.w)}</td></tr>`).join('') || '<tr><td colspan="6">এখনো কেউ নেই।</td></tr>';
+  const sel = $('dl-day'), cur = sel.value;
+  sel.innerHTML = Array.from({ length: 31 }, (_, i) => i + 1).map(d => `<option value="${d}">দিন ${bn(d)}</option>`).join('');
+  sel.value = cur || String(Math.max(1, ...PARS.flatMap(r => r.dayList), 1));
+  renderDayLog();
+}
+
+// ── দিনভিত্তিক রিপোর্ট ──
+const REACT_LBL = { read: '📖 পড়েছি', love: '❤️ মাশাআল্লাহ', dua: '🤲 জাযাকাল্লাহ', learn: '💡 নতুন শিখলাম' };
+function dayRows(d) {
+  return PARS.filter(r => r.raw['day' + d]).map(r => ({ ...r, x: r.raw['day' + d] })).sort((a, b) => a.x.t - b.x.t);
+}
+function renderDayLog() {
+  if (!PARS) return;
+  const d = +$('dl-day').value, rows = dayRows(d);
+  const a = ARTS['day' + d], q = a && a.quiz;
+  const answered = rows.filter(r => r.x.qa != null), right = rows.filter(r => r.x.qc).length;
+  const rc = {}; rows.forEach(r => { rc[r.x.react] = (rc[r.x.react] || 0) + 1; });
+  $('dl-sum').innerHTML = `${a ? `<div style="font-size:13px;color:#c8e8d0;">📖 ${esc(a.title)}${q ? `<br><span style="color:#7aad8a;">🎯 ${esc(q.q)} — সঠিক: ${'কখগঘ'[q.ans - 1]}) ${esc(q.opts[q.ans - 1])}</span>` : ''}</div>` : '<div style="font-size:13px;color:#7aad8a;">এই দিনে কোনো আর্টিকেল নেই।</div>'}
+    <div class="sumrow"><div><b>${bn(rows.length)}</b>মোট অংশগ্রহণ</div><div><b>${bn(rows.filter(r => r.x.onTime).length)}</b>সেই দিনেই</div>
+    <div><b>${bn(rows.filter(r => r.x.qs).length)}</b>🎯 কুইজ দিয়েছেন</div><div><b>${bn(right)}/${bn(answered.length)}</b>সঠিক (${answered.length ? bn(Math.round(right / answered.length * 100)) + '%' : '—'})</div>
+    <div><b>${bn(rows.filter(r => r.x.react).length)}</b>📖 রিঅ্যাক্ট</div><div><b>${bn(rows.filter(r => r.x.w).length)}</b>✍️ লেখা</div>
+    <div><b>${bn(rows.filter(r => r.x.qs === 'timeout').length)}</b>⌛ সময় শেষ</div><div><b>${bn(rows.filter(r => r.x.qs && r.x.react && r.x.w).length)}</b>তিনটিই করেছেন</div></div>
+    <div style="font-size:12px;color:#9abfaa;margin-bottom:8px;">${Object.entries(REACT_LBL).map(([k, l]) => `${l}: <b style="color:#e8d48a">${bn(rc[k] || 0)}</b>`).join(' &nbsp;•&nbsp; ')}</div>`;
+  const tm = (t) => t ? new Date(t).toLocaleString('bn-BD', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }) : '';
+  $('dl-body').innerHTML = rows.map((r, i) => `<tr><td>${bn(i + 1)}</td><td>${esc(r.name)}<small>${esc(r.phone)}</small></td>
+    <td>${quizCell(r.x)}${r.x.qT ? `<small>${tm(r.x.qT)}</small>` : ''}</td>
+    <td>${REACT_LBL[r.x.react] || '—'}${r.x.rT ? `<small>${tm(r.x.rT)}</small>` : ''}</td>
+    <td>${r.x.w ? '✍️ ' + bn(Object.keys(r.x.w).length) : '—'}</td>
+    <td>${tm(r.x.t)}${r.x.onTime ? '' : '<small>পরে এসে করেছেন</small>'}</td></tr>`).join('') || '<tr><td colspan="6" style="color:#7aad8a;">এই দিনে এখনো কেউ অংশগ্রহণ করেননি।</td></tr>';
+}
+function quizCell(x) {
+  if (x.qa != null) return `<span class="${x.qc ? 'ok-t' : 'no-t'}">${'কখগঘ'[x.qa]} ${x.qc ? '✓' : '✗'}</span>${x.qt ? `<small>${bn(x.qt)} সেকেন্ড</small>` : ''}`;
+  if (x.qs === 'timeout') return '⌛<small>সময় শেষ</small>';
+  if (x.qs === 'skipped') return '—<small>কুইজ দেননি</small>';
+  return '—';
+}
+function quizTxt(x) { return x.qa != null ? `${'কখগঘ'[x.qa]} (${x.qc ? 'সঠিক' : 'ভুল'}, ${x.qt || '?'} সে.)` : x.qs === 'timeout' ? 'সময় শেষ' : x.qs === 'skipped' ? 'কুইজ দেননি' : ''; }
+function exportDay() {
+  if (!PARS) return;
+  const d = +$('dl-day').value;
+  csv([['নাম', 'ফোন', 'কুইজ', 'সঠিক?', 'রিঅ্যাক্ট', 'লেখা', 'সেই দিনেই?', 'প্রথম কখন'], ...dayRows(d).map(r => [r.name, r.phone, quizTxt(r.x), r.x.qa != null ? (r.x.qc ? 'হ্যাঁ' : 'না') : '', REACT_LBL[r.x.react] || '', r.x.w ? Object.keys(r.x.w).length : 0, r.x.onTime ? 'হ্যাঁ' : 'না', new Date(r.x.t).toLocaleString()])], `gronthokanon-din-${d}.csv`);
+}
+function pickRandom() {
+  if (!PARS) return;
+  const min = +$('rnd-min').value || 1;
+  const pool = PARS.filter(r => r.days >= min);
+  if (!pool.length) { $('rnd-out').innerHTML = `<div class="alert show info">কমপক্ষে ${bn(min)} দিন অংশগ্রহণ করেছেন এমন কেউ নেই।</div>`; return; }
+  const arr = new Uint32Array(1); crypto.getRandomValues(arr);
+  const w = pool[arr[0] % pool.length];
+  $('rnd-out').innerHTML = `<div class="winner">🎉 দৈবচয়নে নির্বাচিত (${bn(pool.length)} জনের মধ্য থেকে)<b>${esc(w.name)}</b>${esc(w.phone)} • ${bn(w.days)} দিন অংশগ্রহণ</div>`;
+}
+
+// ── CSV ──
+function csv(rows, name) {
+  const txt = '﻿' + rows.map(r => r.map(v => `"${String(v ?? '').replace(/"/g, '""')}"`).join(',')).join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([txt], { type: 'text/csv;charset=utf-8' }));
+  a.download = name; a.click();
+}
+function exportSubs() { if (SUBS) csv([['নাম', 'ফোন', 'দিন', 'শিরোনাম', 'শব্দ', 'লেখা', 'সূত্র', 'সময়'], ...SUBS.map(s => [s.name, s.phone, s.day, s.title, s.words, s.text, s.refs, new Date(s.t).toLocaleString()])], 'gronthokanon-lekha.csv'); }
+function exportPar() { if (PARS) csv([['অবস্থান', 'নাম', 'ফোন', 'রেজিস্ট্রেশন', 'মোট দিন', 'সময়মতো', 'কুইজ সঠিক', 'লেখা', 'যে দিনগুলো'], ...PARS.map((r, i) => [i + 1, r.name, r.phone, r.reg ? new Date(r.reg).toLocaleString() : '', r.days, r.onTime, r.qc, r.w, r.dayList.join(' ')])], 'gronthokanon-ongshogrohon.csv'); }
+
+// ── SETTINGS ──
+function saveSettings() {
+  const d = $('s-db').value.trim().replace(/\/+$/, ''), b = $('s-base').value.trim().replace(/\/+$/, '');
+  if (!/^https:\/\//.test(d)) return alertBox('s-alert', 'err', 'সঠিক Firebase URL দিন।');
+  ls('gk_fb_db_url', d); ls('gk_base_url', b); ls('gk_db_secret', $('s-secret').value.trim());
+  SUBS = PARS = null;
+  checkSecret().then(() => loadArts()).then(() => pickDay(CUR));
+}
+// চাবি সত্যিই কাজ করছে কিনা Firebase-এ যাচাই (contacts শুধু চাবি দিয়েই পড়া যায়)
+async function checkSecret() {
+  if (!secret()) return alertBox('s-alert', 'err', '⚠️ Database Secret ঘর ফাঁকা। চাবি ছাড়া অ্যাডমিন প্যানেল কাজ করবে না।');
+  alertBox('s-alert', 'info', '<span class="spin"></span> সেভ হয়েছে — চাবি যাচাই করা হচ্ছে…');
+  try {
+    await api('contacts', 'GET');
+    alertBox('s-alert', 'ok', `✅ চাবি সঠিক! অ্যাডমিন প্যানেল পুরোপুরি চালু।${baseUrl() ? '' : '<br>⚠️ “পাবলিক সাইটের লিংক” ঘরটাও পূরণ করুন — আর্টিকেলের লিংক কপি করতে লাগবে।'}`);
+  } catch (e) {
+    alertBox('s-alert', 'err', /401/.test(e.message)
+      ? '❌ চাবি সঠিক নয়। Firebase থেকে আবার কপি করে পেস্ট করুন (সামনে-পেছনে ফাঁকা জায়গা যেন না থাকে)।'
+      : '⚠️ যাচাই করা যায়নি: ' + esc(e.message) + ' — ইন্টারনেট সংযোগ ও Database URL দেখুন।');
+  }
+}
+
+$('s-db').value = dbUrl(); $('s-base').value = baseUrl(); $('s-secret').value = secret();
+if (!secret()) document.querySelector('[data-t=set]').click();
+loadStoredDrafts();
+loadArts().then(() => pickDay(1));
+</script>
+</body>
+</html>
