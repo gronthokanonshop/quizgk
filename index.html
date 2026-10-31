@@ -348,6 +348,34 @@ details.rules[open] summary::after{content:'−';}
 .vbtn{margin-top:16px;}
 .rank-badge{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;font-size:13px;margin-right:6px;}
 
+/* ── গ্যালারি এন্ট্রি অ্যানিমেশন (প্রথমবার ঢুকলে একটি ক্রমে চলে) ── */
+@keyframes gk-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes gk-pop{0%{transform:scale(0);opacity:0}65%{transform:scale(1.3);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes gk-float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-5px) rotate(6deg)}}
+@keyframes gk-shine{0%{transform:translateX(-120%)}100%{transform:translateX(220%)}}
+@keyframes gk-glow{0%,100%{box-shadow:0 14px 30px -14px rgba(138,100,32,.8)}50%{box-shadow:0 14px 40px -8px rgba(226,192,122,.95)}}
+@keyframes gk-nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.gal-cta{animation:gk-glow 2.8s ease-in-out infinite;}
+.gal-cta .ar{animation:gk-nudge 1.6s ease-in-out infinite;}
+.vhero{position:relative;overflow:hidden;display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:18px 16px;margin-bottom:16px;border-radius:20px;color:#fff;
+  background:var(--pattern-light),linear-gradient(135deg,var(--em),var(--em2) 70%,#35609f);box-shadow:0 18px 36px -18px rgba(30,58,110,.7);}
+.vhero::after{content:'';position:absolute;top:0;bottom:0;width:38%;left:0;background:linear-gradient(100deg,transparent,rgba(255,255,255,.22),transparent);transform:translateX(-120%);pointer-events:none;}
+.vh-ic{width:54px;height:54px;border-radius:16px;flex-shrink:0;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:30px;}
+.vh-tx{flex:1;min-width:200px;}
+.vh-tx h3{font-family:var(--serif);font-size:19px;margin-bottom:4px;color:#f3dca3;}
+.vh-tx p{font-size:13px;line-height:1.75;opacity:.95;}
+.vh-tx .cnt{color:#f3dca3;font-size:15px;}
+.vhero .vslots{margin-left:0;}
+.vhero .vslots i{border-color:#e2c07a;color:#f3dca3;}
+.vhero .vslots i.on{background:#e2c07a;border-color:#e2c07a;color:#1e3a6e;}
+#v-gal.fx .vhero{animation:gk-rise .7s cubic-bezier(.2,.7,.2,1) both;}
+#v-gal.fx .vhero::after{animation:gk-shine 1.4s .5s ease-out 1 both;}
+#v-gal.fx .vh-ic{animation:gk-float 3.2s ease-in-out infinite;}
+#v-gal.fx .vslots i{animation:gk-pop .5s cubic-bezier(.3,1.4,.5,1) both;animation-delay:calc(.7s + var(--n)*.18s);}
+#v-gal.fx .vstat,#v-gal.fx .tfilter{animation:gk-rise .6s .15s both;}
+#v-gal.fx .wcard{animation:gk-rise .65s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(1s + var(--i,0)*.09s);}
+@media (prefers-reduced-motion:reduce){.gal-cta,.gal-cta .ar,#v-gal.fx *,#v-gal.fx *::after{animation:none!important;}}
+
 /* ── ট্রায়াল ── */
 .trial-cta{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;border:2px dashed var(--gold2);background:linear-gradient(135deg,#fffaf0,#fff);}
 .trial-cta .ti{width:52px;height:52px;border-radius:16px;flex-shrink:0;background:linear-gradient(135deg,#c89a48,#e2c07a);display:flex;align-items:center;justify-content:center;font-size:26px;}
@@ -946,7 +974,15 @@ async function loadArticles() {
 }
 // ══════════ লেখা গ্যালারি ও ভোট (মাস শেষে অ্যাডমিন চালু করবেন) ══════════
 //  প্রত্যেক রেজিস্টার্ড সদস্য সর্বোচ্চ ৩টি ভোট; এক লেখায় একটি; নিজের লেখায় নয়; দেওয়ার পর বদলানো যায় না।
-let SETTINGS = {}, PUBS = null, BALLOTS = null, MYBALLOT = {}, GFILTER = 'all';
+let SETTINGS = {}, PUBS = null, BALLOTS = null, MYBALLOT = {}, GFILTER = 'all', GAL_SEEN = false;
+function countUp(root, animate) {
+  root.querySelectorAll('.cnt').forEach(el => {
+    const to = +el.dataset.to || 0;
+    if (!animate || !to || (window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches)) { el.textContent = bn(to); return; }
+    const t0 = performance.now(), dur = 1200;
+    (function f(t) { const k = Math.min(1, (t - t0) / dur); el.textContent = bn(Math.round(to * (1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(f); })(t0);
+  });
+}
 const SLOTS = ['s1', 's2', 's3'];
 const galOpen = () => !!(SETTINGS.gallery && SETTINGS.gallery.open);
 const voteOpen = () => galOpen() && !!(SETTINGS.voting && SETTINGS.voting.open);
@@ -977,10 +1013,13 @@ async function renderGallery() {
     return;
   }
   await loadGallery();
+  const first = !GAL_SEEN; GAL_SEEN = true;
+  $('v-gal').classList.toggle('fx', first);
   const counts = tally(), mine = myVotes(), used = mine.size;
   $('g-stat').innerHTML = voteOpen()
-    ? `<div class="vstat">🗳 <div><b>ভোট চলছে!</b> প্রত্যেকে সর্বোচ্চ <b>৩টি</b> লেখায় ভোট দিতে পারবেন। ভোট দেওয়ার পর বদলানো যাবে না।${ME ? '' : ' ভোট দিতে রেজিস্ট্রেশন লাগবে।'}</div>
-       <div class="vslots">${SLOTS.map((s, i) => `<i class="${i < used ? 'on' : ''}">${i < used ? '✓' : bn(i + 1)}</i>`).join('')}</div></div>`
+    ? `<div class="vhero"><div class="vh-ic">🌙</div>
+       <div class="vh-tx"><h3>সেরা লেখা বেছে নিন</h3><p><b class="cnt" data-to="${Object.keys(PUBS).length}">০</b>টি লেখা পড়ার অপেক্ষায়। প্রত্যেকে <b>৩টি</b> লেখায় ভোট দিতে পারবেন; দেওয়ার পর বদলানো যাবে না।${ME ? '' : ' ভোট দিতে রেজিস্ট্রেশন লাগবে।'}</p></div>
+       <div class="vslots">${SLOTS.map((s, i) => `<i style="--n:${i}" class="${i < used ? 'on' : ''}">${i < used ? '✓' : bn(i + 1)}</i>`).join('')}</div></div>`
     : `<div class="vstat">🏁 <div><b>ভোট গ্রহণ শেষ।</b> ${showCounts() ? 'নিচে ভোটের ফলাফল দেখুন।' : 'ফলাফল শীঘ্রই ঘোষণা করা হবে ইনশাআল্লাহ।'}</div></div>`;
   const fl = [['all', 'সব লেখা'], ['mine', '✓ আমার ভোট']];
   if (showCounts()) fl.push(['top', '🏆 সর্বাধিক ভোট']);
@@ -991,9 +1030,10 @@ async function renderGallery() {
   if (GFILTER === 'mine') list = list.filter(x => mine.has(x.id));
   if (GFILTER === 'top' && showCounts()) list.sort((a, b) => b.v - a.v || a.t - b.t);
   else list.sort((a, b) => seedHash(a.id + seed) - seedHash(b.id + seed));  // প্রত্যেকের কাছে আলাদা এলোমেলো ক্রম
+  countUp($('g-stat'), first);
   $('g-sub').textContent = `মোট ${bn(Object.keys(PUBS).length)}টি লেখা প্রকাশিত হয়েছে। পড়ুন, আর পছন্দের লেখায় ভোট দিন।`;
   $('g-list').innerHTML = list.map((x, i) => `
-    <a class="wcard ${mine.has(x.id) ? 'voted' : ''}" href="#/lekha/${esc(x.id)}">
+    <a class="wcard ${mine.has(x.id) ? 'voted' : ''}" style="--i:${Math.min(i, 9)}" href="#/lekha/${esc(x.id)}">
       <span class="chip gold">দিন ${bn(x.day)} • ${esc(topicTitle(x.day))}</span>
       <h4>${GFILTER === 'top' && i < 3 ? `<span class="rank-badge">${bn(i + 1)}</span>` : ''}${esc(x.title)}</h4>
       <p>${esc(excerpt(x.text, 150))}</p>
@@ -1629,13 +1669,21 @@ function loadCache() {
     LOAD_ERR = !hadCache; LOADING = false;
   }
   // নতুন তথ্য এলে পেজ আপডেট — তবে কেউ কুইজ দিচ্ছে বা লিখছে এমন অবস্থায় বাধা দেওয়া হবে না
-  const onDay = $('v-day').classList.contains('on');
-  if (!onDay || !wasOpen.has(String(CURDAY)) && CURDAY !== 0) {
-    const y = scrollY; route(); if (!onDay) scrollTo(0, y);
-  } else drawDayHead(CURDAY);
+  // গ্যালারি চালু থাকলে সাইটের মূল লিংকে ঢুকলেই (প্রতি সেশনে একবার) সরাসরি লেখা ও ভোটের পাতা দেখাও
+  const landing = !location.hash.replace(/^#\/?/, '');
+  let seenGal = false; try { seenGal = sessionStorage.getItem('gk_gal_seen') === '1'; } catch (e) {}
+  if (landing && galOpen() && !seenGal) {
+    try { sessionStorage.setItem('gk_gal_seen', '1'); } catch (e) {}
+    go('lekha');
+  } else {
+    const onDay = $('v-day').classList.contains('on');
+    if (!onDay || !wasOpen.has(String(CURDAY)) && CURDAY !== 0) {
+      const y = scrollY; route(); if (!onDay) scrollTo(0, y);
+    } else drawDayHead(CURDAY);
+  }
 
   // নতুন কেউ ঢুকলে প্রথমেই ফ্রি রেজিস্ট্রেশনের ফর্ম
-  if (!ME) { if (!$('m-profile').classList.contains('on')) openProfile(); }
+  if (!ME) { if (!$('m-profile').classList.contains('on') && !galOpen()) openProfile(); }   // গ্যালারি খোলা থাকলে পড়তে বাধা নয়; ভোট দেওয়ার সময়ই রেজিস্ট্রেশন চাইবে
   // আগে নাম দিয়েছিলেন কিন্তু রেজিস্ট্রেশন ডেটাবেসে নেই — চুপচাপ জমা করে দাও
   else if (MYREC_OK && !MYREC.reg) registerMe();
 })();
