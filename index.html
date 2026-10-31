@@ -376,6 +376,33 @@ details.rules[open] summary::after{content:'−';}
 #v-gal.fx .wcard{animation:gk-rise .65s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(1s + var(--i,0)*.09s);}
 @media (prefers-reduced-motion:reduce){.gal-cta,.gal-cta .ar,#v-gal.fx *,#v-gal.fx *::after{animation:none!important;}}
 
+/* ── আরও সুন্দর ছবি/অ্যানিমেশন ── */
+@keyframes gk-spin{to{transform:rotate(360deg)}}
+@keyframes gk-tw{0%,100%{opacity:0;transform:rotate(45deg) scale(.3)}50%{opacity:1;transform:rotate(45deg) scale(1.3)}}
+@keyframes gk-fly{0%{opacity:1;transform:translate(-50%,-50%) scale(.4)}100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.1)}}
+.vhero::before{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;opacity:.13;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23e2c07a' stroke-width='1'%3E%3Crect x='12' y='12' width='40' height='40'/%3E%3Crect x='12' y='12' width='40' height='40' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='14'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;}
+.vh-ic{width:64px;height:64px;background:none;}
+.vh-ic svg{width:64px;height:64px;overflow:visible;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25));}
+.vh-ic .spin{transform-origin:32px 32px;}
+.sp{position:absolute;width:6px;height:6px;background:#f3dca3;transform:rotate(45deg);opacity:0;pointer-events:none;}
+.sp.s1{top:14px;right:74px;}.sp.s2{top:48px;right:26px;}.sp.s3{bottom:14px;right:120px;}
+#v-gal.fx .vhero::before{animation:gk-spin 50s linear infinite;}
+#v-gal.fx .vh-ic .spin{animation:gk-spin 16s linear infinite;}
+#v-gal.fx .sp{animation:gk-tw 2.6s ease-in-out infinite;}
+#v-gal.fx .sp.s2{animation-delay:.9s;}#v-gal.fx .sp.s3{animation-delay:1.7s;}
+.wcard{overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;}
+.wcard:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(60,45,20,.06),0 16px 30px -10px rgba(60,45,20,.25);}
+.wart{position:relative;height:58px;margin:-16px -16px 12px;display:flex;align-items:flex-end;padding:0 14px 8px;color:#fff;font-size:12.5px;font-weight:600;
+  background:linear-gradient(120deg,var(--c1),var(--c2));}
+.wart svg{position:absolute;inset:0;width:100%;height:100%;}
+.wart b{position:relative;z-index:1;background:rgba(255,255,255,.2);backdrop-filter:blur(4px);border-radius:20px;padding:2px 11px;font-weight:600;}
+.wart .big{position:absolute;right:12px;top:-14px;width:84px;height:84px;opacity:.28;transition:transform .8s;}
+.wcard:hover .wart .big{transform:rotate(90deg) scale(1.1);}
+.card.part.done .ok-ic{animation:gk-pop .7s cubic-bezier(.3,1.4,.5,1) both;}
+.gk-p{position:fixed;z-index:999;pointer-events:none;font-style:normal;line-height:1;animation:gk-fly 1.05s ease-out forwards;}
+@media (prefers-reduced-motion:reduce){#v-gal.fx *::before{animation:none!important;}.wcard,.wcard:hover{transition:none;transform:none;}}
+
 /* ── ট্রায়াল ── */
 .trial-cta{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;border:2px dashed var(--gold2);background:linear-gradient(135deg,#fffaf0,#fff);}
 .trial-cta .ti{width:52px;height:52px;border-radius:16px;flex-shrink:0;background:linear-gradient(135deg,#c89a48,#e2c07a);display:flex;align-items:center;justify-content:center;font-size:26px;}
@@ -975,6 +1002,25 @@ async function loadArticles() {
 // ══════════ লেখা গ্যালারি ও ভোট (মাস শেষে অ্যাডমিন চালু করবেন) ══════════
 //  প্রত্যেক রেজিস্টার্ড সদস্য সর্বোচ্চ ৩টি ভোট; এক লেখায় একটি; নিজের লেখায় নয়; দেওয়ার পর বদলানো যায় না।
 let SETTINGS = {}, PUBS = null, BALLOTS = null, MYBALLOT = {}, GFILTER = 'all', GAL_SEEN = false;
+const HERO_ART = `<svg viewBox="0 0 64 64"><g class="spin" fill="none" stroke="#e2c07a" stroke-width="1.5"><rect x="13" y="13" width="38" height="38"/><rect x="13" y="13" width="38" height="38" transform="rotate(45 32 32)"/></g><circle cx="32" cy="32" r="17" fill="rgba(255,255,255,.08)"/><path d="M37 19a14 14 0 1 0 0 26 11 11 0 1 1 0-26z" fill="#f3dca3"/><path d="M44 24l1.3 3 3 1.3-3 1.3L44 33l-1.3-3.4-3-1.3 3-1.3z" fill="#fff"/></svg>`;
+const ART_PAL = [['#1e3a6e', '#3d6bb3'], ['#176b50', '#3f9a78'], ['#8a6420', '#d9b36a'], ['#6b3a5e', '#a8708f'], ['#2a6f8a', '#5fb0cc'], ['#4a3f8a', '#8a7fd0']];
+const ART_DEFS = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><pattern id="gkp" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M17 3l3.6 9.4L30 16l-9.4 3.6L17 29l-3.6-9.4L4 16l9.4-3.6z" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width=".8"/></pattern></defs></svg>`;
+function cardArt(x) {
+  const p = ART_PAL[seedHash(x.id) % ART_PAL.length], rot = seedHash(x.id + 'r') % 45;
+  return `<div class="wart" style="--c1:${p[0]};--c2:${p[1]}"><svg><rect width="100%" height="100%" fill="url(#gkp)"/></svg>
+    <svg class="big" viewBox="0 0 64 64" style="transform:rotate(${rot}deg)"><g fill="none" stroke="#fff" stroke-width="1.6"><rect x="12" y="12" width="40" height="40"/><rect x="12" y="12" width="40" height="40" transform="rotate(45 32 32)"/><circle cx="32" cy="32" r="8"/></g></svg>
+    <b>দিন ${bn(x.day)} • ${esc(topicTitle(x.day))}</b></div>`;
+}
+function burst(el) {
+  if (!el || (window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches)) return;
+  const r = el.getBoundingClientRect(), cols = ['#e2c07a', '#c89a48', '#2b4f8f', '#e0607e'];
+  for (let i = 0; i < 24; i++) {
+    const s = document.createElement('i'), a = Math.PI * 2 * i / 24 + Math.random() * .3, d = 70 + Math.random() * 100;
+    s.className = 'gk-p'; s.textContent = ['✦', '✧', '❤', '★'][i % 4];
+    s.style.cssText = `left:${r.left + r.width / 2}px;top:${r.top + r.height / 2}px;--dx:${Math.cos(a) * d}px;--dy:${Math.sin(a) * d - 30}px;color:${cols[i % 4]};font-size:${12 + Math.random() * 10}px`;
+    document.body.appendChild(s); setTimeout(() => s.remove(), 1150);
+  }
+}
 function countUp(root, animate) {
   root.querySelectorAll('.cnt').forEach(el => {
     const to = +el.dataset.to || 0;
@@ -1017,7 +1063,7 @@ async function renderGallery() {
   $('v-gal').classList.toggle('fx', first);
   const counts = tally(), mine = myVotes(), used = mine.size;
   $('g-stat').innerHTML = voteOpen()
-    ? `<div class="vhero"><div class="vh-ic">🌙</div>
+    ? `<div class="vhero"><div class="vh-ic">${HERO_ART}</div><i class="sp s1"></i><i class="sp s2"></i><i class="sp s3"></i>
        <div class="vh-tx"><h3>সেরা লেখা বেছে নিন</h3><p><b class="cnt" data-to="${Object.keys(PUBS).length}">০</b>টি লেখা পড়ার অপেক্ষায়। প্রত্যেকে <b>৩টি</b> লেখায় ভোট দিতে পারবেন; দেওয়ার পর বদলানো যাবে না।${ME ? '' : ' ভোট দিতে রেজিস্ট্রেশন লাগবে।'}</p></div>
        <div class="vslots">${SLOTS.map((s, i) => `<i style="--n:${i}" class="${i < used ? 'on' : ''}">${i < used ? '✓' : bn(i + 1)}</i>`).join('')}</div></div>`
     : `<div class="vstat">🏁 <div><b>ভোট গ্রহণ শেষ।</b> ${showCounts() ? 'নিচে ভোটের ফলাফল দেখুন।' : 'ফলাফল শীঘ্রই ঘোষণা করা হবে ইনশাআল্লাহ।'}</div></div>`;
@@ -1032,9 +1078,9 @@ async function renderGallery() {
   else list.sort((a, b) => seedHash(a.id + seed) - seedHash(b.id + seed));  // প্রত্যেকের কাছে আলাদা এলোমেলো ক্রম
   countUp($('g-stat'), first);
   $('g-sub').textContent = `মোট ${bn(Object.keys(PUBS).length)}টি লেখা প্রকাশিত হয়েছে। পড়ুন, আর পছন্দের লেখায় ভোট দিন।`;
-  $('g-list').innerHTML = list.map((x, i) => `
+  $('g-list').innerHTML = ART_DEFS + list.map((x, i) => `
     <a class="wcard ${mine.has(x.id) ? 'voted' : ''}" style="--i:${Math.min(i, 9)}" href="#/lekha/${esc(x.id)}">
-      <span class="chip gold">দিন ${bn(x.day)} • ${esc(topicTitle(x.day))}</span>
+      ${cardArt(x)}
       <h4>${GFILTER === 'top' && i < 3 ? `<span class="rank-badge">${bn(i + 1)}</span>` : ''}${esc(x.title)}</h4>
       <p>${esc(excerpt(x.text, 150))}</p>
       <div class="by">${avatar(x.name, x.k)}<span>${esc(x.name)} • ${bn(x.words || 0)} শব্দ</span>${showCounts() ? `<span class="vc">🗳 ${bn(x.v)}</span>` : ''}</div>
@@ -1082,6 +1128,7 @@ async function castVote(id) {
     MYBALLOT[slot] = id; BALLOTS[ME.key] = Object.assign({}, MYBALLOT);
     toast('✅ আপনার ভোট গ্রহণ করা হয়েছে। জাযাকাল্লাহু খাইরান!');
     renderVoteBox(id);
+    burst(document.querySelector('#w-vote .ok-ic'));
   } catch (e) {
     await loadGallery().catch(() => {});
     renderVoteBox(id);
